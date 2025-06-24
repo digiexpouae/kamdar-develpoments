@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Font and rendering optimizations */
+:root {
+  font-synthesis: none;
+    font-family: 'Lexend', sans-serif; /* Optional: default body font */
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom font: Luxerie (must be in /public/fonts/Luxerie.otf) */
+@font-face {
+  font-family: 'Luxerie';
+  src: url('/fonts/Luxerie.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
