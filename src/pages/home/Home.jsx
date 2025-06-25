@@ -16,7 +16,7 @@ const Home = () => {
        <Section2 text={<>  ELEVATED LIVING.<br />
           WITHIN REACH  </>} />
        <Section4 text={<>SOPHISTICATED LIVING IN<br />
-            THE HEART OF JVC       </>} backgroundImage={'/assets/3.jpg'} btntext={'Explore Now'}/>
+            THE HEART OF JVC       </>} className={'bg-cover bg-center'} backgroundImage={'/assets/3.jpg'} btntext={'Explore Now'}/>
        <Section5 text={<> CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}/>
        <Section3/> 
        <Slider/>

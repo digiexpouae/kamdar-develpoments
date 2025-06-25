@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Section4 = ({text,btntext,p,text1,backgroundImage,titleNumber,className}) => {
+const Section4 = ({text,btntext,p,text1,backgroundImage,overlay,titleNumber,className}) => {
   return (
     <section
       className={`relative w-full h-screen ${className}`}
@@ -11,9 +11,10 @@ const Section4 = ({text,btntext,p,text1,backgroundImage,titleNumber,className}) 
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      {overlay &&
+      <div className="absolute inset-0 bg-black/40"></div>}
       {/* Desktop View */}
-      <div className="hidden md:flex relative z-20 flex-col items-start justify-center h-full pl-44">
+      <div className="hidden md:flex relative z-20 flex-col items-start justify-start h-full pl-44">
         <div className="relative z-10 flex flex-col items-start p-8 md:p-12">
           <motion.h1
           initial={{ opacity: 0, y: 40 }}
