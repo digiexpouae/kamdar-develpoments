@@ -6,6 +6,12 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  background: #000;
+}
+
+body {
+  background: #000;
+  
 }
 
 /* Font and rendering optimizations */

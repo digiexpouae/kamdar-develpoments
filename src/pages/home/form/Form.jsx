@@ -56,7 +56,7 @@ const Form = () => {
         }
       `}</style>
 
-      <section className="w-full py-16 px-4 md:px-0 flex justify-center items-center bg-black text-white section6-shadow relative">
+      <section className="w-full h-screen md:h-[600px] py-16 px-4 md:px-0 flex justify-center items-center bg-black text-white section6-shadow relative">
         <div className="bg-layer bg-base" />
         <motion.div
           className="bg-layer bg-overlay"
@@ -125,20 +125,13 @@ const Form = () => {
 
             <motion.div custom={4} variants={fadeUp}>
               <select className="w-full px-4 py-2 bg-transparent border border-black rounded-md text-black">
-                <option>Enquiry Type</option>
+                <option>Are you</option>
                 <option>Sales</option>
                 <option>Support</option>
                 <option>General</option>
               </select>
             </motion.div>
 
-            <motion.div custom={5} variants={fadeUp}>
-              <textarea
-                placeholder="Message"
-                rows="4"
-                className="w-full px-4 py-2 bg-transparent border border-black rounded-md text-black placeholder-black"
-              />
-            </motion.div>
 
             <motion.button
               type="submit"
