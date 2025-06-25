@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import bgImage from '../../../../public/assets/bg_5.png';
-import formBg from '../../../../public/assets/formbg.png';
+import bgImage from '../../../public/assets/bg_5.png';
+import formBg from '../../../public/assets/formbg.png'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },

@@ -1,4 +1,4 @@
-import Form from "./form/Form";
+import Form from "../../common/form/Form";
 import Section1 from "../../common/section1/Section1"
 import Section2 from '../../common/section2/Section2';
 import Section3 from "./section3/Section3";
