@@ -7,6 +7,7 @@ import Section5 from "../../common/section5/Section5";
 import Slider from "./slider/Slider";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+
 const Home = () => {
     return (
        <>
@@ -18,6 +19,7 @@ const Home = () => {
        <Section4 text={<>SOPHISTICATED LIVING IN<br />
             THE HEART OF JVC       </>} className={'bg-cover bg-center'} backgroundImage={'/assets/3.jpg'} btntext={'Explore Now'}/>
        <Section5 text={<> CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}/>
+       
        <Section3/> 
        <Slider/>
        <Form/> 

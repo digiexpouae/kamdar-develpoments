@@ -49,18 +49,19 @@ const Section5 = ({text}) => {
 
       {/* Mobile View */}
       <motion.div
-        className="reveal-on-scroll flex md:hidden relative z-10 flex-col items-center justify-center h-full px-4 pt-24 text-center"
-        variants={fadeVariants}
-        initial="hidden"
+  className="reveal-on-scroll flex md:hidden relative z-10 flex-col items-center top-15 justify-start h-full px-4 text-center"
+  
+       variants={fadeVariants}
+      initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <h1
-          className="reveal-on-scroll text-white font-light -mt-68 mb-10"
+          className="reveal-on-scroll text-white font-light  md:-mt-96 mb-2"
           style={{
             fontFamily: 'Luxerie, sans-serif',
-            fontSize: '2.5rem',
-            lineHeight: 1.1,
+            fontSize: '2.8rem',
+            lineHeight: 1.0,
             letterSpacing: '0.01px',
             textShadow: '0 2px 16px rgba(0,0,0,0.18)',
           }}

@@ -106,7 +106,7 @@ const Slider = () => {
               {images.map((img, idx) => (
                 <div
                   key={idx}
-                  className="rounded-3xl overflow-hidden bg-white relative shadow-lg"
+                  className="rounded-3xl overflow-hidden bg-white relative "
                   style={{
                     width: `${slideWidth}px`,
                     height: `${containerHeight}px`,
@@ -132,14 +132,14 @@ const Slider = () => {
           <div className="absolute bottom-2 right-2 flex gap-2 z-10">
             <button
               onClick={prevSlide}
-              className="w-8 h-8 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
+              className="w-10 h-10 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
               aria-label="Previous"
             >
               &#8592;
             </button>
             <button
               onClick={nextSlide}
-              className="w-8 h-8 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
+              className="w-10 h-10 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
               aria-label="Next"
             >
               &#8594;

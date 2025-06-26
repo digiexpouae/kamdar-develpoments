@@ -66,11 +66,11 @@ const Section4 = ({ text, btntext, p, text1, backgroundImage, overlay, titleNumb
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-white font-light -mt-68 mb-10"
+          className="text-white font-light -mt-86 mb-10"
           style={{
             fontFamily: 'Luxerie, sans-serif',
-            fontSize: '2.5rem',
-            lineHeight: 1.1,
+            fontSize: '3.0rem',
+            lineHeight: 1.0,
             letterSpacing: '0.01px',
             textShadow: '0 2px 16px rgba(0,0,0,0.18)',
           }}

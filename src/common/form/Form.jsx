@@ -56,7 +56,7 @@ const Form = () => {
         }
       `}</style>
 
-      <section className="w-full h-screen md:h-[600px] py-16 px-4 md:px-0 flex justify-center items-center bg-black text-white section6-shadow relative">
+      <section className="w-full h-[600px] md:h-[600px] py-16 px-4 md:px-0 flex justify-center items-center bg-black text-white section6-shadow relative">
         <div className="bg-layer bg-base" />
         <motion.div
           className="bg-layer bg-overlay"

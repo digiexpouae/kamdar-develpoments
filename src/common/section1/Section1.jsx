@@ -35,7 +35,7 @@ const Section1 = ({text,backgroundImage}) => {
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         <motion.h1
           style={{ fontFamily: 'Luxerie' }}
-          className="reveal-on-scroll text-white text-center text-4xl md:text-7xl leading-[0.8]"
+          className="reveal-on-scroll text-white text-center text-6xl md:text-7xl md:leading-[0.8]"
           variants={fadeVariants}
           initial="hidden"
           animate="visible"
