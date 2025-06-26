@@ -115,7 +115,7 @@ const Header = () => {
             transition={{ delay: 0.5, duration: 0.5 }}
           >
             <a
-              href="#contact"
+              href="/contact"
               className="hidden md:inline-block bg-white text-black rounded-md px-6 py-2 font-light shadow hover:bg-gray-200 transition"
             >
               Contact Us

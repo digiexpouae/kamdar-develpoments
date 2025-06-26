@@ -20,6 +20,7 @@ const project = () => {
             className={'bg-no-repeat bg-[length:115%_135%] bg-[position:left_top_10%]'}
             backgroundImage={'/assets/projectimages/project-3.png'}
             heading={<> Residences<br /> By Kamdar</>}
+            btntext={'Explore Now'} 
             p={true}
           />
           <Section5 heading={<> Bespoke Living <br />

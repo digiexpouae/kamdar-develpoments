@@ -13,13 +13,16 @@ const Home = () => {
    return (
       <>
          <Header />
+
          <Section1
             text={<>BUILT FOR GENERATIONS.<br />CRAFTED WITH PURPOSE</>}
             backgroundImage="/assets/1.png"
             mobileBackgroundImage="/assets/homemob.png" // your mobile bg image
          />
+
          <Section2 text={<>  ELEVATED LIVING.<br />
             WITHIN REACH  </>} />
+            
          <Section4 heading={<>SOPHISTICATED LIVING IN<br />
             THE HEART OF JVC       </>}
             className={'bg-cover bg-center'}

@@ -21,7 +21,7 @@ const About = () => {
             <Section2 backgroundImage={'/assets/aboutimages/about_header.jpg'} /> 
           <Section3 />
           <Chooseus />
-          <Section3Home   bgImage="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+XxKQAAAAASUVORK5CYII="/>
+          <Section3Home bgImage="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+XxKQAAAAASUVORK5CYII="/>
           <Form />
         <Footer />
     </>
