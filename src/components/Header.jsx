@@ -8,7 +8,7 @@ import Image from 'next/image';
 import logo from '../../public/assets/logo.png';
 
 const navLinks = [
-  { href: '#about', label: 'About Us' },
+  { href: '/about', label: 'About Us' },
   { href: '/project', label: 'Projects' },
   { href: '#news', label: 'News' },
 ];

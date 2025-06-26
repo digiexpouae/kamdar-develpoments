@@ -16,12 +16,12 @@ const fadeVariants = {
   },
 };
 
-const Section3 = () => {
+const Section3 = ({ bgImage }) => {
   return (
     <section
       className="relative w-full min-h-[700px] px-6 md:px-20 py-20 font-['Lexend']"
       style={{
-        backgroundImage: `url('/assets/formbg.png')`,
+        backgroundImage: `url(${bgImage || '/assets/formbg.png'})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

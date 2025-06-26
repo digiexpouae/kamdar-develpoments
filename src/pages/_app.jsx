@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import StickyIcon from '../commmon/stickyicon';
+import StickyIcon from '../common/stickyicon/stickyicon';
 
 export default function App({ Component, pageProps }) {
   return (

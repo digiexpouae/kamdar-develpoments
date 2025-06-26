@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Bg from '../../../../public/assets/4.png';
 
 const fadeVariants = {
   hidden: { opacity: 0 },
@@ -13,10 +12,10 @@ const fadeVariants = {
   },
 };
 
-const Section5 = () => {
+const Section5 = ({text}) => {
   return (
     <section
-      className="reveal-on-scroll relative w-full h-[110vh] bg-cover bg-center"
+      className="reveal-on-scroll relative w-full h-screen bg-cover bg-center"
       style={{
         backgroundImage: `url('/assets/4.png')`,
       }}
@@ -39,7 +38,7 @@ const Section5 = () => {
             textShadow: '0 2px 16px rgba(0,0,0,0.18)',
           }}
         >
-          CRAFTED FOR THE FEW <br /> WHO EXPECT MORE
+          {text}
         </h1>
         <button
           className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-bold font-lexend shadow hover:bg-gray-200 transition"
