@@ -7,6 +7,7 @@ import Section5 from "../../common/section5/Section5";
 import Slider from "./slider/Slider";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import MobileSlider from "../../common/mobileslider/mobileslider";
 
 const Home = () => {
     return (
@@ -20,8 +21,15 @@ const Home = () => {
             THE HEART OF JVC       </>} className={'bg-cover bg-center'} backgroundImage={'/assets/3.jpg'} btntext={'Explore Now'}/>
        <Section5 text={<> CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}/>
        
-       <Section3/> 
-       <Slider/>
+       <Section3/>
+       <div className="md:block hidden"> 
+         <Slider/>
+         </div> 
+
+         <div className="block md:hidden"> 
+         <MobileSlider/>
+         </div>
+      
        <Form/> 
        <Footer /> 
        </>
