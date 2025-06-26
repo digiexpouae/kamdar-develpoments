@@ -52,6 +52,19 @@ const Section3 = ({ bgImage }) => {
               <span className="block">INTEGRITY</span>
             </motion.h2>
 
+            <div className='md:hidden block'>
+              {/* Quote */}
+              <motion.p
+                variants={fadeVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="text-bold md:text-2xl font-light  leading-relaxed text-left"
+              >
+                “We founded Kamdar with a simple belief; that real estate should stand the test of time, both in design and in trust. Every home we build is a reflection of that legacy”
+              </motion.p>
+            </div>
+
             <motion.div
               variants={fadeVariants}
               initial="hidden"
@@ -59,11 +72,25 @@ const Section3 = ({ bgImage }) => {
               viewport={{ once: true }}
               className="mt-2"
             >
-              <div className="text-xl font-medium font-bold" style={{ fontFamily: 'Luxerie' }}>
+              <div className="md:text-xl text-2xl  font-medium font-bold" style={{ fontFamily: 'Luxerie' }}>
                 YOUSUF KAMDAR
               </div>
               <div className="text-sm font-light">Chairman of Kamdar Developments</div>
             </motion.div>
+
+
+              {/* Stats below quote */}
+              <div className="md:hidden flex gap-10 ">
+                <div>
+                  <h3 className="text-6xl font-semibold">40+</h3>
+                  <p className="text-base font-light mt-1">Years of Experience</p>
+                </div>
+                <div>
+                  <h3 className="text-6xl font-semibold">500+</h3>
+                  <p className="text-base font-light mt-1">Properties</p>
+                </div>
+              </div>
+           
 
             <motion.button
               variants={fadeVariants}
@@ -84,13 +111,13 @@ const Section3 = ({ bgImage }) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-base md:text-2xl font-light mt-5 leading-relaxed text-left"
+              className="text-base md:block hidden md:text-2xl font-light mt-5 leading-relaxed text-left"
             >
               “We founded Kamdar with a simple belief; that real estate should stand the test of time, both in design and in trust. Every home we build is a reflection of that legacy”
             </motion.p>
 
             {/* Stats below quote */}
-            <div className="flex gap-10 ">
+            <div className="md:flex hidden gap-10 ">
               <div>
                 <h3 className="text-7xl font-semibold">40+</h3>
                 <p className="text-base font-light mt-1">Years of Experience</p>
