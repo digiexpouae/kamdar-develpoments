@@ -12,7 +12,7 @@ const fadeVariants = {
   },
 };
 
-const Section5 = ({text}) => {
+const Section5 = ({ heading }) => {
   return (
     <section
       className="reveal-on-scroll relative w-full h-[110vh] bg-cover bg-center"
@@ -38,7 +38,7 @@ const Section5 = ({text}) => {
             textShadow: '0 2px 16px rgba(0,0,0,0.18)',
           }}
         >
-          {text}
+          {heading}
         </h1>
         <button
           className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-bold font-lexend shadow hover:bg-gray-200 transition"
@@ -66,7 +66,7 @@ const Section5 = ({text}) => {
             textShadow: '0 2px 16px rgba(0,0,0,0.18)',
           }}
         >
-          CRAFTED FOR THE FEW WHO EXPECT MORE
+          {heading}
         </h1>
         <button className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-bold font-lexend shadow hover:bg-gray-200 transition">
           Explore More

@@ -9,10 +9,21 @@ const project = () => {
     return (
        <>
        <Header />
-        <Section1 text={<>Our <br /> Portfolio</>} backgroundImage={'/assets/projectimages/project-1.jpg'} />
-          <Section4  overlay={true} className={'bg-no-repeat bg-[length:115%_135%] bg-[position:left_top_10%]'} backgroundImage={'/assets/projectimages/project-2.jpg'} titleNumbertext={'105'} text={<> Residences<br /> By Kamdar</>} btntext={<>Explore More</>} p={true} text1={<> JVC, Dubai</>} />
-          <Section5 text={<> Bespoke Living <br />
-            By Kamdar</>}/>
+        <Section1 
+        text={<>Our <br /> Portfolio</>}
+        backgroundImage={'/assets/projectimages/project-1.jpg'}
+        mobileBackgroundImage="/assets/portfoliomob.png"
+        />
+
+          <Section4
+            overlay={true}
+            className={'bg-no-repeat bg-[length:115%_135%] bg-[position:left_top_10%]'}
+            backgroundImage={'/assets/projectimages/project-3.png'}
+            heading={<> Residences<br /> By Kamdar</>}
+            p={true}
+          />
+          <Section5 heading={<> Bespoke Living <br />
+            By Kamdar</>} />
 
           <Form />
         <Footer />

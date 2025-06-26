@@ -1,5 +1,5 @@
 // components/Section1.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const fadeVariants = {
@@ -21,12 +21,22 @@ const fadeVariants = {
   },
 };
 
-const Section1 = ({text,backgroundImage}) => {
+const Section1 = ({ text, backgroundImage, mobileBackgroundImage }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const bgImg = isMobile && mobileBackgroundImage ? mobileBackgroundImage : backgroundImage;
+
   return (
     <motion.section
       className="reveal-on-scroll max-w-full h-screen bg-cover -mt-10 bg-center flex items-center justify-center"
-      style={{
-     backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `url(${bgImg})` }}
       variants={fadeVariants}
       initial="hidden"
       animate="visible"

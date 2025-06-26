@@ -10,30 +10,37 @@ import Footer from "../../components/Footer";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 
 const Home = () => {
-    return (
-       <>
-       <Header />
-        <Section1 text={<>BUILT FOR GENERATIONS.<br />
-          CRAFTED WITH PURPOSE </>}  backgroundImage={'/assets/1.png'} />
-       <Section2 text={<>  ELEVATED LIVING.<br />
-          WITHIN REACH  </>} />
-       <Section4 text={<>SOPHISTICATED LIVING IN<br />
-            THE HEART OF JVC       </>} className={'bg-cover bg-center'} backgroundImage={'/assets/3.jpg'} btntext={'Explore Now'}/>
-       <Section5 text={<> CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}/>
-       
-       <Section3/>
-       <div className="md:block hidden"> 
-         <Slider/>
-         </div> 
+   return (
+      <>
+         <Header />
+         <Section1
+            text={<>BUILT FOR GENERATIONS.<br />CRAFTED WITH PURPOSE</>}
+            backgroundImage="/assets/1.png"
+            mobileBackgroundImage="/assets/homemob.png" // your mobile bg image
+         />
+         <Section2 text={<>  ELEVATED LIVING.<br />
+            WITHIN REACH  </>} />
+         <Section4 heading={<>SOPHISTICATED LIVING IN<br />
+            THE HEART OF JVC       </>}
+            className={'bg-cover bg-center'}
+            backgroundImage={'/assets/3.jpg'}
+            btntext={'Explore Now'} />
 
-         <div className="block md:hidden"> 
-         <MobileSlider/>
+         <Section5 heading={<> CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>} />
+
+         <Section3 />
+         <div className="md:block hidden">
+            <Slider />
          </div>
-      
-       <Form/> 
-       <Footer /> 
-       </>
-    );
+
+         <div className="block md:hidden">
+            <MobileSlider />
+         </div>
+
+         <Form />
+         <Footer />
+      </>
+   );
 
 }
 

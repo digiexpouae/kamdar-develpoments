@@ -13,9 +13,12 @@ const About = () => {
     return (
        <>
        <Header />
-        <Section1 text={<>Driven by Detail, <br />
-            Defined by Integrity</>} backgroundImage={'/assets/aboutimages/about_header.jpg'} />
-            <Section2 backgroundImage={'/assets/aboutimages/about_header.jpg'} />
+                <Section1
+            text={<>BUILT FOR GENERATIONS.<br />CRAFTED WITH PURPOSE</>}
+            backgroundImage="/assets/aboutimages/about_header.jpg"
+            mobileBackgroundImage="/assets/aboutmob.png" // your mobile bg image
+         />
+            <Section2 backgroundImage={'/assets/aboutimages/about_header.jpg'} /> 
           <Section3 />
           <Chooseus />
           <Section3Home   bgImage="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+XxKQAAAAASUVORK5CYII="/>

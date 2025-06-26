@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Section4 = ({ text, btntext, p, text1, backgroundImage, overlay, titleNumber, className }) => {
+const Section4 = ({ heading, text, btntext, p, text1, backgroundImage, overlay, titleNumber, className }) => {
   return (
     <section
       className={`relative w-full h-screen ${className}`}
@@ -29,7 +29,7 @@ const Section4 = ({ text, btntext, p, text1, backgroundImage, overlay, titleNumb
             }}
             className="reveal-on-scroll text-white text-3xl md:text-7xl pt-10 font-light leading-tight mb-6"
             style={{ fontFamily: 'Luxerie, sans-serif', lineHeight: 0.5, }}>
-            <span className="text-7xl font-extrabold">{titleNumber}</span>{text}
+            <span className="text-7xl font-extrabold">{titleNumber}</span>{heading}
           </motion.h1>
 
           {p &&
@@ -75,11 +75,10 @@ const Section4 = ({ text, btntext, p, text1, backgroundImage, overlay, titleNumb
             textShadow: '0 2px 16px rgba(0,0,0,0.18)',
           }}
         >
-          SOPHISTICATED LIVING IN<br />
-          THE HEART OF JVC
+          {heading}
         </motion.h1>
         {p &&
-          <motion.p>{text1}</motion.p>}
+          <motion.p className='text-white'>{text1}</motion.p>}
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
