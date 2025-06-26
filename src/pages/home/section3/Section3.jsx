@@ -44,7 +44,7 @@ const Section3 = ({ bgImage }) => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="text-5xl md:text-6xl xl:text-7xl font-medium leading-tight"
+              className="text-5xl md:text-6xl xl:text-7xl font-medium leading-wider"
               style={{ fontFamily: 'Luxerie' }}
             >
               <span className="block">DRIVEN BY DETAIL,</span>
