@@ -67,13 +67,9 @@ const Slider = () => {
               className="text-2xl sm:text-4xl md:text-5xl font-light tracking-tight mb-2 text-center sm:text-left"
               style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
             >
-              LATEST ARTICLES
+              LATEST NEWS
             </h2>
-            <div className="flex gap-4 sm:gap-6 mt-2 flex-wrap justify-center sm:justify-start w-full">
-              {[gulf, khaleej, lovin].map((logo, i) => (
-                <Image key={i} src={logo} alt={`logo-${i}`} className="h-5 sm:h-6 w-auto object-contain" />
-              ))}
-            </div>
+         
           </div>
           <button className="bg-black text-white px-4 py-2 rounded-md transition text-xs sm:text-sm w-full sm:w-auto">
             View All Articles

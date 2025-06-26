@@ -38,7 +38,7 @@ const Section3 = () => {
             {/* Heading and Description */}
             <div className="text-center mt-10 mb-10">
                 <h2
-                    className="text-4xl md:text-7xl font-bold text-white"
+                    className="text-5xl md:text-7xl font-bold text-white"
                     style={{
                         fontFamily: 'Luxerie, sans-serif',
                     }}
