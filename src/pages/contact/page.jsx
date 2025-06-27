@@ -2,7 +2,7 @@ import Section1 from "../../common/section1/Section1"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "./Form";
-import Slide from "./Slide";
+import Slide from "../project1/Slide";
 
 const Contact = () => {
    return (
