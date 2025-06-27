@@ -1,8 +1,9 @@
 import Project1 from './project1';
 
-export default function Page() {
+const Project1Page = () => {
   return (
     <Project1 />
   );
-  
 }
+
+export default Project1Page

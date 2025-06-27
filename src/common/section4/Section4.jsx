@@ -1,6 +1,7 @@
 // components/Section4.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileBackground, overlay, titleNumber, className }) => {
   return (
@@ -49,13 +50,15 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
 
 
             >{text1}</motion.p>}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            viewport={{ once: true }} className="reveal-on-scroll mt-5 bg-white text-black px-6 py-2 rounded shadow font-medium hover:bg-gray-200 transition">
-            {btntext}
-          </motion.button>
+          <Link href="/project1" passHref legacyBehavior>
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }} className="reveal-on-scroll mt-5 bg-white text-black px-6 py-2 rounded shadow font-medium hover:bg-gray-200 transition">
+              {btntext}
+            </motion.button>
+          </Link>
         </div>
       </div>
 
