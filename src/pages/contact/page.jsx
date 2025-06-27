@@ -1,28 +1,26 @@
 import Section1 from "../../common/section1/Section1"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import ContactSection from "./Map";
 import Form from "./Form";
+import Slide from "./Slide";
 
 const Contact = () => {
-        return(
-            <>
-             <Header />
-            
-                     <Section1
-                        text={<>GET IN TOUCH</>}
-                        backgroundImage="/assets/contact/contactbg.png"
-                        mobileBackgroundImage="/assets/contact/contactbgmob.png" // your mobile bg image
-                     />
-            <Form/>
-                <ContactSection/>
-            
-                     <Footer />
+   return (
+      <>
+         <Header />
+         <Section1
+            text={<>GET IN TOUCH</>}
+            backgroundImage="/assets/contact/contactbg.png"
+            mobileBackgroundImage="/assets/contact/contactbgmob.png" // your mobile bg image
+         />
+         <Form />
+         <Slide />
+         <Footer />
 
 
 
-            </>
-        );
+      </>
+   );
 }
 
 export default Contact;

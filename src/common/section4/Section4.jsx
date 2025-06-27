@@ -2,12 +2,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Section4 = ({ heading, text, btntext, p, text1, backgroundImage, overlay, titleNumber, className }) => {
+const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileBackground, overlay, titleNumber, className }) => {
   return (
     <section
       className={`relative w-full h-screen ${className}`}
       style={{
-        backgroundImage: `url(${backgroundImage})`
+        backgroundImage: `url(${desktopBackground})`
       }}
     >
       {/* Dark Overlay */}
@@ -60,7 +60,15 @@ const Section4 = ({ heading, text, btntext, p, text1, backgroundImage, overlay, 
       </div>
 
       {/* Mobile View */}
-      <div className="flex md:hidden relative z-20 flex-col items-center justify-center h-full px-4 text-center">
+      <div 
+        className="flex md:hidden relative z-20 flex-col items-center justify-center h-full px-4 text-center"
+        style={{
+          backgroundImage: `url(${mobileBackground || desktopBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

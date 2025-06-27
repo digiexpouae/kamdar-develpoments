@@ -18,7 +18,7 @@ const project = () => {
           <Section4
             overlay={true}
             className={'bg-no-repeat bg-[length:115%_135%] bg-[position:left_top_10%]'}
-            backgroundImage={'/assets/projectimages/project-3.png'}
+            desktopBackground={'/assets/projectimages/project-3.png'}
             heading={<> Residences<br /> By Kamdar</>}
             btntext={'Explore Now'} 
             p={true}

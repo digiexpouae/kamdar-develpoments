@@ -26,7 +26,7 @@ const Home = () => {
          <Section4 heading={<>SOPHISTICATED LIVING IN<br />
             THE HEART OF JVC       </>}
             className={'bg-cover bg-center'}
-            backgroundImage={'/assets/3.jpg'}
+            desktopBackground={'/assets/3.jpg'}
             btntext={'Explore Now'} />
 
          <Section5 heading={<> CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>} />
