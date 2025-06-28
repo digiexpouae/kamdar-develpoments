@@ -12,10 +12,11 @@ const fadeVariants = {
   },
 };
 
-const Section5 = ({ heading }) => {
+const Section5 = ({ heading,className }) => {
   return (
+    <div className={className}>
     <section
-      className="reveal-on-scroll relative w-full h-[110vh] bg-cover bg-center"
+      className={`reveal-on-scroll relative w-full bg-cover h-[110vh] bg-center `}
       style={{
         backgroundImage: `url('/assets/4.png')`,
       }}
@@ -73,6 +74,7 @@ const Section5 = ({ heading }) => {
         </button>
       </motion.div>
     </section>
+    </div>
   );
 };
 
