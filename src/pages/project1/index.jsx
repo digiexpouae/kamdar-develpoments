@@ -6,7 +6,7 @@ import ContactSection from "./Map";
 import Form from "../contact/Form";
 import Slide from "./Slide";
 import Places from '../../common/places/place'
-import Icons from './icons'
+import Icons from '../../common/icons'
 
 const Project1 = () => {
 
