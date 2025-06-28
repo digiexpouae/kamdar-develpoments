@@ -2,7 +2,7 @@ import Section1 from "../../common/section1/Section1"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "./Form";
-import Slide from "../project1/Slide";
+import Map from "../project1/Map";
 
 const Contact = () => {
    return (
@@ -14,7 +14,7 @@ const Contact = () => {
             mobileBackgroundImage="/assets/contact/contactbgmob.png" // your mobile bg image
          />
          <Form />
-         <Slide />
+         <Map />
          <Footer />
 
 
