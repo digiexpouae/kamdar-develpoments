@@ -14,15 +14,16 @@ const fadeVariants = {
   },
 };
 
-const Section2 = ({text}) => {
+const Section2 = ({text,className}) => {
+
   return (
     <section
-      className="reveal-on-scroll max-w-full h-screen bg-cover bg-center flex items-center justify-center"
+      className={`reveal-on-scroll max-w-full h-screen bg-cover bg-center flex  items-center justify-center ${className}`}
     style={{
         backgroundImage: `url('/assets/2.png')`,
       }}    >
       <motion.div
-        className="reveal-on-scroll relative z-10 flex flex-col items-center justify-center w-full h-full"
+        className="reveal-on-scroll relative z-10 flex flex-col items-center justify-center  w-full h-full"
         variants={fadeVariants}
         initial="hidden"
         whileInView="visible"
