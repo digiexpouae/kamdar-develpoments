@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "../../common/form/Form";
@@ -82,7 +81,7 @@ const Home = () => {
         />
       </div>
 
-      <Section3 />
+      <Section3 className="panel" />
 
       {/* Slider components */}
       <div className="hidden md:block">
