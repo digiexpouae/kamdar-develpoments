@@ -8,8 +8,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 const icon = ({ icons }) => {
-  const firstRow = icons.slice(0, 3);
-  const secondRow = icons.slice(3);
+  const firstRow = (icons|| []).slice(0, 3);
+  const secondRow = (icons|| []).slice(3);
 
   const renderRow = (row) =>
     row.map((elem, index) => (
