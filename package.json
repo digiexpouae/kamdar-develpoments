@@ -15,6 +15,7 @@
     "framer-motion": "^12.19.1",
     "gsap": "^3.13.0",
     "hamburger-react": "^2.5.2",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.523.0",
     "next": "^15.3.4",
     "r": "^0.0.5",
@@ -22,6 +23,7 @@
     "react-burger-menu": "^3.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-leaflet": "^5.0.0",
     "swiper": "^11.2.8"
   },
   "devDependencies": {
