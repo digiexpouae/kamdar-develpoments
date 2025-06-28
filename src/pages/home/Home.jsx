@@ -16,7 +16,6 @@ import MobileSlider from "../../common/mobileslider/mobileslider";
 const Home = () => {
 
   useEffect(() => {
-    if (window.innerWidth < 768) return; // ❌ Skip animations on mobile
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.normalizeScroll(true);

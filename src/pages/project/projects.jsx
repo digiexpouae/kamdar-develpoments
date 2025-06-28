@@ -13,7 +13,6 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 const Project = () => {
 
   useEffect(() => {
-    if (window.innerWidth < 768) return; // ❌ Skip animations on mobile
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.normalizeScroll(true);
