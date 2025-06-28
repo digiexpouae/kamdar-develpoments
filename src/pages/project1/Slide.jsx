@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
@@ -13,11 +15,17 @@ const images = [
   '/assets/3.jpg',
 ];
 
-const iconSlides = [
-  '/assets/icon1.png',
-  '/assets/icon2.png',
-  '/assets/icon3.png',
+const icons= [
+  {im: '/assets/105/icon-1.png',name: <>Infinity<br /> swimming  pool</> },
+  {im: '/assets/105/icon-2.png',name: <>Barbecue <br /> area</> },
+  {im: '/assets/105/icon-3.png',name: <>Kids <br /> play  area</> },
+  {im: '/assets/105/icon-4.png',name: <>Accessible <br /> parking</> },
+  {im: '/assets/105/icon-5.png',name: <>Fully <br /> equipped  gym</> },
+  {im: '/assets/105/icon-6.png',name: <>Rooftop <br /> wellness garden</> },
+  {im: '/assets/105/icon-7.png',name: <>Rooftop <br /> Cinema</> },
+  {im: '/assets/105/icon-8.png',name: <>Multi-purpose <br /> sports court</> }
 ];
+  ;
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -136,32 +144,44 @@ const Slide = () => {
 
         {/* Icon Strip */}
         {/* Mobile Swiper */}
-        <motion.div
-          className="md:hidden max-w-xs mx-auto mb-6"
-          variants={fadeIn}
-        >
+        <div className="block md:hidden w-full relative">
           <Swiper
-            slidesPerView={1.5}
-            spaceBetween={20}
-            loop={true}
-            autoplay={{ delay: 2000 }}
-            modules={[Autoplay]}
+            spaceBetween={10}
+            slidesPerView={1}
+            centeredSlides={true}
+            className="w-full px-4"
+            modules={[Navigation]}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
           >
-            {iconSlides.map((icon, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="flex justify-center">
-                  <Image
-                    src={icon}
-                    alt={`Icon ${idx + 1}`}
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
+            {icons.map((elem, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex flex-col items-center justify-center h-[120px] ">
+                  <div className="w-[80px] h-[70px] flex items-center justify-center mx-auto">
+                    <Image
+                      src={elem.im}
+                      width={100}
+                      height={100}
+                      className={`!h-full`}
+                      alt={elem.name}
+                    />
+                  </div>
+                  <span className="text-center font-bold h-[50px]  text-[14px] w-full font-lexend text-wrap leading-5 text-black my-2">
+                    {elem.name}
+                  </span>
                 </div>
               </SwiperSlide>
             ))}
+            <div className="swiper-button-prev !text-[#CCAB64] !left-0 !top-1/2 !-translate-y-1/2 !w-8 !h-8 !flex !items-center !justify-center !bg-transparent">
+           
+            </div>
+            <div className="swiper-button-next !text-[#CCAB64] !right-0 !top-1/2 !-translate-y-1/2 !w-8 !h-8 !flex !items-center !justify-center !bg-transparent">
+             
+            </div>
           </Swiper>
-        </motion.div>
+        </div>
 
         {/* Desktop Static Icon Strip */}
         <motion.div

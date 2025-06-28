@@ -15,7 +15,7 @@ const icon = ({ icons }) => {
     row.map((elem, index) => (
       <div
         key={index}
-        className="flex flex-col items-center justify-center relative text-white m-10 md:h-[200px]"
+        className="flex flex-col items-center justify-center relative text-white  md:h-[200px]"
       >
         <div className="w-[38px] md:w-[80px] flex items-center justify-center h-[23%] md:h-[60%]">
           <Image
@@ -70,21 +70,21 @@ const icon = ({ icons }) => {
                 </div>
               </SwiperSlide>
             ))}
-            <div className="swiper-button-prev !text-[#CCAB64] !left-0 !top-1/2 !-translate-y-1/2 !w-8 !h-8 !flex !items-center !justify-center !bg-transparent">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 8L12 16L20 24" stroke="#CCAB64" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <div className="swiper-button-prev !text-[#FFFFFF] !left-0 !top-1/2 !-translate-y-1/2 !w-8 !h-8 !flex !items-center !justify-center !bg-transparent">
+              {/* <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 8L12 16L20 24" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg> */}
             </div>
-            <div className="swiper-button-next !text-[#CCAB64] !right-0 !top-1/2 !-translate-y-1/2 !w-8 !h-8 !flex !items-center !justify-center !bg-transparent">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 8L20 16L12 24" stroke="#CCAB64" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <div className="swiper-button-next !text-[#FFFFFF] !right-0 !top-1/2 !-translate-y-1/2 !w-8 !h-8 !flex !items-center !justify-center !bg-transparent">
+              {/* <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8L20 16L12 24" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg> */}
             </div>
           </Swiper>
         </div>
         {/* Desktop: grid */}
         <div className="hidden md:flex items-center justify-center flex-col ">
-          <div className="grid grid-cols-3 gap-x-4 w-[60%]">{renderRow(firstRow)}</div>
+          <div className="grid grid-cols-3  gap-x-3 w-[70%]">{renderRow(firstRow)}</div>
           <div className="flex justify-center w-[40%] gap-x-2">{renderRow(secondRow)}</div>
         </div>
       </div>
