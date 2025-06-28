@@ -17,8 +17,6 @@ const Contact = () => {
          <Map />
          <Footer />
 
-
-
       </>
    );
 }
