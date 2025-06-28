@@ -2,7 +2,6 @@ import Section1 from "../../common/section1/Section1"
 import Section4 from "../../common/section4/Section4"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import ContactSection from "./Map";
 import Form from "../contact/Form";
 import Slide from "./Slide";
 import Places from '../../common/places/place'
