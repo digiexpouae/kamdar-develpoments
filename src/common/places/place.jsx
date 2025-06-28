@@ -7,7 +7,7 @@ import car from '../../../public/assets/105/car.png'
 
 import dynamic from 'next/dynamic';
 
-const Map = dynamic(() => import('./maptwo'), {
+const Map = dynamic(() => import('../map/maptwo'), {
   ssr: false,
 });
 const places = ({center_position,Name,markers,Main_marker}) => {

@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 import ContactSection from "./Map";
 import Form from "../contact/Form";
 import Slide from "./Slide";
-import Places from './place'
+import Places from '../../common/places/place'
 import Icons from './icons'
 
 const Project1 = () => {
