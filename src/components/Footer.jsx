@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
 
         {/* Dashed Divider */}
-        <div className="w-full border-1 border-dashed border-white/30" />
+        <div className="w-full border-1 border border-white/30" />
 
         {/* Row 5: Bottom Text */}
         <div className="flex justify-between items-center text-xs text-white/60">
