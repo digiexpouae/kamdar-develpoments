@@ -16,7 +16,6 @@ import MobileSlider from "../../common/mobileslider/mobileslider";
 const Home = () => {
 
   useEffect(() => {
-
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.normalizeScroll(true);
 
@@ -49,6 +48,12 @@ const Home = () => {
       }, "+=0.5");
     });
 
+    // CLEANUP on unmount
+    return () => {
+      // Kill all ScrollTriggers and timelines
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      gsap.globalTimeline.clear();
+    };
   }, []);
 
   return (

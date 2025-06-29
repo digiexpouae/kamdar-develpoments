@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/assets/logo.png';
+import { useRouter } from 'next/router';
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
@@ -37,12 +38,15 @@ const linkVariants = {
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showTransition, setShowTransition] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   return (
     <motion.header
@@ -114,12 +118,15 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            <a
-              href="/contact"
-              className="hidden md:inline-block bg-white text-black rounded-md px-6 py-2 font-light shadow hover:bg-gray-200 transition"
+            <Link href="/contact">
+            <button
+              
+              className="hidden md:inline-block bg-white text-black rounded-md px-6 py-2 font-light shadow cursor-pointer hover:bg-gray-200 transition focus:outline-none"
+              type="button"
             >
               Contact Us
-            </a>
+            </button>
+            </Link>
           </motion.div>
         </div>
       </nav>
@@ -158,26 +165,55 @@ const Header = () => {
                 />
               </div>
               <nav className="flex flex-col gap-6">
-                {navLinks.map((link) => (
-                  <a
+                {navLinks.map((link, i) => (
+                  <motion.div
                     key={link.href}
-                    href={link.href}
-                    className="text-white text-lg font-light hover:underline"
-                    onClick={() => setMobileOpen(false)}
+                    custom={i}
+                    variants={linkVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="inline-block"
                   >
-                    {link.label}
-                  </a>
+                    <Link
+                      href={link.href}
+                      className="text-white text-lg font-light hover:underline"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </nav>
-              <a
-                href="#contact"
-                className="mt-auto bg-white text-black rounded-md px-6 py-2 font-light shadow hover:bg-gray-200 transition"
-                onClick={() => setMobileOpen(false)}
+              <Link href="/contact">
+              <button
+                
+                className="mt-auto bg-white text-black rounded-md px-6 py-2 font-light shadow cursor-pointer hover:bg-gray-200 transition focus:outline-none"
+                type="button"
               >
                 Contact Us
-              </a>
+              </button>
+              </Link>
             </motion.div>
           </>
+        )}
+      </AnimatePresence>
+      {/* Page transition overlay */}
+      <AnimatePresence>
+        {showTransition && (
+          <motion.div
+            key="contact-transition"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              background: '#000',
+              zIndex: 9999,
+              pointerEvents: 'auto',
+            }}
+          />
         )}
       </AnimatePresence>
     </motion.header>

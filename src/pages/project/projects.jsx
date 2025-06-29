@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import EntranceAnimation from '../../components/EntranceAnimation';
 import Section1 from "../../common/section1/Section1";
 import Section4 from "../../common/section4/Section4";
 import Header from "../../components/Header";
@@ -46,10 +47,17 @@ const Project = () => {
       }, "+=0.5");
     });
 
+     // CLEANUP on unmount
+     return () => {
+      // Kill all ScrollTriggers and timelines
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      gsap.globalTimeline.clear(); };
+
   }, []);
 
   return (
     <>
+      <EntranceAnimation />
       <Header />
 
       {/* Scroll panels */}
