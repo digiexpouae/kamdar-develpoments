@@ -56,9 +56,11 @@ const About = () => {
        <>
        <Header />
                 <Section1
-            text={<>BUILT FOR GENERATIONS.<br />CRAFTED WITH PURPOSE</>}
+       text={<>Driven by Detail,<br />
+            Defined by Integrity</>}
             backgroundImage="/assets/aboutimages/about_header.jpg"
-            mobileBackgroundImage="/assets/aboutmob.png" 
+            mobileBackgroundImage="/assets/aboutmob.png"
+           className={'h-[100vh]'}
          />
             <Section2 backgroundImage={'/assets/aboutimages/about_header.jpg'} /> 
           <Section3 />
