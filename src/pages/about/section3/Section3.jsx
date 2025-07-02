@@ -9,25 +9,25 @@ const content = [
       title: 'DESIGN & INNOVATION',
       description:
         'At Kamdar Developments, Design & Innovation are at the forefront of our services. We embrace cutting-edge design principles and creative solutions to craft spaces that inspire and engage...',
-      image: '/assets/slider/2.png',
+      image: '/assets/pPodium-2.webp',
     },
     {
       title: 'ARCHITECTURE & ENGINEERING',
       description:
         'We combine modern architectural techniques with engineering precision to deliver structurally sound and visually striking developments.',
-      image:  '/assets/slider/1.png',
+      image:  '/assets/pExternal-3---105-Residences-by-Kamdar.webp',
     },
     {
       title: 'SUSTAINABLE DEVELOPMENT',
       description:
         'Kamdar integrates eco-friendly practices to create sustainable living spaces that reduce environmental impact and promote well-being.',
-      image:  '/assets/slider/3.png',
+      image:  '/assets/p01_2-copy.webp',
     },
     {
       title: 'URBAN PLANNING',
       description:
         'From infrastructure to green spaces, our urban planning team designs cohesive communities with long-term vision and value.',
-      image: '/assets/slider/4.png',
+      image: '/assets/pbeautiful-black-white-upshot-new-york-city-subway-s-wtc-cortlandt-station-k-oculus.webp',
     },
   ];
 const Section3 = () => {

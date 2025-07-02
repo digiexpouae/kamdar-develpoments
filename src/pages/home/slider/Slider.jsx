@@ -31,6 +31,7 @@ const Slider = () => {
   const [previewWidth, setPreviewWidth] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
 
+  // const trackRef = useRef < HTMLDivElement > (null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -85,6 +86,19 @@ const Slider = () => {
 
     return () => clearTimeout(timeout);
   }, [current, transitioning, total]);
+
+  // Autoplay: go to next slide every 5 seconds
+useEffect(() => {
+  const interval = setInterval(() => {
+    if (!transitioning) {
+      setTransitioning(true);
+      setCurrent((prev) => prev + 1);
+    }
+  }, 1000); // Change 5000 to any duration in ms
+
+  return () => clearInterval(interval); // Cleanup on unmount
+}, [transitioning]);
+
 
   const realIndex = (current - 1 + total) % total;
   const containerWidth = slideWidth + previewWidth;
@@ -193,15 +207,15 @@ const Slider = () => {
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full h-0.5 bg-gray-200 rounded-full mt-10 mb-10 relative overflow-hidden">
-            <div
+          {/* <div className="w-full h-0.5 bg-gray-200 rounded-full mt-10 mb-10 relative overflow-hidden"> */}
+            {/* <div
               className="h-0.5 bg-black rounded-full transition-all duration-300"
               style={{ width: `${((realIndex + 1) / total) * 100}%` }}
             />
-          </div>
+          </div> */}
 
           {/* Arrows */}
-          <div className="absolute bottom-2 right-2 flex gap-2 z-10">
+          {/* <div className="absolute bottom-2 right-2 flex gap-2 z-10">
             <button
               onClick={prevSlide}
               className="w-10 h-10 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
@@ -216,7 +230,7 @@ const Slider = () => {
             >
               &#8594;
             </button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>
