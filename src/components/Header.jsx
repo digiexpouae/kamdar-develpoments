@@ -41,21 +41,22 @@ const Header = () => {
   const [showTransition, setShowTransition] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => setScrolled(window.scrollY > 10);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
 
   return (
+    
     <motion.header
       initial="hidden"
       animate="visible"
       variants={headerVariants}
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? 'bg-black/40 backdrop-blur-md' : 'bg-black backdrop-blur-md'
-      } font-lexend font-light`}
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 
+       bg-black/40 backdrop-blur-md
+      font-lexend font-light`}
     >
       <nav className="max-w-7xl mx-auto px-8 py-4">
         <div className="flex items-center justify-between w-full">

@@ -58,6 +58,7 @@ const Home = () => {
 
   return (
     <>
+
       <Header />
       <div className="hero relative">
         <Section1
@@ -102,3 +103,4 @@ const Home = () => {
 };
 
 export default Home;
+
