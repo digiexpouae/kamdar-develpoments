@@ -47,6 +47,7 @@ const Section1Video = ({ text, backgroundImage, mobileBackgroundImage, className
         autoPlay
         loop
         muted
+        preload='auto'
         playsInline
         className="absolute top-0 left-0 w-full h-screen object-cover z-0"
       />
