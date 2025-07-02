@@ -1,13 +1,12 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import slider from '../../../../public/assets/aboutimages/slider1.png';
+import khaleejLogo from '../../../../public/assets/khaleej1.png';
 
-import gulf from '../../../../public/assets/gulf.png';
-import khaleej from '../../../../public/assets/khaleej.png';
-import lovin from '../../../../public/assets/lovin.png';
-import slider from '../../../../public/assets/slider.png';
-
+// Original image set
 const images = [slider, slider, slider];
 
 const fadeUp = {
@@ -23,38 +22,79 @@ const fadeUp = {
 };
 
 const Slider = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(1); // start at index 1 due to cloning
   const total = images.length;
+  const extendedImages = [images[total - 1], ...images, images[0]];
+  const extendedTotal = extendedImages.length;
+
   const [slideWidth, setSlideWidth] = useState(0);
   const [previewWidth, setPreviewWidth] = useState(0);
+  const [transitioning, setTransitioning] = useState(false);
+
+  const trackRef = useRef < HTMLDivElement > (null);
 
   useEffect(() => {
     const handleResize = () => {
-      const base = Math.min(Math.max(window.innerWidth * 0.8, 280), 900);
-      setSlideWidth(base);
-      setPreviewWidth(base * (window.innerWidth < 640 ? 0.07 : 0.1));
+      const container = Math.min(Math.max(window.innerWidth * 0.85, 280), 900);
+      const slide = container * 0.8;
+      const preview = container * 0.2;
+      setSlideWidth(slide);
+      setPreviewWidth(preview);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % total);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + total) % total);
-
-  const getTranslateX = () => {
-    let tx = current * (slideWidth + previewWidth) - previewWidth / 2;
-    const maxTx = (slideWidth + previewWidth) * (total - 1) - previewWidth / 2;
-    return Math.min(Math.max(tx, 0), maxTx);
+  const nextSlide = () => {
+    if (!transitioning) {
+      setTransitioning(true);
+      setCurrent((prev) => prev + 1);
+    }
   };
 
+  const prevSlide = () => {
+    if (!transitioning) {
+      setTransitioning(true);
+      setCurrent((prev) => prev - 1);
+    }
+  };
+
+  const getTranslateX = () => {
+    // Center the current slide
+    const totalSlideWidth = slideWidth + previewWidth;
+    const containerCenter = (slideWidth + previewWidth) / 2;
+    const offset = current * totalSlideWidth + slideWidth / 2 - containerCenter;
+    return offset;
+  };
+
+  // Reset to real first/last slide after transition for seamless infinite loop
+  useEffect(() => {
+    if (!transitioning) return;
+
+    const timeout = setTimeout(() => {
+      if (current === 0) {
+        setTransitioning(false);
+        setCurrent(total);
+      } else if (current === total + 1) {
+        setTransitioning(false);
+        setCurrent(1);
+      } else {
+        setTransitioning(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [current, transitioning, total]);
+
+  const realIndex = (current - 1 + total) % total;
   const containerWidth = slideWidth + previewWidth;
   const containerHeight = Math.min(slideWidth * 0.56, 500);
 
   return (
     <div className="w-full bg-white px-2 sm:px-8 pt-12 flex justify-center">
-      <div className="w-full max-w-6xl">
-        {/* Header Section */}
+      <div className="w-full max-w-5xl">
+        {/* Header */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -62,21 +102,20 @@ const Slider = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4 w-full"
         >
-          <div className="flex flex-col items-center sm:items-start w-full sm:w-auto">
+          <div className="flex flex-col items-center mb-10 sm:items-start w-full sm:w-auto">
             <h2
-              className="text-2xl sm:text-4xl md:text-5xl font-light tracking-tight mb-2 text-center sm:text-left"
+              className="text-6xl  font-light tracking-tight mb-2 text-center sm:text-left"
               style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
             >
               LATEST NEWS
             </h2>
-         
           </div>
           <button className="bg-black text-white px-4 py-2 rounded-md transition text-xs sm:text-sm w-full sm:w-auto">
             View All Articles
           </button>
         </motion.div>
 
-        {/* Slider Section */}
+        {/* Slider */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -85,7 +124,7 @@ const Slider = () => {
           className="relative flex flex-col items-center mt-8"
         >
           <div
-            className="overflow-hidden relative"
+            className="relative "
             style={{
               width: `${containerWidth}px`,
               height: `${containerHeight}px`,
@@ -93,34 +132,72 @@ const Slider = () => {
             }}
           >
             <div
-              className="flex transition-transform duration-500"
+              className={`flex ${transitioning ? 'transition-transform duration-500 ease-out' : ''}`}
               style={{
-                width: `${(slideWidth + previewWidth) * (total - 1) + slideWidth}px`,
+                width: `${(slideWidth + previewWidth) * extendedTotal}px`,
                 transform: `translateX(-${getTranslateX()}px)`,
               }}
             >
-              {images.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-3xl overflow-hidden bg-white relative "
-                  style={{
-                    width: `${slideWidth}px`,
-                    height: `${containerHeight}px`,
-                    marginRight: idx !== total - 1 ? `${previewWidth}px` : 0,
-                    flex: '0 0 auto',
-                  }}
-                >
-                  <Image src={img} alt={`Slide ${idx + 1}`} fill className="object-contain" />
-                </div>
-              ))}
+              {extendedImages.map((img, idx) => {
+                const isActive = idx === current;
+                return (
+                  <div
+                    key={idx}
+                    className="rounded-3xl overflow-hidden bg-white relative"
+                    style={{
+                      width: `${slideWidth}px`,
+                      height: `${containerHeight}px`,
+                      marginRight: `${previewWidth}px`,
+                      flex: '0 0 auto',
+                      transform: isActive ? 'scale(1.15)' : 'scale(1)',
+                      transition: 'transform 0.4s ease',
+                    }}
+                  >
+                    <Image
+                      src={img}
+                      alt={`Slide ${idx}`}
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Overlay on every slide */}
+                    <div className="absolute inset-0  flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10" style={{ background: 'linear-gradient(180deg,rgba(25,25,25,0.45) 60%,rgba(25,25,25,0.85) 100%)' }}>
+                      <div className="max-w-md">
+
+
+                        {/* Top Logo */}
+                        <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
+                          <Image src={khaleejLogo} alt="Khaleej Times Logo" width={120} height={32} className="object-contain drop-shadow-lg" />
+                        </div>
+                        {/* Heading */}
+                        <h2
+                          style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
+                          className="text-white text-4xl   font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg">KAMDAR DEVELOPMENTS BREAKS GROUND ON RESIDENCES IN JVC</h2>
+                        {/* Description */}
+                        <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">The ceremony was attended by the team from Kamdar Developments, contractor Luxedesign (LDV) and project advisors from Savills Middle East</p>
+                        {/* Read More Button */}
+                        <button
+                          style={{
+                            border: '1px solid #A08741',
+                            borderRadius: '7px', // Force pill shape
+                          }}
+                          className="text-white text-xs font-lexend cursor-pointer px-3 py-2 shadow-md transition w-fit"
+                        >
+                          Read More
+                        </button>
+
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* Progress Bar */}
-          <div className="w-full h-0.5 bg-gray-200 rounded-full mt-6 mb-10 relative overflow-hidden">
+          <div className="w-full h-0.5 bg-gray-200 rounded-full mt-10 mb-10 relative overflow-hidden">
             <div
               className="h-0.5 bg-black rounded-full transition-all duration-300"
-              style={{ width: `${((current + 1) / total) * 100}%` }}
+              style={{ width: `${((realIndex + 1) / total) * 100}%` }}
             />
           </div>
 

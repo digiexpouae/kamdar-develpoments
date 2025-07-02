@@ -9,25 +9,25 @@ const content = [
       title: 'DESIGN & INNOVATION',
       description:
         'At Kamdar Developments, Design & Innovation are at the forefront of our services. We embrace cutting-edge design principles and creative solutions to craft spaces that inspire and engage...',
-      image: '/assets/3.jpg',
+      image: '/assets/slider/2.png',
     },
     {
       title: 'ARCHITECTURE & ENGINEERING',
       description:
         'We combine modern architectural techniques with engineering precision to deliver structurally sound and visually striking developments.',
-      image: '/assets/2.png',
+      image:  '/assets/slider/1.png',
     },
     {
       title: 'SUSTAINABLE DEVELOPMENT',
       description:
         'Kamdar integrates eco-friendly practices to create sustainable living spaces that reduce environmental impact and promote well-being.',
-      image: '/assets/2.png',
+      image:  '/assets/slider/3.png',
     },
     {
       title: 'URBAN PLANNING',
       description:
         'From infrastructure to green spaces, our urban planning team designs cohesive communities with long-term vision and value.',
-      image: '/assets/1.png',
+      image: '/assets/slider/4.png',
     },
   ];
 const Section3 = () => {
@@ -57,7 +57,7 @@ const Section3 = () => {
       </motion.div>
 
       {/* Desktop View */}
-      <div className="hidden md:grid bg-white rounded-xl shadow-xl w-[800px] mb-10 h-[500px] grid-cols-1 md:grid-cols-2 overflow-hidden">
+      <div className="hidden md:grid bg-white rounded-xl shadow-xl w-[800px] mb-10 h-[380px] grid-cols-1 md:grid-cols-2 overflow-hidden">
         {/* Image with animation */}
         <div className="relative w-full h-full">
           <AnimatePresence mode="wait">

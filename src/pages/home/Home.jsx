@@ -61,21 +61,21 @@ const Home = () => {
       <Header />
       <div className="hero relative">
         <Section1
-          text={<>BUILT FOR GENERATIONS.<br />CRAFTED WITH PURPOSE</>}
+          text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
           backgroundImage="/assets/1.png"
           mobileBackgroundImage="/assets/homemob.png"
           className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0"
         />
 
         <Section2
-          text={<>ELEVATED LIVING.<br />WITHIN REACH</>}
+          text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
           className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10"
         />
 
         <Section4
           heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
           desktopBackground="/assets/3.jpg"
-          btntext="Explore Now"
+          btntext="Explore More"
           className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
         />
 

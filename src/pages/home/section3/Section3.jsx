@@ -82,11 +82,11 @@ const Section3 = ({ bgImage }) => {
               {/* Stats below quote */}
               <div className="md:hidden flex gap-10 ">
                 <div>
-                  <h3 className="text-6xl font-semibold">40+</h3>
+                  <h3 className="text-6xl font-[400]">40+</h3>
                   <p className="text-base font-light mt-1">Years of Experience</p>
                 </div>
                 <div>
-                  <h3 className="text-6xl font-semibold">500+</h3>
+                  <h3 className="text-6xl font-[400]">500+</h3>
                   <p className="text-base font-light mt-1">Properties</p>
                 </div>
               </div>
@@ -119,12 +119,12 @@ const Section3 = ({ bgImage }) => {
             {/* Stats below quote */}
             <div className="md:flex hidden gap-10 ">
               <div>
-                <h3 className="text-7xl font-semibold">40+</h3>
-                <p className="text-base font-light mt-1">Years of Experience</p>
+                <h3 className="text-7xl font-[400]">40+</h3>
+                <p className="text-base font-base mt-1">Years of Experience</p>
               </div>
               <div>
-                <h3 className="text-7xl font-semibold">500+</h3>
-                <p className="text-base font-light mt-1">Properties</p>
+                <h3 className="text-7xl font-[400]">500+</h3>
+                <p className="text-base font-base mt-1">Properties</p>
               </div>
             </div>
           </div>

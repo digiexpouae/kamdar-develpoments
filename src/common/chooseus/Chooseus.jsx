@@ -123,7 +123,7 @@ const Choose = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center justify-center gap-3"
+                className="flex flex-col items-center text-center gap-2 min-h-[100px]"
                 custom={index + 1}
                 variants={fadeUp}
                 initial="hidden"
@@ -142,6 +142,7 @@ const Choose = () => {
               </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

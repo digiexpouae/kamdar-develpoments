@@ -41,7 +41,7 @@ const Section5 = ({text}) => {
           {text}
         </h1>
         <button
-          className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-bold font-lexend shadow hover:bg-gray-200 transition"
+          className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-thin font-lexend shadow hover:bg-gray-200 transition"
         >
           Explore More
         </button>
@@ -67,7 +67,7 @@ const Section5 = ({text}) => {
         >
           CRAFTED FOR THE FEW WHO EXPECT MORE
         </h1>
-        <button className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-bold font-lexend shadow hover:bg-gray-200 transition">
+        <button className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-light font-lexend shadow hover:bg-gray-200 transition">
           Explore More
         </button>
       </motion.div>
