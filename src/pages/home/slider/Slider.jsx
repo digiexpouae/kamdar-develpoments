@@ -31,7 +31,6 @@ const Slider = () => {
   const [previewWidth, setPreviewWidth] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
 
-  const trackRef = useRef < HTMLDivElement > (null);
 
   useEffect(() => {
     const handleResize = () => {
