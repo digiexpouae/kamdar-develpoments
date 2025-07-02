@@ -9,50 +9,51 @@ import Form from "../contact/Form";
 import Slide from "./Slide";
 import Places from '../../common/places/place'
 import Icons from '../../common/icons'
+import Section1Video from "../../common/Section1video/Section1Video";
 
 const Project1 = () => {
 
-   
-     useEffect(() => {
-       gsap.registerPlugin(ScrollTrigger);
-       ScrollTrigger.normalizeScroll(true);
-   
-       const panels = gsap.utils.toArray(".panel:not(:first-child)");
-       
-       gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
-       gsap.set(panels, {
+
+   useEffect(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.normalizeScroll(true);
+
+      const panels = gsap.utils.toArray(".panel:not(:first-child)");
+
+      gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
+      gsap.set(panels, {
          yPercent: 100,
          zIndex: (i) => i + 2
-       });
-   
-       const scroll = `+=${panels.length * 100}%`;
-   
-       const tl = gsap.timeline({
+      });
+
+      const scroll = `+=${panels.length * 100}%`;
+
+      const tl = gsap.timeline({
          scrollTrigger: {
-           trigger: ".hero",
-           start: "top top",
-           endTrigger: 'bottom bottom',
-           end: `${scroll}vh`,
-           scrub: true,
-           pin: true,
-           anticipatePin: 1,
+            trigger: ".hero",
+            start: "top top",
+            endTrigger: 'bottom bottom',
+            end: `${scroll}vh`,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
          }
-       });
-   
-       panels.forEach((panel) => {
+      });
+
+      panels.forEach((panel) => {
          tl.to(panel, {
-           yPercent: 0,
-           ease: "none"
+            yPercent: 0,
+            ease: "none"
          }, "+=0.5");
-       });
-   
-       // CLEANUP on unmount
-       return () => {
+      });
+
+      // CLEANUP on unmount
+      return () => {
          // Kill all ScrollTriggers and timelines
          ScrollTrigger.getAll().forEach(trigger => trigger.kill());
          gsap.globalTimeline.clear();
-       };
-     }, []);
+      };
+   }, []);
 
 
    const icons = [
@@ -73,14 +74,14 @@ const Project1 = () => {
    return (
       <>
          <Header />
-         <Section1
-            text={<>RESIDENCE BY KAMDAR</>}
-            backgroundImage="/assets/105bg.png"
-            mobileBackgroundImage="/assets/portfoliomob.png" // your mobile bg image
+         <Section1Video
+            backgroundImage="/assets/105video.mp4"
+            mobileBackgroundImage="/assets/105video.mp4"
+            className="h-screen w-full"
          />
          <Slide />
          <Section4 heading={<>Studio Apartments       </>}
-             className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
+            className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
             desktopBackground={'/assets/105/1.png'}
             text={<>Size Range: 394 to 468 sq. ft.
                Layout Variations: At least two types
@@ -89,13 +90,13 @@ const Project1 = () => {
             btntext={'Explore Now'} />
 
          <Section4 heading={<>ONE BED APARTMETNS      </>}
-              className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0 bg-cover bg-center"
+            className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0 bg-cover bg-center"
             desktopBackground={'/assets/105/2.png'}
             mobileBackground={'/assets/105/mob2.png'}
             btntext={'Explore Now'} />
 
          <Section4 heading={<>TWO BED APARTMETNS      </>}
-              className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
+            className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
             desktopBackground={'/assets/105/3.png'}
             mobileBackground={'/assets/105/mob3.png'}
             btntext={'Explore Now'} />

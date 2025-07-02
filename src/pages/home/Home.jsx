@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "../../common/form/Form";
-import Section1 from "../../common/section1/Section1";
+import Section1Video from "../../common/Section1video/Section1Video";
 import Section2 from '../../common/section2/Section2';
 import Section3 from "./section3/Section3";
 import Section4 from "../../common/section4/Section4";
@@ -61,10 +61,10 @@ const Home = () => {
 
       <Header />
       <div className="hero relative">
-        <Section1
+        <Section1Video
           text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-          backgroundImage="/assets/1.png"
-          mobileBackgroundImage="/assets/homemob.png"
+          backgroundImage="/assets/homevideo.mp4"
+          mobileBackgroundImage="/assets/homevideo.mp4"
           className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0"
         />
 
