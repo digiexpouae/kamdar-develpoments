@@ -79,7 +79,7 @@ const MobileSlider = () => {
                    <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
                                            <Image src={khaleejLogo} alt="Khaleej Times Logo" width={120} height={32} className="object-contain drop-shadow-lg" />
                                          </div>
-                  <h2 className="text-2xl font-bold max-w-xl leading-[1] mt-5"
+                  <h2 className="text-2xl font-bold max-w-xl leading-[0.7] mt-5"
                   style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}>
                     {slide.title}
                   </h2>
