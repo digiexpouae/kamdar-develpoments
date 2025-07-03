@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Header from "../../components/Header";
@@ -14,13 +14,24 @@ import Slider from "./slider/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 
 const Home = () => {
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.normalizeScroll(true);
 
     const panels = gsap.utils.toArray(".panel:not(:first-child)");
-    
     gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
     gsap.set(panels, {
       yPercent: 100,
@@ -28,7 +39,6 @@ const Home = () => {
     });
 
     const scroll = `+=${panels.length * 100}%`;
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero",
@@ -48,13 +58,12 @@ const Home = () => {
       }, "+=0.5");
     });
 
-    // CLEANUP on unmount
+    // CLEANUP on unmount or when isDesktop changes
     return () => {
-      // Kill all ScrollTriggers and timelines
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       gsap.globalTimeline.clear();
     };
-  }, []);
+  }, [isDesktop]);
 
   return (
     <>
