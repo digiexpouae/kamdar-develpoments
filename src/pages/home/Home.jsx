@@ -14,46 +14,50 @@ import Slider from "./slider/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 
 const Home = () => {
-
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.normalizeScroll(true);
-
-    const panels = gsap.utils.toArray(".panel:not(:first-child)");
+    // Check if screen is mobile (less than 768px)
+    const isMobile = window.innerWidth < 768;
     
-    gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
-    gsap.set(panels, {
-      yPercent: 100,
-      zIndex: (i) => i + 2
-    });
+    if (!isMobile) {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.normalizeScroll(true);
 
-    const scroll = `+=${panels.length * 100}%`;
+      const panels = gsap.utils.toArray(".panel:not(:first-child)");
+      
+      gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
+      gsap.set(panels, {
+        yPercent: 100,
+        zIndex: (i) => i + 2
+      });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        endTrigger: 'bottom bottom',
-        end: `${scroll}vh`,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-      }
-    });
+      const scroll = `+=${panels.length * 100}%`;
 
-    panels.forEach((panel) => {
-      tl.to(panel, {
-        yPercent: 0,
-        ease: "none"
-      }, "+=0.5");
-    });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          endTrigger: 'bottom bottom',
+          end: `${scroll}vh`,
+          scrub: true,
+          pin: true,
+          anticipatePin: 1,
+        }
+      });
 
-    // CLEANUP on unmount
-    return () => {
-      // Kill all ScrollTriggers and timelines
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.globalTimeline.clear();
-    };
+      panels.forEach((panel) => {
+        tl.to(panel, {
+          yPercent: 0,
+          ease: "none"
+        }, "+=0.5");
+      });
+
+      // CLEANUP on unmount
+      return () => {
+        // Kill all ScrollTriggers and timelines
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        gsap.globalTimeline.clear();
+      };
+    }
   }, []);
 
   return (
