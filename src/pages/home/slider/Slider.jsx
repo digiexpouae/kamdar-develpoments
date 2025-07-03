@@ -30,8 +30,7 @@ const Slider = () => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [previewWidth, setPreviewWidth] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-
-  // const trackRef = useRef < HTMLDivElement > (null);
+  const [isHovered, setIsHovered] = useState(false); // 👈 NEW
 
   useEffect(() => {
     const handleResize = () => {
@@ -61,14 +60,12 @@ const Slider = () => {
   };
 
   const getTranslateX = () => {
-    // Center the current slide
     const totalSlideWidth = slideWidth + previewWidth;
     const containerCenter = (slideWidth + previewWidth) / 2;
     const offset = current * totalSlideWidth + slideWidth / 2 - containerCenter;
     return offset;
   };
 
-  // Reset to real first/last slide after transition for seamless infinite loop
   useEffect(() => {
     if (!transitioning) return;
 
@@ -87,25 +84,24 @@ const Slider = () => {
     return () => clearTimeout(timeout);
   }, [current, transitioning, total]);
 
-  // Autoplay: go to next slide every 5 seconds
-useEffect(() => {
-  const interval = setInterval(() => {
-    if (!transitioning) {
-      setTransitioning(true);
-      setCurrent((prev) => prev + 1);
-    }
-  }, 1000); // Change 5000 to any duration in ms
+  // Autoplay: pause if hovered
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!transitioning && !isHovered) {
+        setTransitioning(true);
+        setCurrent((prev) => prev + 1);
+      }
+    }, 1000); // ← autoplay interval
 
-  return () => clearInterval(interval); // Cleanup on unmount
-}, [transitioning]);
-
+    return () => clearInterval(interval);
+  }, [transitioning, isHovered]);
 
   const realIndex = (current - 1 + total) % total;
   const containerWidth = slideWidth + previewWidth;
   const containerHeight = Math.min(slideWidth * 0.56, 500);
 
   return (
-    <div className="w-full bg-white px-2 sm:px-8 pt-12 flex justify-center">
+    <div className="w-full h-screen bg-white px-2 sm:px-8 pt-12 flex justify-center">
       <div className="w-full max-w-5xl">
         {/* Header */}
         <motion.div
@@ -117,7 +113,7 @@ useEffect(() => {
         >
           <div className="flex flex-col items-center mb-10 sm:items-start w-full sm:w-auto">
             <h2
-              className="text-6xl  font-light tracking-tight mb-2 text-center sm:text-left"
+              className="text-6xl font-light tracking-tight mb-2 text-center sm:text-left"
               style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
             >
               LATEST NEWS
@@ -137,7 +133,7 @@ useEffect(() => {
           className="relative flex flex-col items-center mt-8"
         >
           <div
-            className="relative "
+            className="relative"
             style={{
               width: `${containerWidth}px`,
               height: `${containerHeight}px`,
@@ -152,18 +148,17 @@ useEffect(() => {
               }}
             >
               {extendedImages.map((img, idx) => {
-                const isActive = idx === current;
                 return (
                   <div
                     key={idx}
+                    onMouseEnter={() => setIsHovered(true)} // 👈 pause autoplay
+                    onMouseLeave={() => setIsHovered(false)} // 👈 resume autoplay
                     className="rounded-3xl overflow-hidden bg-white relative"
                     style={{
                       width: `${slideWidth}px`,
                       height: `${containerHeight}px`,
                       marginRight: `${previewWidth}px`,
                       flex: '0 0 auto',
-                      transform: isActive ? 'scale(1.15)' : 'scale(1)',
-                      transition: 'transform 0.4s ease',
                     }}
                   >
                     <Image
@@ -172,32 +167,40 @@ useEffect(() => {
                       fill
                       className="object-cover"
                     />
-                    {/* Overlay on every slide */}
-                    <div className="absolute inset-0  flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10" style={{ background: 'linear-gradient(180deg,rgba(25,25,25,0.45) 60%,rgba(25,25,25,0.85) 100%)' }}>
+                    <div className="absolute inset-0 flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10"
+                      style={{
+                        background:
+                          'linear-gradient(180deg,rgba(25,25,25,0.45) 60%,rgba(25,25,25,0.85) 100%)',
+                      }}
+                    >
                       <div className="max-w-md">
-
-
-                        {/* Top Logo */}
                         <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
-                          <Image src={khaleejLogo} alt="Khaleej Times Logo" width={120} height={32} className="object-contain drop-shadow-lg" />
+                          <Image
+                            src={khaleejLogo}
+                            alt="Khaleej Times Logo"
+                            width={120}
+                            height={32}
+                            className="object-contain drop-shadow-lg"
+                          />
                         </div>
-                        {/* Heading */}
                         <h2
                           style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
-                          className="text-white text-4xl   font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg">KAMDAR DEVELOPMENTS BREAKS GROUND ON RESIDENCES IN JVC</h2>
-                        {/* Description */}
-                        <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">The ceremony was attended by the team from Kamdar Developments, contractor Luxedesign (LDV) and project advisors from Savills Middle East</p>
-                        {/* Read More Button */}
+                          className="text-white text-4xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
+                        >
+                          KAMDAR DEVELOPMENTS BREAKS GROUND ON RESIDENCES IN JVC
+                        </h2>
+                        <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
+                          The ceremony was attended by the team from Kamdar Developments, contractor Luxedesign (LDV) and project advisors from Savills Middle East
+                        </p>
                         <button
                           style={{
                             border: '1px solid #A08741',
-                            borderRadius: '7px', // Force pill shape
+                            borderRadius: '7px',
                           }}
                           className="text-white text-xs font-lexend cursor-pointer px-3 py-2 shadow-md transition w-fit"
                         >
                           Read More
                         </button>
-
                       </div>
                     </div>
                   </div>
@@ -205,32 +208,6 @@ useEffect(() => {
               })}
             </div>
           </div>
-
-          {/* Progress Bar */}
-          {/* <div className="w-full h-0.5 bg-gray-200 rounded-full mt-10 mb-10 relative overflow-hidden"> */}
-            {/* <div
-              className="h-0.5 bg-black rounded-full transition-all duration-300"
-              style={{ width: `${((realIndex + 1) / total) * 100}%` }}
-            />
-          </div> */}
-
-          {/* Arrows */}
-          {/* <div className="absolute bottom-2 right-2 flex gap-2 z-10">
-            <button
-              onClick={prevSlide}
-              className="w-10 h-10 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
-              aria-label="Previous"
-            >
-              &#8592;
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-10 h-10 flex items-center justify-center text-gray-700 text-2xl hover:text-black transition"
-              aria-label="Next"
-            >
-              &#8594;
-            </button>
-          </div> */}
         </motion.div>
       </div>
     </div>
