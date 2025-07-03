@@ -60,29 +60,29 @@ const Home = () => {
     <>
 
       <Header />
-      <div className="md:hero md:relative">
+      <div className="hero relative">
         <Section1Video
           text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
           backgroundImage="/assets/homevideo.mp4"
           mobileBackgroundImage="/assets/homevideo.mp4"
-          className="md:panel md:inset-0 md:absolute w-full h-[100dvh] md:h-[100vh] z-0"
+          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0"
         />
 
         <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          className="md:panel md:inset-0 md:absolute w-full h-[100dvh] md:h-[100vh] z-10"
+          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10"
         />
 
         <Section4
           heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
           desktopBackground="/assets/3.jpg"
           btntext="Explore More"
-          className="md:panel md:inset-0 md:absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
+          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
         />
 
         <Section5
           heading={<>CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}
-          className="md:panel md:inset-0 md:absolute w-full h-[100dvh] md:h-[100vh] z-10"
+          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10"
         />
       </div>
 
@@ -103,4 +103,3 @@ const Home = () => {
 };
 
 export default Home;
-
