@@ -52,7 +52,7 @@ const Home = () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       gsap.globalTimeline.clear();
     };
-  }, [isDesktop]);
+  }, []);
 
   return (
     <>
