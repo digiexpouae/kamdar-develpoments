@@ -14,25 +14,16 @@ import Slider from "./slider/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 
 const Home = () => {
-  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
-
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+    // Run animations only on desktop
+    if (window.innerWidth < 768) return;
 
-  useEffect(() => {
-    if (!isDesktop) return;
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.normalizeScroll(true);
 
     const panels = gsap.utils.toArray(".panel:not(:first-child)");
-    gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
+
+    gsap.set(panels[0], { yPercent: 0, zIndex: 1 });
     gsap.set(panels, {
       yPercent: 100,
       zIndex: (i) => i + 2
@@ -43,7 +34,6 @@ const Home = () => {
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        endTrigger: 'bottom bottom',
         end: `${scroll}vh`,
         scrub: true,
         pin: true,
@@ -58,7 +48,6 @@ const Home = () => {
       }, "+=0.5");
     });
 
-    // CLEANUP on unmount or when isDesktop changes
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       gsap.globalTimeline.clear();
@@ -67,37 +56,62 @@ const Home = () => {
 
   return (
     <>
-
       <Header />
-      <div className="hero relative">
+
+      {/* Desktop animated section */}
+      <div
+  className="hero relative"
+ 
+>
+<div className="md:block hidden">
         <Section1Video
           text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
           backgroundImage="/assets/homevideo.mp4"
-          mobileBackgroundImage="/assets/homevideo.mp4"
-          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0"
+          className="panel inset-0 absolute w-full h-[100vh] z-0"
         />
-
         <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10"
+          className="panel inset-0 absolute w-full h-[100vh] z-10"
         />
-
         <Section4
           heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
           desktopBackground="/assets/3.jpg"
           btntext="Explore More"
-          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
+          className="panel inset-0 absolute w-full h-[100vh] z-10 bg-cover bg-center"
         />
-
         <Section5
           heading={<>CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}
-          className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10"
+          className="panel inset-0 absolute w-full h-[100vh] z-10"
+        />
+      </div>
+</div>
+
+      {/* Mobile stacked sections */}
+      <div className="block md:hidden">
+        <Section1Video
+          text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
+          backgroundImage="/assets/homevideo.mp4"
+          className="w-full h-[100dvh]"
+        />
+        <Section2
+          text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
+          className="w-full h-auto"
+        />
+        <Section4
+          heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
+          desktopBackground="/assets/3.jpg"
+          btntext="Explore More"
+          className="w-full h-auto bg-cover bg-center"
+        />
+        <Section5
+          heading={<>CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}
+          className="w-full h-auto"
         />
       </div>
 
       <Section3 className="panel" />
 
-      {/* Slider components */}
+      {/* Sliders */}
       <div className="hidden md:block">
         <Slider />
       </div>
@@ -112,4 +126,3 @@ const Home = () => {
 };
 
 export default Home;
-
