@@ -116,7 +116,7 @@ const Home = () => {
 
       {/* Sliders */}
       <div className="hidden md:block">
-        <Slider heading="LATEST NEWS" buttonheading="View All News" />
+        <Slider heading="LATEST NEWS" href="/news" buttonheading="View All News" />
       </div>
       <div className="block md:hidden">
         <h1>

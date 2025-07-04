@@ -55,7 +55,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              viewport={{ once: true }} className="reveal-on-scroll mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition">
+              viewport={{ once: true }} className="reveal-on-scroll cursor-pointer mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition">
               {btntext}
             </motion.button>
           </Link>
@@ -90,14 +90,13 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
         </motion.h1>
         {p &&
           <motion.p className='text-white'>{text1}</motion.p>}
-        <Link href="/project1" passHref legacyBehavior>
+        <Link href="/project1" >
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white text-black rounded-md px-6 py-2 font-medium font-lexend shadow hover:bg-gray-200 transition"
-        >
+                  >
           Explore More
         </motion.button>
         </Link>

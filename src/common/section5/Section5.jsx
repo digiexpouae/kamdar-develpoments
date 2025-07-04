@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import Link from 'next/link';
+
 const fadeVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -41,11 +43,13 @@ const Section5 = ({ heading,className }) => {
         >
           {heading}
         </h1>
+        <Link href="/project1" passHref legacyBehavior>
         <button
-          className="reveal-on-scroll bg-white text-black rounded-md px-6 py-2 font-medium font-lexend shadow hover:bg-gray-200 transition"
+          className="reveal-on-scroll cursor-pointer bg-white text-black rounded-md px-6 py-2 font-medium font-lexend shadow hover:bg-gray-200 transition"
         >
           Explore More
         </button>
+        </Link>
       </motion.div>
 
       {/* Mobile View */}
@@ -69,10 +73,13 @@ const Section5 = ({ heading,className }) => {
         >
           {heading}
         </h1>
+        <Link href="/project1" passHref legacyBehavior>
         <button className="reveal-on-scroll bg-white text-black rounded-md px-6 py-3 font-bold font-lexend shadow hover:bg-gray-200 transition">
           Explore More
         </button>
+        </Link>
       </motion.div>
+      
     </section>
     </div>
   );

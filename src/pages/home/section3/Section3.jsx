@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import quote from '../../../../public/assets/this.png';
+import Link from 'next/link';
 
 const fadeVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -92,15 +93,16 @@ const Section3 = ({ bgImage }) => {
               </div>
            
 
+            <Link href="/contact" passHref legacyBehavior>
             <motion.button
               variants={fadeVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="mt-4 w-fit px-6 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition"
+              className="mt-4 w-fit px-6 py-2 cursor-pointer bg-black text-white rounded-md shadow hover:bg-gray-900 transition"
             >
               Get in Touch
-            </motion.button>
+            </motion.button></Link>
           </div>
 
           {/* Right Content */}

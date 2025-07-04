@@ -13,6 +13,8 @@ import identitylogo from '../../../../public/assets/homeslider/identity.png'
 import designlogo from '../../../../public/assets/homeslider/design.png'
 import plumberlogo from '../../../../public/assets/homeslider/plumber.png'
 import plumberslide from '../../../../public/assets/homeslider/hs2.png'
+import Link from 'next/link';
+import { Link2 } from 'lucide-react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -26,7 +28,7 @@ const fadeUp = {
   },
 };
 
-const Slider = ({heading , buttonheading}) => { 
+const Slider = ({ heading, buttonheading, href }) => { 
   const [current, setCurrent] = useState(1);
   const total = 7; // Since we have 7 slides now
   const extendedSlides = [
@@ -190,9 +192,11 @@ const Slider = ({heading , buttonheading}) => {
               {heading}
             </h2>
           </div>
+          <Link href={href} >
           <button className="bg-black cursor-pointer text-white px-4 py-2 rounded-md transition text-xs sm:text-sm w-full sm:w-auto">
             {buttonheading}
           </button>
+          </Link>
         </motion.div>
 
         {/* Slider */}

@@ -14,24 +14,36 @@ const news = () => {
     return (
         <>
             <Header />
-
-            <Section1
+            <div className="md:block hidden">
+           <Section1
        text={<>BLOGS/ARTICLES</>}
             backgroundImage="/assets/blogs/blogs.png"
             mobileBackgroundImage="/assets/blogs/blogs.png"
            className={'h-[100vh]'}
          />
-
-         <div className="md:block hidden">
-            <Slider heading="LATEST ARTICLES" buttonheading="View All"/>
          </div>
 
          <div className="md:hidden block">
-            <MobileSlider heading="LATEST ARTICLES"/>
+         <Section1
+       text={<><span className="text-5xl"> BLOGS/ARTICLES</span></>}
+            backgroundImage="/assets/blogs/blogs.png"
+            mobileBackgroundImage="/assets/blogs/blogs.png"
+           className={'h-[100vh]'}
+         />
+           
+         </div>
+            
+
+         <div className="md:block hidden">
+            <Slider heading="LATEST ARTICLES" href="/blogs" buttonheading="View All"/>
+         </div>
+
+         <div className="md:hidden block">
+            <MobileSlider heading="LATEST ARTICLES" />
          </div>
         
          <div className="md:block hidden">
-            <Slider heading="LATEST BLOGS" buttonheading="View All Blogs"/>
+            <Slider heading="LATEST BLOGS" href="/blogs" buttonheading="View All Blogs"/>
          </div>
 
          <div className="md:hidden block">
