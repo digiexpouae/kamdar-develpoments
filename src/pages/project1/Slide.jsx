@@ -9,13 +9,17 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 
 const images = [
-  '/assets/kitchen.png',
+  '/assets/105slider/1.png',
+  '/assets/105slider/2.png',
+  '/assets/105slider/3.png',
+  '/assets/105slider/4.png',
   '/assets/105slider/1.webp',
   '/assets/105slider/2.webp',
   '/assets/105slider/3.webp',
   '/assets/105slider/4.webp',
   '/assets/105slider/5.webp',
   '/assets/105slider/6.webp',
+  
 ];
 
 const icons = [

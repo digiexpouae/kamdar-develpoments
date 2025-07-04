@@ -5,10 +5,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import slider from '../../../../public/assets/aboutimages/slider1.png';
 import sliderimg from '../../../../public/assets/slider2.jpg';
+import sliderimg2 from '../../../../public/assets/projectimages/project-2.jpg';
 import khaleejLogo from '../../../../public/assets/khaleej1.png';
 
 // Images array
-const images = [slider, sliderimg, slider, sliderimg];
+const images = [slider, sliderimg, sliderimg2, slider, sliderimg, sliderimg2];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
