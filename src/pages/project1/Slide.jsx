@@ -76,9 +76,13 @@ const Slide = () => {
             <h1 className="text-5xl sm:text-5xl md:text-6xl font-light leading-10">
               ELEVATED LIVING <br /> WITHIN REACH
             </h1>
-            <button className="mt-2 cursor-pointer md:block hidden md:mt-4 w-fit px-5 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition text-sm md:text-base">
-              Download Brochure
-            </button>
+            <a
+  href="/105 Residences by Kamdar - Brochure.pdf"
+  download
+  className="mt-2 cursor-pointer font-lexend md:block hidden md:mt-4 w-fit px-5 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition text-sm md:text-base"
+>
+  Download Brochure
+</a>
           </motion.div>
 
           <motion.div
@@ -92,9 +96,13 @@ const Slide = () => {
               deliver an unparalleled lifestyle in one of Dubai’s most sought-after residential neighbourhoods.
               The project is under development and will be ready to move in from Q1 2027.
             </p>
-            <button className="mt-8 md:hidden cursor-pointer block w-fit px-5 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition text-sm">
-              Download Brochure
-            </button>
+            <a
+  href="/105 Residences by Kamdar - Brochure.pdf"
+  download
+  className="mt-8 md:hidden cursor-pointer font-lexend block w-fit px-5 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition text-sm"
+>
+  Download Brochure
+</a>
           </motion.div>
         </div>
 
