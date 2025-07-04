@@ -90,6 +90,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
         </motion.h1>
         {p &&
           <motion.p className='text-white'>{text1}</motion.p>}
+        <Link href="/project1" passHref legacyBehavior>
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,6 +100,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
         >
           Explore More
         </motion.button>
+        </Link>
       </div>
     </section>
   );
