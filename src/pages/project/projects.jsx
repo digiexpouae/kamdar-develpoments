@@ -47,11 +47,12 @@ const Project = () => {
       }, "+=0.5");
     });
 
-     // CLEANUP on unmount
-     return () => {
+    // CLEANUP on unmount
+    return () => {
       // Kill all ScrollTriggers and timelines
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      gsap.globalTimeline.clear(); };
+      gsap.globalTimeline.clear();
+    };
 
   }, []);
 
@@ -71,7 +72,13 @@ const Project = () => {
 
         <Section4
           overlay={true}
-          heading={<>Residences<br /> By Kamdar</>}
+          heading={<>
+            <span style={{
+              fontFamily: 'lexend',
+              fontSize: '55px',
+              fontStyle: 'italic',
+              fontWeight: '300',
+            }}> 105 </span> RESIDENCES <br /> BY KAMDAR</>}
           btntext="Explore Now"
           p={true}
           mobileBackgroundImage="/assets/projectimages/project-3.png"

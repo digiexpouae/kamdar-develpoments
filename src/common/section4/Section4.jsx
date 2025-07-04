@@ -49,7 +49,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
               className={'text-white font-light'}
 
 
-            >{text1}</motion.p>}
+            > JVC, Dubai</motion.p>}
           <Link href="/project1" passHref legacyBehavior>
             <motion.button
               initial={{ opacity: 0, y: 20 }}

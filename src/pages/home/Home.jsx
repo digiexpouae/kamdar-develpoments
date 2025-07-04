@@ -72,6 +72,8 @@ const Home = () => {
         />
         <Section2video
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
+          backgroundImage="/assets/105video.mp4"
+          mobileBackgroundImage="/assets/105video.mp4"
           className="panel inset-0 absolute w-full h-[100vh] z-10"
         />
         <Section4
