@@ -149,17 +149,22 @@ const Slider = () => {
               }}
             >
               {extendedImages.map((img, idx) => {
+                // The real active slide index is current
+                const isActive = idx === current;
                 return (
                   <div
                     key={idx}
                     onMouseEnter={() => setIsHovered(true)} // 👈 pause autoplay
                     onMouseLeave={() => setIsHovered(false)} // 👈 resume autoplay
-                    className="rounded-3xl overflow-hidden bg-white relative"
+                    className={`rounded-3xl overflow-hidden bg-white relative transition-transform duration-500 ${isActive ? 'z-20' : 'z-10'}`}
                     style={{
                       width: `${slideWidth}px`,
                       height: `${containerHeight}px`,
                       marginRight: `${previewWidth}px`,
                       flex: '0 0 auto',
+                      transform: isActive ? 'scale(1.09)' : 'scale(0.95)',
+                      boxShadow: isActive ? '0 10px 30px rgba(0,0,0,0.15)' : 'none',
+                      transition: 'transform 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)',
                     }}
                   >
                     <Image

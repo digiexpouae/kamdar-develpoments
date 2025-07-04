@@ -10,7 +10,7 @@ import Image from 'next/image';
 // Slide content
 const slides = [
   {
-    image: '/assets/sliderimg.png',
+    image: '/assets/aboutimages/slider1.png',
     title: 'KAMDAR DEVELOPMENTS BREAKS GROUND ON RESIDENCES IN JVC',
     description:
       'The ceremony was attended by the team from Kamdar Developments, contractor Luxedesign (LDV) and project advisors from Savills Middle East',

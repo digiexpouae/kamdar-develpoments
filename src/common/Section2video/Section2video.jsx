@@ -1,4 +1,4 @@
-// components/Section2.jsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -6,18 +6,11 @@ import { useEffect, useState } from 'react';
 const fadeVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
-        y: 0,
         opacity: 1,
+        y: 0,
         transition: {
-            duration: 3,
+            duration: 1,  
             ease: 'easeOut',
-        },
-    },
-    exit: {
-        opacity: 0,
-        transition: {
-            duration: 0.5,
-            ease: 'easeIn',
         },
     },
 };
@@ -45,14 +38,12 @@ const Section2video = ({ text, className, backgroundImage, mobileBackgroundImage
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    const bgVideo = isMobile && mobileBackgroundImage ? mobileBackgroundImage : backgroundImage;
+    const bgVideo = isMobile && mobileBackgroundImage ? backgroundImage : backgroundImage;
 
     return (
         <section
             className={`reveal-on-scroll max-w-full h-screen bg-cover bg-center flex  items-center justify-center ${className}`}
-            style={{
-                backgroundImage: `url('/assets/2.png')`,
-            }}    >
+              >
             <motion.div
                 className="reveal-on-scroll relative z-10 flex flex-col items-center justify-center  w-full h-full"
                 variants={fadeVariants}

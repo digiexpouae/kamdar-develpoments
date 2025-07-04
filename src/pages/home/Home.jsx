@@ -73,7 +73,6 @@ const Home = () => {
         <Section2video
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
           backgroundImage="/assets/105video.mp4"
-          mobileBackgroundImage="/assets/105video.mp4"
           className="panel inset-0 absolute w-full h-[100vh] z-10"
         />
         <Section4
@@ -96,8 +95,9 @@ const Home = () => {
           backgroundImage="/assets/homevideo.mp4"
           className="w-full h-[100dvh]"
         />
-        <Section2
+         <Section2video
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
+          backgroundImage="/assets/105video.mp4"
           className="w-full h-auto"
         />
         <Section4
