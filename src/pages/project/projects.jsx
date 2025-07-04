@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import EntranceAnimation from '../../components/EntranceAnimation';
 import Section1 from "../../common/section1/Section1";
+// import EntranceAnimation from '../../components/EntranceAnimation';
+
 import Section4 from "../../common/section4/Section4";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -14,25 +15,25 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 const Project = () => {
 
   useEffect(() => {
+    // Run animations only on desktop
+    if (window.innerWidth < 768) return;
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.normalizeScroll(true);
 
     const panels = gsap.utils.toArray(".panel:not(:first-child)");
 
-    gsap.set(panels[0], { yPercent: 0, zIndex: 1 }); // First panel
+    gsap.set(panels[0], { yPercent: 0, zIndex: 1 });
     gsap.set(panels, {
       yPercent: 100,
       zIndex: (i) => i + 2
     });
 
     const scroll = `+=${panels.length * 100}%`;
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        endTrigger: 'bottom bottom',
         end: `${scroll}vh`,
         scrub: true,
         pin: true,
@@ -47,18 +48,14 @@ const Project = () => {
       }, "+=0.5");
     });
 
-    // CLEANUP on unmount
     return () => {
-      // Kill all ScrollTriggers and timelines
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       gsap.globalTimeline.clear();
     };
-
   }, []);
-
   return (
     <>
-      <EntranceAnimation />
+      {/* <EntranceAnimation /> */}
       <Header />
 
       {/* Scroll panels */}
@@ -74,7 +71,7 @@ const Project = () => {
           overlay={true}
           heading={<>
             <span style={{
-              fontFamily: 'lexend',
+              fontFamily: 'Lexend',
               fontSize: '55px',
               fontStyle: 'italic',
               fontWeight: '300',
