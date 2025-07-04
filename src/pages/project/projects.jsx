@@ -76,15 +76,6 @@ const Project = () => {
               }}> 105 </span> RESIDENCES <br /> BY KAMDAR
             </>
           }
-          heading={<>
-            <span style={{
-              fontFamily: 'lexend',
-              fontSize: '55px',
-              fontStyle: 'italic',
-              fontWeight: '300',
-            }}>
-              105 </span >RESIDENCES
-           <br />BY KAMDAR</> }
           
           btntext="Explore Now"
           p={true}

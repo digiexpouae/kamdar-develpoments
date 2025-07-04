@@ -89,6 +89,6 @@ const Icon = ({ icons }) => {
     </div>
   );
 };
-export default icon
+export default Icon
 
 
