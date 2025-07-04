@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 import Section1 from "../../common/section1/Section1";
 // import EntranceAnimation from '../../components/EntranceAnimation';
-
 import Section4 from "../../common/section4/Section4";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -13,9 +12,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 const Project = () => {
-
   useEffect(() => {
-    // Run animations only on desktop
     if (window.innerWidth < 768) return;
 
     gsap.registerPlugin(ScrollTrigger);
@@ -53,13 +50,14 @@ const Project = () => {
       gsap.globalTimeline.clear();
     };
   }, []);
+
   return (
     <>
       {/* <EntranceAnimation /> */}
       <Header />
 
-      {/* Scroll panels */}
-      <div className="hero relative">
+      {/* Desktop Animated Scroll Panels */}
+      <div className="hero relative hidden md:block">
         <Section1
           text={<>Our <br /> Portfolio</>}
           backgroundImage="/assets/projectimages/project-1.jpg"
@@ -69,13 +67,16 @@ const Project = () => {
 
         <Section4
           overlay={true}
-          heading={<>
-            <span style={{
-              fontFamily: 'Lexend',
-              fontSize: '55px',
-              fontStyle: 'italic',
-              fontWeight: '300',
-            }}> 105 </span> RESIDENCES <br /> BY KAMDAR</>}
+          heading={
+            <>
+              <span style={{
+                fontFamily: 'Lexend',
+                fontSize: '55px',
+                fontStyle: 'italic',
+                fontWeight: '300',
+              }}> 105 </span> RESIDENCES <br /> BY KAMDAR
+            </>
+          }
           btntext="Explore Now"
           p={true}
           mobileBackgroundImage="/assets/projectimages/project-3.png"
@@ -89,7 +90,40 @@ const Project = () => {
         />
       </div>
 
-      {/* After scroll-pinned panels */}
+      {/* Mobile Stacked Sections */}
+      <div className="block md:hidden">
+        <Section1
+          text={<>Our <br /> Portfolio</>}
+          backgroundImage="/assets/projectimages/project-1.jpg"
+          mobileBackgroundImage="/assets/portfoliomob.png"
+          className="w-full h-[100dvh]"
+        />
+
+        <Section4
+          overlay={true}
+          heading={
+            <>
+              <span style={{
+                fontFamily: 'Lexend',
+                fontSize: '35px',
+                fontStyle: 'italic',
+                fontWeight: '300',
+              }}> 105 </span> RESIDENCES <br /> BY KAMDAR
+            </>
+          }
+          btntext="Explore Now"
+          p={true}
+          mobileBackgroundImage="/assets/projectimages/project-3.png"
+          desktopBackground="/assets/projectimages/project-2.jpg"
+          className="w-full h-auto bg-no-repeat bg-cover"
+        />
+
+        <Section5
+          heading={<>Bespoke Living <br />By Kamdar</>}
+          className="w-full h-auto"
+        />
+      </div>
+
       <Form />
       <Footer />
     </>
