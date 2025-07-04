@@ -1,4 +1,4 @@
-import Section1Video from "../../common/section1video/Section1Video"
+import Section1Video from "../../common/Section1video/Section1Video"
 import { useEffect } from "react";
 import Section4 from "../../common/section4/Section4"
 import Header from "../../components/Header";
