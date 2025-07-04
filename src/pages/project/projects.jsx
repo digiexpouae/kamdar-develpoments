@@ -73,10 +73,18 @@ const Project = () => {
                 fontSize: '55px',
                 fontStyle: 'italic',
                 fontWeight: '300',
-              }}> 105 </span> RESIDENCES <br /> BY KAMDAR
+              }}
+              className='tracking-[1px]'
+              
+              >105 </span>RESIDENCES
+              <br />
+              <span
+             className='ms-1'
+
+              >BY KAMDAR </span>
             </>
           }
-          
+
           btntext="Explore Now"
           p={true}
           mobileBackgroundImage="/assets/projectimages/project-3.png"
