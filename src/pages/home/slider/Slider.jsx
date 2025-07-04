@@ -119,19 +119,7 @@ const Slider = ({ heading, buttonheading, href }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const nextSlide = () => {
-    if (!transitioning) {
-      setTransitioning(true);
-      setCurrent((prev) => prev + 1);
-    }
-  };
 
-  const prevSlide = () => {
-    if (!transitioning) {
-      setTransitioning(true);
-      setCurrent((prev) => prev - 1);
-    }
-  };
 
   const getTranslateX = () => {
     const totalSlideWidth = slideWidth + previewWidth;
