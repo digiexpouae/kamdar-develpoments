@@ -116,10 +116,13 @@ const Home = () => {
 
       {/* Sliders */}
       <div className="hidden md:block">
-        <Slider />
+        <Slider heading="LATEST NEWS" buttonheading="View All News" />
       </div>
       <div className="block md:hidden">
-        <MobileSlider />
+        <h1>
+          Latest Articles
+        </h1>
+        <MobileSlider heading="LATEST ARTICLES"/>
       </div>
 
       <Form />
