@@ -97,6 +97,7 @@ const Home = () => {
          <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
           backgroundImage="/assets/2.png"
+          mobileBackgroundImage="/assets/2.png"
           className="w-full h-auto"
         />
         <Section4
