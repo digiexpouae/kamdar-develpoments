@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import slider from '../../../../public/assets/aboutimages/slider1.png';
 import sliderimg from '../../../../public/assets/slider2.jpg';
 import khaleejLogo from '../../../../public/assets/khaleej1.png';
 
-// Updated image set
-const images = [ slider,sliderimg,  slider ,sliderimg];
+// Images array
+const images = [slider, sliderimg, slider, sliderimg];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -23,7 +23,7 @@ const fadeUp = {
 };
 
 const Slider = () => {
-  const [current, setCurrent] = useState(1); // start at index 1 due to cloning
+  const [current, setCurrent] = useState(1);
   const total = images.length;
   const extendedImages = [images[total - 1], ...images, images[0]];
   const extendedTotal = extendedImages.length;
@@ -31,7 +31,7 @@ const Slider = () => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [previewWidth, setPreviewWidth] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  const [isHovered, setIsHovered] = useState(false); // 👈 NEW
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -80,19 +80,18 @@ const Slider = () => {
       } else {
         setTransitioning(false);
       }
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, [current, transitioning, total]);
 
-  // Autoplay: pause if hovered
   useEffect(() => {
     const interval = setInterval(() => {
       if (!transitioning && !isHovered) {
         setTransitioning(true);
         setCurrent((prev) => prev + 1);
       }
-    }, 1000); // ← autoplay interval
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [transitioning, isHovered]);
@@ -142,21 +141,26 @@ const Slider = () => {
             }}
           >
             <div
-              className={`flex ${transitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+              className={`flex ${
+                transitioning
+                  ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]'
+                  : ''
+              }`}
               style={{
                 width: `${(slideWidth + previewWidth) * extendedTotal}px`,
                 transform: `translateX(-${getTranslateX()}px)`,
               }}
             >
               {extendedImages.map((img, idx) => {
-                // The real active slide index is current
                 const isActive = idx === current;
                 return (
                   <div
                     key={idx}
-                    onMouseEnter={() => setIsHovered(true)} // 👈 pause autoplay
-                    onMouseLeave={() => setIsHovered(false)} // 👈 resume autoplay
-                    className={`rounded-3xl overflow-hidden bg-white relative transition-transform duration-500 ${isActive ? 'z-20' : 'z-10'}`}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    className={`rounded-3xl overflow-hidden bg-white relative ${
+                      isActive ? 'z-20' : 'z-10'
+                    }`}
                     style={{
                       width: `${slideWidth}px`,
                       height: `${containerHeight}px`,
@@ -164,16 +168,13 @@ const Slider = () => {
                       flex: '0 0 auto',
                       transform: isActive ? 'scale(1.09)' : 'scale(0.95)',
                       boxShadow: isActive ? '0 10px 30px rgba(0,0,0,0.15)' : 'none',
-                      transition: 'transform 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)',
+                      transition:
+                        'transform 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)',
                     }}
                   >
-                    <Image
-                      src={img}
-                      alt={`Slide ${idx}`}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10"
+                    <Image src={img} alt={`Slide ${idx}`} fill className="object-cover" />
+                    <div
+                      className="absolute inset-0 flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10"
                       style={{
                         background:
                           'linear-gradient(180deg,rgba(25,25,25,0.45) 60%,rgba(25,25,25,0.85) 100%)',
@@ -196,7 +197,8 @@ const Slider = () => {
                           KAMDAR DEVELOPMENTS BREAKS GROUND ON RESIDENCES IN JVC
                         </h2>
                         <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
-                          The ceremony was attended by the team from Kamdar Developments, contractor Luxedesign (LDV) and project advisors from Savills Middle East
+                          The ceremony was attended by the team from Kamdar Developments, contractor
+                          Luxedesign (LDV) and project advisors from Savills Middle East
                         </p>
                         <button
                           style={{
