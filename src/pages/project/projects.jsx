@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import EntranceAnimation from '../../components/EntranceAnimation';
 import Section1 from "../../common/section1/Section1";
 import Section4 from "../../common/section4/Section4";
 import Header from "../../components/Header";
@@ -58,7 +57,6 @@ const Project = () => {
 
   return (
     <>
-      <EntranceAnimation />
       <Header />
 
       {/* Scroll panels */}
@@ -78,7 +76,10 @@ const Project = () => {
               fontSize: '55px',
               fontStyle: 'italic',
               fontWeight: '300',
-            }}> 105 </span> RESIDENCES <br /> BY KAMDAR</>}
+            }}>
+              105 </span >RESIDENCES
+           <br />BY KAMDAR</> }
+          
           btntext="Explore Now"
           p={true}
           mobileBackgroundImage="/assets/projectimages/project-3.png"

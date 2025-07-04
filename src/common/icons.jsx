@@ -5,7 +5,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const icon = ({ icons }) => {
+const Icon = ({ icons }) => {
   const firstRow = (icons|| []).slice(0, 3);
   const secondRow = (icons|| []).slice(3);
 

@@ -12,7 +12,6 @@ import Section4 from "../../common/section4/Section4";
 import Section5 from "../../common/section5/Section5";
 import Slider from "./slider/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
-import Section2video from "../../common/Section2video/Section2video";
 
 const Home = () => {
   useEffect(() => {
@@ -70,9 +69,9 @@ const Home = () => {
           backgroundImage="/assets/homevideo.mp4"
           className="panel inset-0 absolute w-full h-[100vh] z-0"
         />
-        <Section2video
+        <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          backgroundImage="/assets/105video.mp4"
+          backgroundImage="/assets/2.png"
           className="panel inset-0 absolute w-full h-[100vh] z-10"
         />
         <Section4
@@ -95,9 +94,9 @@ const Home = () => {
           backgroundImage="/assets/homevideo.mp4"
           className="w-full h-[100dvh]"
         />
-         <Section2video
+         <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          backgroundImage="/assets/105video.mp4"
+          backgroundImage="/assets/2.png"
           className="w-full h-auto"
         />
         <Section4

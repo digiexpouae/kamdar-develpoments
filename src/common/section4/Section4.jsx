@@ -28,7 +28,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
               letterSpacing: '0.01px',
               textShadow: '0 2px 16px rgba(0,0,0,0.18)',
             }}
-            className="reveal-on-scroll text-white text-3xl md:text-7xl pt-10 font-light leading-tight mb-6"
+            className="reveal-on-scroll text-white text-3xl md:text-7xl pt-10 font-light  mb-6"
             style={{ fontFamily: 'Luxerie, sans-serif', lineHeight: 0.5, }}>
             <span className="text-7xl font-extrabold">{titleNumber}</span>{heading}
           </motion.h1>

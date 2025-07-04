@@ -72,7 +72,7 @@ const Section3 = ({ bgImage }) => {
               viewport={{ once: true }}
               className="mt-2"
             >
-              <div className="md:text-xl text-2xl  font-medium font-bold" style={{ fontFamily: 'Luxerie' }}>
+              <div className="md:text-3xl text-xl  font-medium font-bold" style={{ fontFamily: 'Luxerie' }}>
                 YOUSUF KAMDAR
               </div>
               <div className="text-sm font-light">Chairman of Kamdar Developments</div>

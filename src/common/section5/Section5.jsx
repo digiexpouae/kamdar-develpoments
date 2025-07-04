@@ -13,7 +13,7 @@ const fadeVariants = {
 };
 
 const Section5 = ({ heading,className }) => {
-  return (
+  return (  
     <div className={className}>
     <section
       className={`reveal-on-scroll relative w-full bg-cover h-[110vh] bg-center `}

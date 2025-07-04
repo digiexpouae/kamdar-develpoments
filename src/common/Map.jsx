@@ -9,7 +9,7 @@ const fadeUp = {
 
 const ContactSection = () => {
   return (
-    <section className="md:pb-34 py-10 px-6 md:px-20  bg-white">
+    <section className="md:pb-34 py-8 px-6 md:px-15  bg-white">
      
       {/* Contact Info */}
       <motion.div 
