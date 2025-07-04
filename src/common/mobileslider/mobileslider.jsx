@@ -6,8 +6,22 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import khaleejLogo from '../../../public/assets/khaleej1.png';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 
 // Slide content
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
+};
+
 const slides = [
   {
     image: '/assets/aboutimages/slider1.png',
@@ -54,8 +68,30 @@ const MobileSlider = () => {
           width: 24px;
         }
       `}</style>
-
+      
+    <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="flex flex-col sm:flex-row items-start p-6 sm:items-center justify-between mb-4 w-full"
+              >
+                <div className="flex flex-col items-center justify-center mb-4 sm:items-start w-full sm:w-auto">
+                  <h2
+                    className="text-6xl font-light tracking-tight mb-2 text-center sm:text-left"
+                    style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
+                  >
+                    LATEST NEWS
+                  </h2>
+                </div>
+                <div className="w-full flex flex-col items-center justify-center">
+                <button className="bg-black text-white px-3 py-4 rounded-md transition text-xs sm:text-sm  sm:w-auto">
+                  View All Articles
+                </button>
+                </div>
+              </motion.div>
       <div className="relative w-full h-[300px]" style={{ aspectRatio: '16 / 9' }}>
+          
         <Swiper
           modules={[Pagination]}
           spaceBetween={0}
@@ -96,6 +132,7 @@ const MobileSlider = () => {
         </Swiper>
       </div>
     </div>
+  
   );
 };
 
