@@ -21,7 +21,7 @@ const fadeVariants = {
   },
 };
 
-const Section1Video = ({ text, backgroundImage, mobileBackgroundImage, className }) => {
+const Section1Video = ({ text,  backgroundImage, mobileBackgroundImage, className }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Section1Video = ({ text, backgroundImage, mobileBackgroundImage, className
           animate="visible"
           exit="exit"
         >
-          {text}
+       {text}
         </motion.h1>
       </div>
     </motion.section>

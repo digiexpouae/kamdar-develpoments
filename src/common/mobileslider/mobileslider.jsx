@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import khaleejLogo from '../../../public/assets/khaleej1.png';
 import Image from 'next/image';
 
@@ -18,7 +17,7 @@ const slides = [
     link: '#',
   },
   {
-    image: '/assets/2.png',
+    image: '/assets/slider2.jpg',
     title: 'NEW PROJECT LAUNCH IN DUBAI MARINA',
     description:
       'Kamdar introduces another luxurious property with world-class amenities and waterfront views.',

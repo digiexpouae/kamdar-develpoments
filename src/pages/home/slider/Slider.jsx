@@ -4,10 +4,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import slider from '../../../../public/assets/aboutimages/slider1.png';
+import sliderimg from '../../../../public/assets/slider2.jpg';
 import khaleejLogo from '../../../../public/assets/khaleej1.png';
 
-// Original image set
-const images = [slider, slider, slider];
+// Updated image set
+const images = [ slider,sliderimg,  slider ,sliderimg];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

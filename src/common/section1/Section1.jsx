@@ -35,14 +35,14 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage,className }) =>
 
   return (
     <motion.section
-      className={`reveal-on-scroll max-w-full h-screen bg-cover -mt-20 bg-center flex items-center justify-center ${className}`}
+      className={`reveal-on-scroll max-w-full h-screen bg-cover bg-center flex items-center justify-center ${className}`}
       style={{ backgroundImage: `url(${bgImg})` }}
       variants={fadeVariants}
       initial="hidden"
       animate="visible"
       exit="exit" 
     >
-      <div className="relative z-0 flex flex-col items-center justify-center w-full h-full">
+      <div className="relative z-0 flex flex-col items-center justify-center w-full h-screen">
         <motion.h1
           style={{ fontFamily: 'Luxerie' }}
           className="reveal-on-scroll text-white text-center text-6xl md:text-7xl md:leading-[0.8]"

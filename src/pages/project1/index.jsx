@@ -9,7 +9,6 @@ import Form from "../contact/Form";
 import Slide from "./Slide";
 import Places from '../../common/places/place'
 import Icons from '../../common/icons'
-import Section1Video from "../../common/Section1video/Section1Video";
 
 const Project1 = () => {
 
@@ -74,9 +73,14 @@ const Project1 = () => {
    return (
       <>
          <Header />
-         <Section1Video
-            backgroundImage="/assets/105video.mp4"
-            mobileBackgroundImage="/assets/105video.mp4"
+         <Section1
+            backgroundImage="/assets/105bg.png"
+            mobileBackgroundImage="/assets/105bg.png"
+            text={<><span style={{ fontFamily: 'lexend',
+               fontSize: '55px',
+               fontStyle: 'italic',
+               fontWeight: '300',
+             }}> 105 </span>RESIDENCES BY KAMDAR</>}
             className="h-screen w-full"
          />
          <Slide />
