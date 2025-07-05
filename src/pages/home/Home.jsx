@@ -10,7 +10,7 @@ import Section2 from '../../common/section2/Section2';
 import Section3 from "./section3/Section3";
 import Section4 from "../../common/section4/Section4";
 import Section5 from "../../common/section5/Section5";
-import Slider from "./slider/Slider";
+import Slider from "../../components/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 
 const Home = () => {

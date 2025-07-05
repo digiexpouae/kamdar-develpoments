@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import slider from '../../../../public/assets/aboutimages/slider1.png';
-import sliderimg from '../../../../public/assets/slider2.jpg';
-import sliderimg2 from '../../../../public/assets/projectimages/project-2.jpg';
-import khaleejLogo from '../../../../public/assets/khaleej1.png';
-import arabialogo from '../../../../public/assets/homeslider/arab.png'
-import bayanlogo from '../../../../public/assets/homeslider/bayan.png'
-import identitylogo from '../../../../public/assets/homeslider/identity.png'
-import designlogo from '../../../../public/assets/homeslider/design.png'
-import plumberlogo from '../../../../public/assets/homeslider/plumber.png'
-import plumberslide from '../../../../public/assets/homeslider/hs2.png'
+import slider from '../../public/assets/aboutimages/slider1.png';
+import sliderimg from '../../public/assets/slider2.jpg';
+import sliderimg2 from '../../public/assets/projectimages/project-2.jpg';
+import khaleejLogo from '../../public/assets/khaleej1.png';
+import arabialogo from '../../public/assets/homeslider/arab.png'
+import bayanlogo from '../../public/assets/homeslider/bayan.png'
+import identitylogo from '../../public/assets/homeslider/identity.png'
+import designlogo from '../../public/assets/homeslider/design.png'
+import plumberlogo from '../../public/assets/homeslider/plumber.png'
+import plumberslide from '../../public/assets/homeslider/hs2.png'
 import Link from 'next/link';
 import { Link2 } from 'lucide-react';
 
