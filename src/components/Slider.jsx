@@ -30,6 +30,7 @@ const fadeUp = {
 
 const Slider = ({ heading, buttonheading, href }) => { 
   const [current, setCurrent] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
   const total = 7; // Since we have 7 slides now
   const extendedSlides = [
     // This is the last slide added at the beginning for infinite loop
@@ -147,15 +148,21 @@ const Slider = ({ heading, buttonheading, href }) => {
   }, [current, transitioning, total]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!transitioning) {
-        setTransitioning(true);
-        setCurrent((prev) => prev + 1);
-      }
-    }, 2000);
+    let interval;
+    
+    if (!isHovered) {
+      interval = setInterval(() => {
+        if (!transitioning) {
+          setTransitioning(true);
+          setCurrent((prev) => prev + 1);
+        }
+      }, 2000);
+    }
 
-    return () => clearInterval(interval);
-  }, [transitioning]);
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [transitioning, isHovered]);
 
   const realIndex = (current - 1 + total) % total;
   const containerWidth = slideWidth + previewWidth;
@@ -194,6 +201,8 @@ const Slider = ({ heading, buttonheading, href }) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           className="relative flex flex-col items-center mt-8"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <div
             className="relative"

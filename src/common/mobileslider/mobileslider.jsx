@@ -16,6 +16,8 @@ import designlogo from '../../../public/assets/homeslider/design.png'
 import plumberlogo from '../../../public/assets/homeslider/plumber.png'
 import plumberslide from '../../../public/assets/homeslider/hs2.png'
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
 
 const MobileSlider = ({heading}) => {
   return (
@@ -319,6 +321,7 @@ const MobileSlider = ({heading}) => {
         </Swiper>
       </div>
     </div>
+  
   );
 };
 
