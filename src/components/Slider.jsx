@@ -104,7 +104,7 @@ const Slider = ({ heading, buttonheading, href }) => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [previewWidth, setPreviewWidth] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -148,14 +148,14 @@ const Slider = ({ heading, buttonheading, href }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!transitioning && !isHovered) {
+      if (!transitioning) {
         setTransitioning(true);
         setCurrent((prev) => prev + 1);
       }
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [transitioning, isHovered]);
+  }, [transitioning]);
 
   const realIndex = (current - 1 + total) % total;
   const containerWidth = slideWidth + previewWidth;
@@ -216,8 +216,6 @@ const Slider = ({ heading, buttonheading, href }) => {
             >
               {/* Slide 1 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   0 === current ? 'z-20' : 'z-10'
                 }`}
@@ -276,8 +274,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 2 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   1 === current ? 'z-20' : 'z-10'
                 }`}
@@ -336,8 +332,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 3 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   2 === current ? 'z-20' : 'z-10'
                 }`}
@@ -399,8 +393,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 4 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   3 === current ? 'z-20' : 'z-10'
                 }`}
@@ -462,8 +454,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 5 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   4 === current ? 'z-20' : 'z-10'
                 }`}
@@ -522,8 +512,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 6 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   5 === current ? 'z-20' : 'z-10'
                 }`}
@@ -582,8 +570,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 7 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   6 === current ? 'z-20' : 'z-10'
                 }`}
@@ -645,8 +631,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 8 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   7 === current ? 'z-20' : 'z-10'
                 }`}
@@ -705,8 +689,6 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 9 */}
               <div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 className={`rounded-3xl overflow-hidden bg-white relative ${
                   8 === current ? 'z-20' : 'z-10'
                 }`}
