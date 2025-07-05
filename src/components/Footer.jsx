@@ -13,10 +13,10 @@ const socialIcons = [
 
 const footerLinks = [
   { href: "/", label: "Home" },
-  { href: "#about", label: "About Us" },
-  { href: "#projects", label: "Projects" },
-  { href: "#news", label: "News" },
-  { href: "#contact", label: "Contact Us" },
+  { href: "about", label: "About Us" },
+  { href: "/project", label: "Projects" },
+  { href: "/news", label: "News" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 const fadeUp = {

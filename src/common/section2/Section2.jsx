@@ -31,7 +31,7 @@ const Section2 = ({text,className}) => {
       >
         <motion.h1
           style={{ fontFamily: 'Luxerie' }}
-          className="reveal-on-scroll text-white text-center text-6xl md:text-8xl leading-[0.8]"
+          className="reveal-on-scroll text-white text-center text-6xl md:text-7xl leading-[0.8]"
         >
         {text}
         </motion.h1>

@@ -1,4 +1,4 @@
-import Section1 from "../../common/section1/Section1"
+import Section1Video from "../../common/Section1video/Section1Video"
 import { useEffect } from "react";
 import Section4 from "../../common/section4/Section4"
 import Header from "../../components/Header";
@@ -59,8 +59,8 @@ const Project1 = () => {
       { img: '/assets/105/Vector.svg', name: 'Dubai Miracle Garden', distance: '10 minutes' },
       { img: '/assets/105/Vector2.svg', name: 'Dubai Marina Mall', distance: '15 minutes' },
       { img: '/assets/105/g2589.svg', name: 'Downtown & Dubai MAll', distance: '20 minutes' },
-      { img: '/assets/105/vector4.svg', name: 'Al-Maktoum Airport', distance: '25 minutes' },
-      { img: '/assets/105/vector4.svg', name: 'International Airport', distance: '30 minutes' },
+      { img: '/assets/105/vector4.svg', name: 'Al-Maktoum Airport', distance: '30 minutes' },
+      { img: '/assets/105/vector4.svg', name: 'International Airport', distance: '25 minutes' },
    ]
    const markers = [
       { name: 'Mall of the Emirates', coordinates: [25.118009, 55.200367], icon: '/assets/105/Vector.svg' },
@@ -73,14 +73,14 @@ const Project1 = () => {
    return (
       <>
          <Header />
-         <Section1
-            backgroundImage="/assets/105bg.png"
-            mobileBackgroundImage="/assets/105bg.png"
+         <Section1Video
+            backgroundImage="/assets/105video.mp4"
+            mobileBackgroundImage="/assets/105video.mp4"
             text={<><span style={{ fontFamily: 'lexend',
                fontSize: '55px',
                fontStyle: 'italic',
                fontWeight: '300',
-             }}> 105 </span>RESIDENCES BY KAMDAR</>}
+             }}>105 </span>RESIDENCES<br />BY KAMDAR</>}
             className="h-screen w-full"
          />
          <Slide />
@@ -93,13 +93,13 @@ const Project1 = () => {
             mobileBackground={'/assets/105/mob1.png'}
             btntext={'Explore Now'} />
 
-         <Section4 heading={<>ONE BED APARTMETNS      </>}
+         <Section4 heading={<>ONE BED APARTMENTS      </>}
             className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0 bg-cover bg-center"
             desktopBackground={'/assets/105/2.png'}
             mobileBackground={'/assets/105/mob2.png'}
             btntext={'Explore Now'} />
 
-         <Section4 heading={<>TWO BED APARTMETNS      </>}
+         <Section4 heading={<>TWO BED APARTMENTS      </>}
             className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
             desktopBackground={'/assets/105/3.png'}
             mobileBackground={'/assets/105/mob3.png'}
