@@ -8,7 +8,7 @@ const content = [
     {
       title: 'DESIGN & INNOVATION',
       description:
-        'At Kamdar Developments, Design & Innovation are at the forefront of our services. We embrace cutting-edge design principles and creative solutions to craft spaces that inspire and engage...',
+        'At Kamdar Developments, Design & Innovation are at the forefront of our services. We embrace cutting-edge design principles and creative solutions to craft spaces that inspire and engage.',
       image: '/assets/pPodium-2.webp',
     },
     {
