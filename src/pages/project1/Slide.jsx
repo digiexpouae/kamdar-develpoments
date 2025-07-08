@@ -83,10 +83,11 @@ const Slide = () => {
             </h1>
             <a
   href="/105 Residences by Kamdar - Brochure.pdf"
-  download
+  target="_blank"
+  rel="noopener noreferrer"
   className="mt-2 cursor-pointer font-lexend md:block hidden md:mt-4 w-fit px-5 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition text-sm md:text-base"
 >
-  Download Brochure
+  View Brochure
 </a>
           </motion.div>
 
@@ -103,10 +104,11 @@ const Slide = () => {
             </p>
             <a
   href="/105 Residences by Kamdar - Brochure.pdf"
-  download
+  target="_blank"
+  rel="noopener noreferrer"
   className="mt-8 md:hidden cursor-pointer font-lexend block w-fit px-5 py-2 bg-black text-white rounded-md shadow hover:bg-gray-900 transition text-sm"
 >
-  Download Brochure
+  View Brochure
 </a>
           </motion.div>
         </div>

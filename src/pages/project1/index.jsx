@@ -59,8 +59,8 @@ const Project1 = () => {
       { img: '/assets/105/Vector.svg', name: 'Dubai Miracle Garden', distance: '10 minutes' },
       { img: '/assets/105/Vector2.svg', name: 'Dubai Marina Mall', distance: '15 minutes' },
       { img: '/assets/105/g2589.svg', name: 'Downtown & Dubai MAll', distance: '20 minutes' },
-      { img: '/assets/105/vector4.svg', name: 'Al-Maktoum Airport', distance: '30 minutes' },
-      { img: '/assets/105/vector4.svg', name: 'International Airport', distance: '25 minutes' },
+      { img: '/assets/105/vector4.svg', name: 'DWC Airport', distance: '30 minutes' },
+      { img: '/assets/105/vector4.svg', name: 'DXB Airport', distance: '25 minutes' },
    ]
    const markers = [
       { name: 'Mall of the Emirates', coordinates: [25.118009, 55.200367], icon: '/assets/105/Vector.svg' },
@@ -84,26 +84,29 @@ const Project1 = () => {
             className="h-screen w-full"
          />
          <Slide />
-         <Section4 heading={<>Studio Apartments       </>}
+         <Section4 
+            heading={<>STUDIO APARTMENTS</>}
             className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
             desktopBackground={'/assets/105/1.png'}
-            text={<>Size Range: 394 to 468 sq. ft.
-               Layout Variations: At least two types
-            </>}
             mobileBackground={'/assets/105/mob1.png'}
-            btntext={'Explore Now'} />
+            btntext={'Learn More'}
+            isProject1={true} />
 
-         <Section4 heading={<>ONE BED APARTMENTS      </>}
+         <Section4 
+            heading={<>ONE BED APARTMENTS</>}
             className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-0 bg-cover bg-center"
-            desktopBackground={'/assets/105/2.png'}
+            desktopBackground="/assets/105/2.png"
             mobileBackground={'/assets/105/mob2.png'}
-            btntext={'Explore Now'} />
+            btntext={'Learn More'}
+            isProject1={true} />
 
-         <Section4 heading={<>TWO BED APARTMENTS      </>}
+         <Section4 
+            heading={<>TWO BED APARTMENTS</>}
             className="panel inset-0 absolute w-full h-[100dvh] md:h-[100vh] z-10 bg-cover bg-center"
-            desktopBackground={'/assets/105/3.png'}
+            desktopBackground="/assets/105/3.png"
             mobileBackground={'/assets/105/mob3.png'}
-            btntext={'Explore Now'} />
+            btntext={'Learn More'}
+            isProject1={true} />
          <section className="bg-black py-10">
             <div className="text-center mt-10 mb-10 md:px-5 px-2">
                <h2
@@ -123,7 +126,9 @@ const Project1 = () => {
             <Icons icons={icons} />
 
          </section>
-         <Form />
+         <div id="register-form">
+           <Form backgroundImage="/assets/formbg.png" />
+         </div>
          <Footer />
       </>
    );

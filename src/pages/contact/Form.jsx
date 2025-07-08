@@ -10,11 +10,16 @@ const fadeUp = {
   }),
 };
 
-const Form = () => {
+const Form = ({ backgroundImage = null }) => {
   return (
     <>
-
-      <section className="w-full h-[600px] md:h-[600px] py-16 px-4 md:px-0 flex justify-center items-center bg-white text-white section6-shadow relative">
+      <section 
+        className={`w-full h-[600px] md:h-[600px] py-16 px-4 md:px-0 flex justify-center items-center ${
+          backgroundImage ? 'bg-cover bg-center' : 'bg-white'
+        } text-white  relative`}
+        style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : {}}
+      >
+        {backgroundImage && <div className="absolute inset-0 " />}
         <div className="bg-layer bg-base" />
         <motion.div
           className="bg-layer bg-overlay"

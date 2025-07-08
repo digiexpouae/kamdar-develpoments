@@ -28,9 +28,9 @@ const fadeUp = {
   },
 };
 
-const Slider = ({ heading, buttonheading, href }) => { 
+const Slider = ({ heading, buttonheading, href }) => {
   const [current, setCurrent] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
+
   const total = 7; // Since we have 7 slides now
   const extendedSlides = [
     // This is the last slide added at the beginning for infinite loop
@@ -105,7 +105,7 @@ const Slider = ({ heading, buttonheading, href }) => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [previewWidth, setPreviewWidth] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -149,24 +149,35 @@ const Slider = ({ heading, buttonheading, href }) => {
 
   useEffect(() => {
     let interval;
-    
-    if (!isHovered) {
-      interval = setInterval(() => {
-        if (!transitioning) {
-          setTransitioning(true);
-          setCurrent((prev) => prev + 1);
-        }
-      }, 2000);
-    }
+    interval = setInterval(() => {
+      if (!transitioning) {
+        setTransitioning(true);
+        setCurrent((prev) => prev + 1);
+      }
+    }, 2000);
 
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [transitioning, isHovered]);
+  }, [transitioning]);
 
   const realIndex = (current - 1 + total) % total;
   const containerWidth = slideWidth + previewWidth;
   const containerHeight = Math.min(slideWidth * 0.56, 500);
+
+  // Navigation handlers
+  const goToPrev = () => {
+    if (!transitioning) {
+      setTransitioning(true);
+      setCurrent((prev) => prev - 1);
+    }
+  };
+  const goToNext = () => {
+    if (!transitioning) {
+      setTransitioning(true);
+      setCurrent((prev) => prev + 1);
+    }
+  };
 
   return (
     <div className="w-full h-screen bg-white px-2 sm:px-8 pt-12 flex justify-center">
@@ -188,9 +199,9 @@ const Slider = ({ heading, buttonheading, href }) => {
             </h2>
           </div>
           <Link href={href} >
-          <button className="bg-black cursor-pointer text-white px-4 py-2 rounded-md transition text-xs sm:text-sm w-full sm:w-auto">
-            {buttonheading}
-          </button>
+            <button className="bg-black cursor-pointer text-white px-4 py-2 rounded-md transition text-xs sm:text-sm w-full sm:w-auto">
+              {buttonheading}
+            </button>
           </Link>
         </motion.div>
 
@@ -201,9 +212,27 @@ const Slider = ({ heading, buttonheading, href }) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           className="relative flex flex-col items-center mt-8"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
         >
+          {/* Previous Arrow */}
+          <button
+            aria-label="Previous Slide"
+            onClick={goToPrev}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 cursor-pointer hover:bg-white text-black rounded-full p-2 shadow-lg focus:outline-none transform transition-transform duration-300 hover:scale-110 active:scale-95"
+            style={{ border: '1px solid black', fontSize: 20 }}
+          >
+            &#8592;
+          </button>
+
+          {/* Next Arrow */}
+          <button
+            aria-label="Next Slide"
+            onClick={goToNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 cursor-pointer hover:bg-white text-black rounded-full p-2 shadow-lg focus:outline-none transform transition-transform duration-300 hover:scale-110 active:scale-95"
+            style={{ border: '1px solid black', fontSize: 20 }}
+          >
+            &#8594;
+          </button>
+
           <div
             className="relative"
             style={{
@@ -213,11 +242,10 @@ const Slider = ({ heading, buttonheading, href }) => {
             }}
           >
             <div
-              className={`flex ${
-                transitioning
-                  ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]'
+              className={`flex ${transitioning
+                  ? 'transition-transform duration-[1000ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]'
                   : ''
-              }`}
+                }`}
               style={{
                 width: `${(slideWidth + previewWidth) * extendedTotal}px`,
                 transform: `translateX(-${getTranslateX()}px)`,
@@ -225,9 +253,8 @@ const Slider = ({ heading, buttonheading, href }) => {
             >
               {/* Slide 1 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  0 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${0 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -283,9 +310,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 2 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  1 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${1 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -341,9 +367,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 3 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  2 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${2 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -377,15 +402,16 @@ const Slider = ({ heading, buttonheading, href }) => {
                       style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
                       className="text-white text-3xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
                     >
-                      Kamdar Developments Breaks Ground on <span style={{ fontFamily: 'lexend',
-                  fontSize:'29px',
-                  fontWeight:'300',
-             }}>105 </span>Residences in JVC
+                      Kamdar Developments Breaks Ground on <span style={{
+                        fontFamily: 'lexend',
+                        fontSize: '29px',
+                        fontWeight: '300',
+                      }}>105 </span>Residences in JVC
                     </h2>
                     <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
                       A 105-unit luxury residential Dubai project starting from $174,000 with completion expected in early 2027
                     </p>
-                    <a href="https://www.albayan.ae/economy/business/real-estate/13347" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc" target="_blank" rel="noopener noreferrer">
                       <button
                         style={{
                           border: '1px solid #A08741',
@@ -402,9 +428,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 4 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  3 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${3 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -438,15 +463,16 @@ const Slider = ({ heading, buttonheading, href }) => {
                       style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
                       className="text-white text-3xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
                     >
-                      Launch of Kamdar <span style={{ fontFamily: 'lexend',
-                  fontSize:'29px',
-                  fontWeight:'300',
-             }}>105 </span>project in Jumeirah Village Circle
+                      Launch of Kamdar <span style={{
+                        fontFamily: 'lexend',
+                        fontSize: '29px',
+                        fontWeight: '300',
+                      }}>105 </span>project in Jumeirah Village Circle
                     </h2>
                     <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
                       Dubai-based Kamdar Developers has announced the launch of its new Kamdar 105 Residences project in Jumeirah Village Circle,
                     </p>
-                    <a href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-property-development-announces-new-105-residences-in-jvc" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.albayan.ae/economy/business/real-estate/13347" target="_blank" rel="noopener noreferrer">
                       <button
                         style={{
                           border: '1px solid #A08741',
@@ -463,9 +489,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 5 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  4 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${4 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -521,9 +546,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 6 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  5 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${5 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -579,9 +603,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 7 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  6 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${6 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -615,15 +638,16 @@ const Slider = ({ heading, buttonheading, href }) => {
                       style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
                       className="text-white text-3xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
                     >
-                      Kamdar Property Development announces new <span style={{ fontFamily: 'lexend',
-                  fontSize:'29px',
-                  fontWeight:'300',
-             }}>105 </span>Residences' in JVC
+                      Kamdar Property Development announces new <span style={{
+                        fontFamily: 'lexend',
+                        fontSize: '29px',
+                        fontWeight: '300',
+                      }}>105 </span>Residences' in JVC
                     </h2>
                     <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
                       105 Residences in Dubai's JVC features comprehensive amenities, including a rooftop open-air cinema, swimming pool, fitness studio and more
                     </p>
-                    <a href="https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-property-development-announces-new-105-residences-in-jvc" target="_blank" rel="noopener noreferrer">
                       <button
                         style={{
                           border: '1px solid #A08741',
@@ -640,9 +664,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 8 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  7 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${7 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,
@@ -681,7 +704,7 @@ const Slider = ({ heading, buttonheading, href }) => {
                     <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
                       Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.
                     </p>
-                    <a href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc" target="_blank" rel="noopener noreferrer">
+                    <a href="https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/" target="_blank" rel="noopener noreferrer">
                       <button
                         style={{
                           border: '1px solid #A08741',
@@ -698,9 +721,8 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 9 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${
-                  8 === current ? 'z-20' : 'z-10'
-                }`}
+                className={`rounded-3xl overflow-hidden bg-white relative ${8 === current ? 'z-20' : 'z-10'
+                  }`}
                 style={{
                   width: `${slideWidth}px`,
                   height: `${containerHeight}px`,

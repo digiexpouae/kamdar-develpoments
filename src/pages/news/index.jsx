@@ -16,7 +16,7 @@ const news = () => {
             <Header />
             <div className="md:block hidden">
            <Section1
-       text={<>BLOGS/ARTICLES</>}
+       text={<>LATEST NEWS</>}
             backgroundImage="/assets/blogs/blogs.png"
             mobileBackgroundImage="/assets/blogs/blogs.png"
            className={'h-[100vh]'}
