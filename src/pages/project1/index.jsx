@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Section1Video from "../../common/Section1video/Section1Video"
 import { useEffect } from "react";
 import Section4 from "../../common/section4/Section4"
@@ -72,6 +73,14 @@ const Project1 = () => {
 
    return (
       <>
+         <Head>
+           <title>105 Residences | Luxury & Modern Apartments in Dubai | Book Yours Today</title>
+           
+           <meta name="title" content='Luxury & Modern Apartments in Dubai | Book Yours Today' />
+           <meta name="description" content="Book your modern apartment at 105 Residences. Kamdar offers luxury architecture and elegant living in the heart of Dubai." />
+           <meta name="keywords" content="luxury apartments in Dubai, Book Apartment in Dubai, Modern Apartments in Dubai, Modern Architecture Residences Dubai" />
+           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         </Head>
          <Header />
          <Section1Video
             backgroundImage="/assets/105video.mp4"

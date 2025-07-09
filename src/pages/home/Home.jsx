@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Head from 'next/head';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "../../common/form/Form";
@@ -56,6 +57,13 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Top Real Estate Developers Dubai | Property for Sale UAE</title>
+        <meta name="title" content='Top Real Estate Developers Dubai | Property for Sale UAE' />
+        <meta name="description" content="Kamdar Developments offers property for sale in Dubai. Trusted among top real estate developers in Dubai and top property developers in UAE for premium homes." />
+        <meta name="keywords" content="top real estate developers in dubai, property for sale in dubai, dubai properties for sale, property developers in uae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Header />
 
       {/* Desktop animated section */}

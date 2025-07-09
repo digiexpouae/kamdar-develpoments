@@ -11,6 +11,8 @@ import Section5 from '../../common/section5/Section5';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
+import Head from 'next/head';
+
 const Project = () => {
   useEffect(() => {
     if (window.innerWidth < 768) return;
@@ -53,6 +55,13 @@ const Project = () => {
 
   return (
     <>
+      <Head>
+        <title>Our Projects | Kamdar Developments</title>
+        <meta name="title" content='Dubai Real Estate Projects | New Developments in UAE' />
+        <meta name="description" content="Discover Dubai real estate projects, explore upcoming projects in UAE, and invest in new property developments with high ROI properties in Dubai." />
+        <meta name="keywords" content="Dubai real estate projects, upcoming projects in UAE, new property developments Dubai, High ROI Properties in Dubai" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Header />
 
       {/* Desktop Animated Scroll Panels */}

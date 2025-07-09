@@ -5,9 +5,9 @@ import Image from "next/image";
 import { div } from "framer-motion/client";
 
 const socialIcons = [
-  { src: "/assets/insta.png", alt: "Instagram", href: "https://www.instagram.com/kamdardevelopments/" },
-  { src: "/assets/linkedin.png", alt: "LinkedIn", href: "https://www.linkedin.com/company/kamdar-developments/posts/?feedView=all" },
-  { src: "/assets/fb.png", alt: "Facebook", href: "https://www.facebook.com/kamdardevelopments/" },
+  { src: "/assets/instagram.svg", alt: "Instagram", href: "https://www.instagram.com/kamdardevelopments/" },
+  { src: "/assets/linkedin.svg", alt: "LinkedIn", href: "https://www.linkedin.com/company/kamdar-developments/posts/?feedView=all" },
+  { src: "/assets/fb.svg", alt: "Facebook", href: "https://www.facebook.com/kamdardevelopments/" },
 
 ];
 

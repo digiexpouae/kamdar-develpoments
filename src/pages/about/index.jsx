@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from "react";
 import { gsap } from 'gsap';
+import Head from 'next/head';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Section1 from "../../common/section1/Section1"
 import Section4 from "../../common/section4/Section4"
@@ -54,6 +55,13 @@ const About = () => {
 
     return (
        <>
+       <Head>
+         <title>Top Property Developers in Dubai & UAE Real Estate
+</title>
+         <meta name="description" content="Work with the best property developers in Dubai. Leading real estate developer in UAE offering trusted real estate development across Dubai and beyond." />
+         <meta name="keywords" content="best property developers in dubai, leading real estate developer in uae, real estate developers dubai, real estate development companies Dubai" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       </Head>
        <Header />
                 <Section1
        text={<>Driven by Detail,<br />
