@@ -115,7 +115,7 @@ const Slide = () => {
 
         {/* Enhanced Image Carousel with AnimatePresence */}
         <motion.div
-          className="relative max-w-5xl mx-auto h-[400px] md:h-[550px] w-full rounded-lg overflow-hidden mb-10"
+          className="relative max-w-5xl mx-auto h-[250px] md:h-[550px] w-full rounded-lg overflow-hidden mb-10"
           variants={fadeIn}
         >
           <AnimatePresence mode="wait">
@@ -131,7 +131,7 @@ const Slide = () => {
                 src={images[currentIndex]}
                 alt="Carousel"
                 fill
-                className="object-cover"
+                className="md:object-cover  object-contain"
               />
             </motion.div>
           </AnimatePresence>
@@ -141,14 +141,14 @@ const Slide = () => {
             onClick={prevImage}
             className="absolute top-1/2 -left-2 sm:left-4 transform -translate-y-1/2 bg-black bg-opacity-60 hover:bg-opacity-80 p-2 rounded-md transition-all duration-300 hover:scale-105"
           >
-            <ChevronLeft color="white" size={24} />
+            <ChevronLeft color="white" size={20} />
           </button>
 
           <button
             onClick={nextImage}
             className="absolute top-1/2 -right-2 sm:right-4 transform -translate-y-1/2 bg-black bg-opacity-60 hover:bg-opacity-80 p-2 rounded-md transition-all duration-300 hover:scale-105"
           >
-            <ChevronRight color="white" size={24} />
+            <ChevronRight color="white" size={20} />
           </button>
         </motion.div>
 
