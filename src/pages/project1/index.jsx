@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Form from "../contact/Form";
+import Form from "../../common/form/Form";
 import Slide from "./Slide";
 import Places from '../../common/places/place'
 import Icons from '../../common/icons'
@@ -127,7 +127,7 @@ const Project1 = () => {
 
          </section>
          <div id="register-form">
-           <Form backgroundImage="/assets/formbg.png" />
+           <Form   />
          </div>
          <Footer />
       </>

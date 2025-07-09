@@ -115,7 +115,7 @@ const Slide = () => {
 
         {/* Enhanced Image Carousel with AnimatePresence */}
         <motion.div
-          className="relative max-w-5xl mx-auto h-[400px] md:h-[450px] w-full rounded-lg overflow-hidden mb-10"
+          className="relative max-w-5xl mx-auto h-[400px] md:h-[550px] w-full rounded-lg overflow-hidden mb-10"
           variants={fadeIn}
         >
           <AnimatePresence mode="wait">
