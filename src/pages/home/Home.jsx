@@ -127,10 +127,8 @@ const Home = () => {
         <Slider heading="LATEST NEWS" href="/news" buttonheading="View All News" />
       </div>
       <div className="block md:hidden">
-        <h1>
-          Latest Articles
-        </h1>
-        <MobileSlider heading="LATEST ARTICLES"/>
+
+        <MobileSlider />
       </div>
 
       <Form />

@@ -48,17 +48,7 @@ const MobileSlider = ({heading}) => {
           width: 24px;
         }
       `}</style>
-    <div>
-    <h1 className='text-center bg-black py-5'
-      style={{
-        fontFamily:'Luxerie, Lexend, sans-serif',
-        fontSize:'35px',
-        fontWeight:'300',
-        color: 'white'
-      }}>
-        {heading}
-      </h1>
-    </div>
+
       <div className="relative w-full h-[300px]" style={{ aspectRatio: '16 / 9' }}>
 
         <Swiper
