@@ -34,7 +34,7 @@ const Slider = ({ heading, buttonheading, href }) => {
   const [isHovered, setIsHovered] = useState(false); // New state for hover
   const sliderRef = useRef(null);
 
-  const total = 14; // Since we have 7 slides now
+  const total = 18; // Since we have 7 slides now
   const extendedSlides = [
     // This is the last slide added at the beginning for infinite loop
     {
@@ -843,7 +843,7 @@ const Slider = ({ heading, buttonheading, href }) => {
               </div>
                             {/* Slide 1 */}
                             <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${0 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${9 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -900,7 +900,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 2 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${1 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${10 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -957,7 +957,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 3 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${2 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${11 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -1018,7 +1018,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 4 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${3 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${12 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -1079,7 +1079,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 5 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${4 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${13 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -1136,7 +1136,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 6 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${5 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${14 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -1193,7 +1193,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 7 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${6 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${15 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -1254,7 +1254,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 8 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${7 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${16 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
@@ -1311,7 +1311,7 @@ const Slider = ({ heading, buttonheading, href }) => {
 
               {/* Slide 9 */}
               <div
-                className={`rounded-3xl overflow-hidden bg-white relative ${8 === current ? 'z-20' : 'z-10'
+                className={`rounded-3xl overflow-hidden bg-white relative ${17 === current ? 'z-20' : 'z-10'
                   }`}
                 style={{
                   width: `${slideWidth}px`,
