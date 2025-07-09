@@ -2,7 +2,7 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Section1 from "../../common/section1/Section1";
-import Slider from "../../components/Slider";
+import Slider from "./Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 import Form from "../../common/form/Form";
 
