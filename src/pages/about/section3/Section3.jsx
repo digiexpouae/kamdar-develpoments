@@ -52,7 +52,7 @@ const Section3 = () => {
           YEARS OF SERVICE
         </h2>
         <p className="text-white text-sm md:text-md font-base font-lexend mt-4 max-w-xl mx-auto">
-          Established over 40 years ago, Kamdar boasts a diverse portfolio spanning three continents and encompassing numerous subsidiaries across various sectors...
+          Established over 40 years ago, Kamdar boasts a diverse portfolio spanning three continents and encompassing numerous subsidiaries across various sectors.
         </p>
       </motion.div>
 
