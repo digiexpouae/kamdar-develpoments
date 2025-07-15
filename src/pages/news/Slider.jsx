@@ -1,5 +1,15 @@
 'use client';
 
+import React from 'react';
+import ClientSlider from './components/ClientSlider';
+
+export default function Slider({ heading, buttonheading, href }) {
+  return (
+    <ClientSlider heading={heading} buttonheading={buttonheading} href={href} />
+  );
+}
+
+// ClientSlider.js
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -28,7 +38,7 @@ const fadeUp = {
     },
 };
 
-const Slider = ({ heading, buttonheading, href }) => {
+const ClientSlider = ({ heading, buttonheading, href }) => {
     const [current, setCurrent] = useState(1);
 
     const total = 7; // Since we have 7 slides now
@@ -782,5 +792,4 @@ const Slider = ({ heading, buttonheading, href }) => {
         </div>
     );
 };
-
-export default Slider;
+
