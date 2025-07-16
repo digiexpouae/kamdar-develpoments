@@ -372,3 +372,131 @@ border-left:none
   .result-detail-content{
   padding-left: 0px;}
 }
+.page-wrapper {
+  background: #0F0D0D;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Form container === */
+.form-container {
+  background:#5c59596c ;
+  color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* === Form group === */
+.form-group {
+  margin-bottom: 20px;
+  flex: 1; /* Makes all form-row columns equal */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #5c59596c;
+  color: #fff;
+  font-size: 14px;
+}
+.form-group .country{
+  max-width: 15%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: #33354A;
+  color: #fff;
+  font-size: 14px;
+}
+.form-group input[type="file"] {
+  padding: 10px;
+}
+
+/* === Form row === */
+
+/* === Phone row === */
+.phone-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.phone-row select {
+  background: #5c59596c;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 20px 0 0 20px;
+  flex: 0 0 25%;
+}
+
+.phone-row input {
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background: #5c59596c;
+  color: #fff;
+  flex: 1 1 75%;
+  padding: 12px;
+}
+
+/* === Submit button === */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #CCAB64 0%, #FAECC9 100%);
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+
+/* === Responsive === */
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column; /* stacks Email and Phone blocks vertically */
+  }
+
+  /* Phone stays row inside its block */
+  .phone-row {
+    flex-direction: row; /* always row! */
+  }
+
+  .phone-row select {
+    flex: 0 0 30%;   /* adjust for mobile */
+  }
+
+  .phone-row input {
+    flex: 1 1 70%;
+  }
+}

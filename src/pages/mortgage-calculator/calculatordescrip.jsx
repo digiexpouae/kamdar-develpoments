@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 const description =()=>{
     return(
-        <div className="calculator-description">
+        <div className="calculator-description" style={{fontFamily:'lexend, sans-serif'}}>
 <p>Our Mortgage Calculator is a powerful tool designed to help you estimate your monthly mortgage payments and understand the financial commitments of purchasing a property. By entering key loan details, you can quickly assess the affordability of a mortgage and make informed decisions about your home financing options.</p>
 <ul>
   <li><strong>Property Price:</strong> This is the total price of the property.</li>
