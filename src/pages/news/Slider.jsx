@@ -1,15 +1,5 @@
 'use client';
 
-import React from 'react';
-import ClientSlider from './components/ClientSlider';
-
-export default function Slider({ heading, buttonheading, href }) {
-  return (
-    <ClientSlider heading={heading} buttonheading={buttonheading} href={href} />
-  );
-}
-
-// ClientSlider.js
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -24,7 +14,6 @@ import designlogo from '../../../public/assets/homeslider/design.png'
 import plumberlogo from '../../../public/assets/homeslider/plumber.png'
 import plumberslide from '../../../public/assets/homeslider/hs2.png'
 import Link from 'next/link';
-import { Link2 } from 'lucide-react';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -207,7 +196,7 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
                         {heading}
                     </h2>
 
-                    <Link href={href}>
+                    <Link href={href ?? '#'}>
                         <button className="bg-white text-black mb-14 cursor-pointer px-6 py-2 rounded-md transition text-sm sm:text-base w-auto">
                             {buttonheading}
                         </button>
@@ -792,4 +781,5 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
         </div>
     );
 };
-
+
+export default ClientSlider;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import bgImage from '../../../public/assets/bg_5.png';
-import formBg from '../../../public/assets/formbg.png'
+import formBg from '../../../public/assets/formbg.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -96,16 +96,77 @@ const Form = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
+            onSubmit={async (e) => {
+              e.preventDefault();
+
+              const firstName = e.target.firstname?.value.trim();
+              const lastName = e.target.lastname?.value.trim();
+              const email = e.target.email?.value.trim();
+              const phone = e.target.phone?.value.trim();
+              const category = e.target.category?.value.toLowerCase();
+
+              // Form ID mapping
+              const FORM_IDS = {
+                sales: '3081f524-7f7b-4fdf-9fa0-86acd4874ebf',
+                general: 'd39ab5ce-eb91-4294-81d2-0e85dcead7a2',
+              };
+
+              const selectedFormId = FORM_IDS[category];
+
+              if (!selectedFormId) {
+                alert('Please select either Sales or General');
+                return;
+              }
+
+              const payload = {
+                fields: [
+                  { name: 'firstname', value: firstName },
+                  { name: 'lastname', value: lastName },
+                  { name: 'email', value: email },
+                  { name: 'phone', value: phone },
+                  { name: 'category', value: category}
+                ],
+              };
+
+              try {
+                const response = await fetch(
+                  `https://api.hsforms.com/submissions/v3/integration/submit/243319543/${selectedFormId}`,
+                  {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                  }
+                );
+
+                if (response.ok) {
+                  alert('Form submitted successfully!');
+                  e.target.reset();
+                } else {
+                  const errorText = await response.text();
+                  console.error('HubSpot Error:', errorText);
+                  alert('Form submission failed. See console for details.');
+                }
+              } catch (err) {
+                console.error('Submission Error:', err);
+                alert('Network error. Try again.');
+              }
+            }}
           >
             <motion.div className="flex gap-4" custom={2} variants={fadeUp}>
               <input
                 type="text"
+                name="firstname"
                 placeholder="First name"
+                required
                 className="w-1/2 px-4 py-2 bg-transparent border border-black rounded-md text-black placeholder-black"
               />
               <input
                 type="text"
+                name="lastname"
                 placeholder="Last name"
+                required
                 className="w-1/2 px-4 py-2 bg-transparent border border-black rounded-md text-black placeholder-black"
               />
             </motion.div>
@@ -113,25 +174,30 @@ const Form = () => {
             <motion.div className="flex gap-4" custom={3} variants={fadeUp}>
               <input
                 type="text"
+                name="phone"
                 placeholder="Phone number"
                 className="w-1/2 px-4 py-2 bg-transparent border border-black rounded-md text-black placeholder-black"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email address"
+                required
                 className="w-1/2 px-4 py-2 bg-transparent border border-black rounded-md text-black placeholder-black"
               />
             </motion.div>
 
             <motion.div custom={4} variants={fadeUp}>
-              <select className="w-full px-4 py-2 bg-transparent border border-black rounded-md text-black">
-                <option>Are you</option>
-                <option>Sales</option>
-                <option>Support</option>
-                <option>General</option>
+              <select
+                name="category"
+                className="w-full px-4 py-2 bg-transparent border border-black rounded-md text-black"
+                required
+              >
+                <option value="">Are you?</option>
+                <option value="sales">Sales</option>
+                <option value="general">General</option>
               </select>
             </motion.div>
-
 
             <motion.button
               type="submit"

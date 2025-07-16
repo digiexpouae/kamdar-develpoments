@@ -54,6 +54,7 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage,className }) =>
         {text}
         </motion.h1>
       </div>
+
     </motion.section>
   );
 };
