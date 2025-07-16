@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-// ClientSlider.js
+
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
