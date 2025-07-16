@@ -1,13 +1,6 @@
 'use client';
 
 import React from 'react';
-import ClientSlider from './components/ClientSlider';
-
-export default function Slider({ heading, buttonheading, href }) {
-  return (
-    <ClientSlider heading={heading} buttonheading={buttonheading} href={href} />
-  );
-}
 
 // ClientSlider.js
 import React, { useState, useEffect } from 'react';
@@ -792,4 +785,4 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
         </div>
     );
 };
-
+
