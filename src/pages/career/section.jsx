@@ -19,8 +19,8 @@
 import React from "react";
 import Image from "next/image";
 import im1 from "../../../public/assets/1.jpg";
-import im2 from "../../../public/assets/2.JPG";
-import im3 from "../../../public/assets/3.JPG";
+import im2 from "../../../public/assets/two.JPG";
+import im3 from "../../../public/assets/three.JPG";
 
 const Section = () => {
   return (
