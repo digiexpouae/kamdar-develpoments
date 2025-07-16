@@ -6,19 +6,19 @@ const StickyIcon = () => {
         {
             src: '/assets/whatsapp.png',
             alt: 'WhatsApp',
-            href: 'https://api.whatsapp.com/send?phone=971552896500&text=Hi', // Replace with your WhatsApp number
+            href: 'https://api.whatsapp.com/send?phone=97148859549&text=Hi', // Replace with your WhatsApp number
             title: 'Contact us on WhatsApp'
         },
         {
             src: '/assets/mail.png',
             alt: 'Email',
-            href: 'mailto:reception@empiredevelopment.ae', // Replace with your email
+            href: 'mailto:info@kamdardevelopments.com', // Replace with your email
             title: 'Send us an email'
         },
         {
             src: '/assets/phone.png',
             alt: 'Phone',
-            href: 'tel:+971800700007', // Replace with your phone number
+            href: 'tel:+97148859549', // Replace with your phone number
             title: 'Call us'
         }
     ]

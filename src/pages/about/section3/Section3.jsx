@@ -8,7 +8,7 @@ const content = [
     {
       title: 'DESIGN & INNOVATION',
       description:
-        'At Kamdar Developments, Design & Innovation are at the forefront of our services. We embrace cutting-edge design principles and creative solutions to craft spaces that inspire and engage...',
+        'At Kamdar Developments, Design & Innovation are at the forefront of our services. We embrace cutting-edge design principles and creative solutions to craft spaces that inspire and engage.',
       image: '/assets/pPodium-2.webp',
     },
     {
@@ -52,7 +52,7 @@ const Section3 = () => {
           YEARS OF SERVICE
         </h2>
         <p className="text-white text-sm md:text-md font-base font-lexend mt-4 max-w-xl mx-auto">
-          Established over 40 years ago, Kamdar boasts a diverse portfolio spanning three continents and encompassing numerous subsidiaries across various sectors...
+          Established over 40 years ago, Kamdar boasts a diverse portfolio spanning three continents and encompassing numerous subsidiaries across various sectors.
         </p>
       </motion.div>
 

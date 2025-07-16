@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Head from 'next/head';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "../../common/form/Form";
@@ -10,9 +11,8 @@ import Section2 from '../../common/section2/Section2';
 import Section3 from "./section3/Section3";
 import Section4 from "../../common/section4/Section4";
 import Section5 from "../../common/section5/Section5";
-import Slider from "./slider/Slider";
+import Slider from "../../components/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
-import Section2video from "../../common/Section2video/Section2video";
 
 const Home = () => {
   useEffect(() => {
@@ -57,6 +57,13 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Top Real Estate Developers Dubai | Property for Sale UAE</title>
+        <meta name="title" content='Top Real Estate Developers Dubai | Property for Sale UAE' />
+        <meta name="description" content="Kamdar Developments offers property for sale in Dubai. Trusted among top real estate developers in Dubai and top property developers in UAE for premium homes." />
+        <meta name="keywords" content="top real estate developers in dubai, property for sale in dubai, dubai properties for sale, property developers in uae" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Header />
 
       {/* Desktop animated section */}
@@ -70,9 +77,9 @@ const Home = () => {
           backgroundImage="/assets/homevideo.mp4"
           className="panel inset-0 absolute w-full h-[100vh] z-0"
         />
-        <Section2video
+        <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          backgroundImage="/assets/105video.mp4"
+          backgroundImage="/assets/2.png"
           className="panel inset-0 absolute w-full h-[100vh] z-10"
         />
         <Section4
@@ -95,9 +102,10 @@ const Home = () => {
           backgroundImage="/assets/homevideo.mp4"
           className="w-full h-[100dvh]"
         />
-         <Section2video
+         <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          backgroundImage="/assets/105video.mp4"
+          backgroundImage="/assets/2.png"
+          mobileBackgroundImage="/assets/2.png"
           className="w-full h-auto"
         />
         <Section4
@@ -116,9 +124,10 @@ const Home = () => {
 
       {/* Sliders */}
       <div className="hidden md:block">
-        <Slider />
+        <Slider heading="LATEST NEWS" href="/news" buttonheading="View All News" />
       </div>
       <div className="block md:hidden">
+
         <MobileSlider />
       </div>
 

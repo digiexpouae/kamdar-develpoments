@@ -40,7 +40,7 @@ const Choose = () => {
           {/* Heading + Button */}
           <div className="mb-16 grid grid-cols-2 items-center">
             <motion.h2
-              className="text-4xl md:text-6xl font-semibold text-black text-left"
+              className="text-4xl md:text-7xl font-semibold text-black text-left"
               style={{ fontFamily: 'Luxerie, sans-serif' }}
               variants={fadeUp}
               initial="hidden"
@@ -50,17 +50,7 @@ const Choose = () => {
               WHY CHOOSE US
             </motion.h2>
 
-            <motion.div
-              className="flex justify-end"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
-              viewport={{ once: true }}
-            >
-              <button className="bg-black text-white px-6 py-2 rounded-md hover:bg-neutral-800 transition">
-                Learn More
-              </button>
-            </motion.div>
+        
           </div>
 
           {/* Features */}
@@ -107,16 +97,7 @@ const Choose = () => {
             WHY CHOOSE US
           </motion.h2>
 
-          {/* Animated Button */}
-          <motion.button
-            className="bg-black text-white px-6 py-2 rounded-md hover:bg-neutral-800 transition mb-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            Learn More
-          </motion.button>
+      
 
           {/* Icon Grid */}
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 px-4">

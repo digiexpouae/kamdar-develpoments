@@ -5,18 +5,18 @@ import Image from "next/image";
 import { div } from "framer-motion/client";
 
 const socialIcons = [
-  { src: "/assets/insta.png", alt: "Instagram" },
-  { src: "/assets/linkedin.png", alt: "LinkedIn" },
-  { src: "/assets/fb.png", alt: "Facebook" },
-  { src: "/assets/youtube.png", alt: "YouTube" },
+  { src: "/assets/instagram.svg", alt: "Instagram", href: "https://www.instagram.com/kamdardevelopments/" },
+  { src: "/assets/linkedin.svg", alt: "LinkedIn", href: "https://www.linkedin.com/company/kamdar-developments/posts/?feedView=all" },
+  { src: "/assets/fb.svg", alt: "Facebook", href: "https://www.facebook.com/kamdardevelopments/" },
+
 ];
 
 const footerLinks = [
   { href: "/", label: "Home" },
-  { href: "#about", label: "About Us" },
-  { href: "#projects", label: "Projects" },
-  { href: "#news", label: "News" },
-  { href: "#contact", label: "Contact Us" },
+  { href: "about", label: "About Us" },
+  { href: "/project", label: "Projects" },
+  { href: "/news", label: "News" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 const fadeUp = {
@@ -43,10 +43,11 @@ const Footer = () => {
             promotions, and exclusive offers.
           </p>
           <div className="flex gap-3">
-            <Image src="/assets/insta.png" alt="Instagram" width={20} height={20} />
-            <Image src="/assets/linkedin.png" alt="LinkedIn" width={20} height={20} />
-            <Image src="/assets/fb.png" alt="Facebook" width={20} height={20} />
-            <Image src="/assets/youtube.png" alt="YouTube" width={20} height={20} />
+          {socialIcons.map((icon, index) => (
+                <a key={index} href={icon.href} target="_blank" rel="noopener noreferrer">
+                  <Image className="cursor-pointer" src={icon.src} alt={icon.alt} width={20} height={20} />
+                </a>
+              ))}
           </div>
         </div>
 
@@ -135,11 +136,14 @@ const Footer = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                   className="relative w-8 h-8"
                 >
-                  <Image src={icon.src} alt={icon.alt} fill className="object-contain" />
+                   <a key={idx} href={icon.href} target="_blank" rel="noopener noreferrer">
+                  <Image className="cursor-pointer" src={icon.src} alt={icon.alt} width={40} height={40} />
+                </a>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
+         
 
           <hr className="border-gray-600 my-6" />
 

@@ -9,9 +9,9 @@ import logo from '../../public/assets/logo.png';
 import { useRouter } from 'next/router';
 
 const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/project', label: 'Projects' },
-  { href: '#news', label: 'News' },
 ];
 
 const headerVariants = {

@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileBackground, overlay, titleNumber, className }) => {
+const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileBackground, overlay, titleNumber, className, isProject1 = false }) => {
   return (
     <section
       className={`relative w-full h-screen ${className}`}
@@ -28,7 +28,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
               letterSpacing: '0.01px',
               textShadow: '0 2px 16px rgba(0,0,0,0.18)',
             }}
-            className="reveal-on-scroll text-white text-3xl md:text-7xl pt-10 font-light leading-tight mb-6"
+            className="reveal-on-scroll text-white text-3xl md:text-7xl pt-10 font-light  mb-6"
             style={{ fontFamily: 'Luxerie, sans-serif', lineHeight: 0.5, }}>
             <span className="text-7xl font-extrabold">{titleNumber}</span>{heading}
           </motion.h1>
@@ -50,15 +50,35 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
 
 
             > JVC, Dubai</motion.p>}
-          <Link href="/project1" passHref legacyBehavior>
+          {isProject1 ? (
             <motion.button
+              onClick={() => {
+                const formSection = document.getElementById('register-form');
+                if (formSection) {
+                  formSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              viewport={{ once: true }} className="reveal-on-scroll mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition">
+              viewport={{ once: true }}
+              className="reveal-on-scroll cursor-pointer mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition"
+            >
               {btntext}
             </motion.button>
-          </Link>
+          ) : (
+            <Link href="/project1" passHref legacyBehavior>
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="reveal-on-scroll cursor-pointer mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition"
+              >
+                {btntext}
+              </motion.button>
+            </Link>
+          )}
         </div>
       </div>
 
@@ -90,15 +110,35 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
         </motion.h1>
         {p &&
           <motion.p className='text-white'>{text1}</motion.p>}
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          viewport={{ once: true }}
-          className="bg-white text-black rounded-md px-6 py-2 font-medium font-lexend shadow hover:bg-gray-200 transition"
-        >
-          Explore More
-        </motion.button>
+        {isProject1 ? (
+          <motion.button
+            onClick={() => {
+              const formSection = document.getElementById('register-form');
+              if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            viewport={{ once: true }}
+            className="reveal-on-scroll cursor-pointer mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition"
+          >
+            {btntext}
+          </motion.button>
+        ) : (
+          <Link href="/project1">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="reveal-on-scroll cursor-pointer mt-5 bg-white text-black px-6 py-2 rounded shadow font-base hover:bg-gray-200 transition"
+            >
+              {btntext}
+            </motion.button>
+          </Link>
+        )}
       </div>
     </section>
   );
