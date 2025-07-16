@@ -30,7 +30,7 @@ const MortgageCalculator = ({className}) => {
   
 
 
-
+// * kamdar
   return (
     <div className={`mortgage-calculator-container bg-transparent text-white p-4 font-sans w-full h-full flex flex-col justify-center ${className}`}>
         <div className='mortgage-calculator-content'>
