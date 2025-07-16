@@ -783,4 +783,4 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
     );
 };
 
-export default Slider;
+export default ClientSlider;
