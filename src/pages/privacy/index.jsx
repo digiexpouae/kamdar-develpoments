@@ -3,6 +3,7 @@ import Footer from "../../components/Footer"
 const privacy = () => {
     return (
         <>
+        {/* mor */}
         <Header />
         <div className="py-20 text-black">
   <h2 className="
