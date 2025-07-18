@@ -34,47 +34,58 @@ const CalculationsSection = ({ monthlyPayment, totalInterest, totalPayment, data
   return (
     <div className="flex md:flex-row flex-col w-full bg-white min-h-[500px] p-10 items-center justify-center">
     <div className="result-details w-full md:w-auto">
-        <div className='result-detail-content space-y-4'>
-          <div className="pb-2">
-            <p className="flex items-center">
-              <span className="">Monthly Payment:</span>
-              <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
-              <span className="font-medium">AED {monthlyPayment.toFixed(2)}</span>
-            </p>
-          </div>
-          <div className="pb-2">
-            <p className="flex items-center">
-              <span className="">Interest:</span>
-              <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+    <div className='result-detail-content space-y-4'>
+  <div className="pb-2">
+    <p className="flex items-center">
+      <span>Monthly Payment:</span>
+      <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+      <span className="font-medium">
+        AED {monthlyPayment ? monthlyPayment.toFixed(2) : '0.00'}
+      </span>
+    </p>
+  </div>
 
-              <span className="font-medium">AED {totalInterest.toFixed(2)}</span>
-            </p>
-          </div>
-          <div className="pb-2">
-            <p className="flex items-center">
-              <span className="">Annual Payment:</span>
-              <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+  <div className="pb-2">
+    <p className="flex items-center">
+      <span>Interest:</span>
+      <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+      <span className="font-medium">
+        AED {typeof totalInterest === 'number' ? totalInterest.toFixed(2) : '0.00'}
+      </span>
+    </p>
+  </div>
 
-              <span className="font-medium">AED {(monthlyPayment * 12).toFixed(2)}</span>
-            </p>
-          </div>
-          <div className="pb-2">
-            <p className="flex items-center">
-              <span className="">Total Interest:</span>
-              <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+  <div className="pb-2">
+    <p className="flex items-center">
+      <span>Annual Payment:</span>
+      <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+      <span className="font-medium">
+        AED {monthlyPayment ? (monthlyPayment * 12).toFixed(2) : '0.00'}
+      </span>
+    </p>
+  </div>
 
-              <span className="font-medium">AED {totalInterest.toFixed(2)}</span>
-            </p>
-          </div>
-          <div className="pt-1">
-            <p className="flex items-center font-semibold">
-              <span className="">Total Payment:</span>
-              <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+  <div className="pb-2">
+    <p className="flex items-center">
+      <span>Total Interest:</span>
+      <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+      <span className="font-medium">
+        AED {typeof totalInterest === 'number' ? totalInterest.toFixed(2) : '0.00'}
+      </span>
+    </p>
+  </div>
 
-              <span>AED {totalPayment.toFixed(2)}</span>
-            </p>
-          </div>
-        </div>
+  <div className="pt-1">
+    <p className="flex items-center font-semibold">
+      <span>Total Payment:</span>
+      <span className="h-px bg-gray-700 lg:flex-1 mx-2"></span>
+      <span>
+        AED {typeof totalPayment === 'number' ? totalPayment.toFixed(2) : '0.00'}
+      </span>
+    </p>
+  </div>
+</div>
+
       </div>
       <div className="calculator-results">
         <div className="chart-container" style={{ width: '100%', height: 290 }}>

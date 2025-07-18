@@ -62,7 +62,7 @@ const MortgageCalculator = ({
                     <input 
                       type="number" 
                       value={propertyPrice} 
-                      onChange={(e) => setPropertyPrice(parseFloat(e.target.value) || 0)} 
+                      onChange={(e) => setPropertyPrice(parseFloat(e.target.value))} 
                     />
                     <div className="input-adornment">
                       <span>AED</span>
@@ -79,7 +79,7 @@ const MortgageCalculator = ({
                     <input 
                       type="number" 
                       value={interestRate} 
-                      onChange={(e) => setInterestRate(parseFloat(e.target.value) || 0)} 
+                      onChange={(e) => setInterestRate(parseFloat(e.target.value))} 
                       step="0.1"
                       min="0"
                       max="100"
