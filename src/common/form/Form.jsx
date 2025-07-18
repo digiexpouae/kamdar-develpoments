@@ -13,6 +13,8 @@ const fadeUp = {
 };
 
 const Form = () => {
+ const [formType, setFormType] = useState('sales');
+
   const getHubSpotEndpoint = () => {
     switch (formType) {
       case 'sales':
