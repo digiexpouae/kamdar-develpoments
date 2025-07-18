@@ -276,24 +276,24 @@ const Slider = ({ heading, buttonheading, href }) => {
           className="relative flex flex-col items-center mt-8"
         >
           {/* Previous Arrow */}
-          {/* <button
+          <button
             aria-label="Previous Slide"
             onClick={goToPrev}
             className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 cursor-pointer hover:bg-white text-black rounded-full p-2 shadow-lg focus:outline-none transform transition-transform duration-300 hover:scale-110 active:scale-95"
             style={{ border: '1px solid black', fontSize: 20 }}
           >
             &#8592;
-          </button> */}
+          </button>
 
           {/* Next Arrow */}
-          {/* <button
+           <button
             aria-label="Next Slide"
             onClick={goToNext}
             className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 cursor-pointer hover:bg-white text-black rounded-full p-2 shadow-lg focus:outline-none transform transition-transform duration-300 hover:scale-110 active:scale-95"
             style={{ border: '1px solid black', fontSize: 20 }}
           >
             &#8594;
-          </button> */}
+          </button>
 
           <div
             className="relative"
