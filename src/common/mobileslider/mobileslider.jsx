@@ -81,7 +81,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Renowned developer launches first UAE project for public sale after four decades of delivering exclusive private developments</p>
                 <a
-                  href="https://www.khaleejtimes.com/business/kamdar-unveils-new-residential-development-in-dubais-jvc"
+                  href="https://www.khaleejtimes.com/business/kamdar-unveils-new-residential-development-in-dubais-jvc "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
@@ -114,7 +114,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">A 105-unit luxury residential Dubai project starting from $174,000 with completion expected in early 2027</p>
                 <a
-                  href="https://www.albayan.ae/economy/business/real-estate/13347"
+                  href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
@@ -147,7 +147,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Dubai-based Kamdar Developers has announced the launch of its new Kamdar 105 Residences project in Jumeirah Village Circle,.........</p>
                 <a
-                  href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-property-development-announces-new-105-residences-in-jvc"
+                  href="https://www.albayan.ae/economy/business/real-estate/13347 "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
@@ -207,7 +207,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Emphasising on timely delivery and exceptional quality, Luxedesign's appointment is expected to support the project's completion by early 2027</p>
                 <a
-                  href="https://www.mepmiddleeast.com/people/appointments/kamdar-developments-appoints-main-contractor"
+                  href="https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/ "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
@@ -240,7 +240,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">105 Residences in Dubai's JVC features comprehensive amenities, including a rooftop open-air cinema, swimming pool, fitness studio and more</p>
                 <a
-                  href="https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/"
+                  href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-property-development-announces-new-105-residences-in-jvc "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
@@ -270,7 +270,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.</p>
                 <a
-                  href="https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc"
+                  href="https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/"
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
@@ -300,7 +300,7 @@ const MobileSlider = ({heading}) => {
                 </h2>
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Renowned developer launches first UAE project for public sale after four decades of delivering exclusive private developments</p>
                 <a
-                  href="https://www.khaleejtimes.com/business/kamdar-unveils-new-residential-development-in-dubais-jvc"
+                  href="https://www.khaleejtimes.com/business/kamdar-unveils-new-residential-development-in-dubais-jvc "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More
