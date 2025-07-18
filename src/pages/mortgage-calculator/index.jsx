@@ -23,12 +23,8 @@ const index = () => {
   const totalInterest = (monthlyPayment * numberOfPayments) - loanAmount;
   const totalPayment = loanAmount + totalInterest;
 
-  const data = [
-    { name: 'Loan Amount', value: loanAmount },
-    { name: 'Interest', value: totalInterest },
-  ];
+ 
 
-  const COLORS = ['#0F0D0D ', '#5C5C5C'];
 
   return (
    <> 
@@ -50,18 +46,17 @@ const index = () => {
       loanTerm={loanTerm}
       setLoanTerm={setLoanTerm}
       loanAmount={loanAmount}
-      data={data}
-      COLORS={COLORS}
     />
      
     </div>
-    <CalculationsSection 
-              monthlyPayment={monthlyPayment}
-              totalInterest={totalInterest}
-              totalPayment={totalPayment}
-              data={data}
-              COLORS={COLORS}
-            />    <Footer />
+    {typeof monthlyPayment === 'number' && typeof totalInterest === 'number' && (
+  <CalculationsSection
+    monthlyPayment={monthlyPayment}
+    totalInterest={totalInterest}
+    loanAmount={loanAmount}
+    totalPayment={totalPayment}
+  />
+)}   <Footer />
     </>
   )
 }

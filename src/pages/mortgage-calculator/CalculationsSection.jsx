@@ -28,9 +28,19 @@ const useWindowSize = () => {
   return windowSize;
 };
 
-const CalculationsSection = ({ monthlyPayment, totalInterest, totalPayment, data, COLORS }) => {
+const CalculationsSection = ({ monthlyPayment, totalInterest,loanAmount, totalPayment }) => {
+  
   const { width } = useWindowSize();
   const outerRadius = width >= 768 ? 120 : 80;
+
+
+  const data = [
+    { name: 'Loan Amount', value: typeof loanAmount === 'number' ? loanAmount : 0 },
+    { name: 'Interest', value: typeof totalInterest === 'number' ? totalInterest : 0 },
+  ];
+  
+  const COLORS = ['#0F0D0D ', '#5C5C5C'];
+
   return (
     <div className="flex md:flex-row flex-col w-full bg-white min-h-[500px] p-10 items-center justify-center">
     <div className="result-details w-full md:w-auto">
@@ -100,8 +110,8 @@ const CalculationsSection = ({ monthlyPayment, totalInterest, totalPayment, data
                 outerRadius={outerRadius}
                 dataKey="value"
               >
-                {data.map((entry, index) => (
-                  <Cell
+                {Array.isArray(data) && data.map((entry, index) => (
+                             <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length].trim()}
                     stroke={COLORS[index % COLORS.length].trim()}
