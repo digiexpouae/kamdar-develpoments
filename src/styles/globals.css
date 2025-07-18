@@ -343,7 +343,7 @@ input[type="range"] {
   }
   
   .calculator-inputs {
-    padding: 15px 10px;
+    padding: 28px 30px;
   }
   
   .input-group {
@@ -363,7 +363,7 @@ input[type="range"] {
   }
   
   .input-adornment button {
-    padding: 2px 6px;
+    padding: 2px 20px;
     font-size: 12px;
   }
   
@@ -385,7 +385,7 @@ input[type="range"] {
   }
   
   .calculator-inputs {
-    padding: 20px 15px;
+    padding: 20px 30px;
   }
   
   .calculator-results {
@@ -450,7 +450,7 @@ border-left:none
  
   .input-field {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
   .result-details p {
     flex-direction: row;
@@ -459,7 +459,6 @@ border-left:none
   }
 
   .input-field span {
-    margin: 5px 0;
   }
 
   .expert-advice-btn {
