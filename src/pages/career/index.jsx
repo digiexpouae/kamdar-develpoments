@@ -5,8 +5,7 @@ import Footer from "../../components/Footer"
 import Section1 from "../../common/section1/Section1"
 import Image from "next/image"
 import Section from './section'
-import OpportunitiesForm from "./oppurtunities"
-import Open from './openposition'
+import PositionCard from "./openpositions"
 const career=()=>{
 
     return(
@@ -17,8 +16,7 @@ const career=()=>{
      mobileBackgroundImage="/assets/career.jpg"   /> 
             </div>
             <Section />
-            <Open />
-            <OpportunitiesForm />
+            <PositionCard />
             <Footer />
         </div>
     )
