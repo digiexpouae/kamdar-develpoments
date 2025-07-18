@@ -1,20 +1,4 @@
-// import React from "react";
-// import Image from "next/image";
-// import im1 from "../../../public/assets/1.jpg";
-// import im2 from "../../../public/assets/2.JPG";
-// import im3 from "../../../public/assets/3.JPG";
-// const section=()=>{
-//     return(
-//         <div className=" flex flex-col items-center justify-center bg-[#0E1527] w-full text-white h-[400px] gap-10">
-//             <h1 className="text-[15px] md:text-[45px] text-center my-heading leading-6 text-white font-bold">Life at Empire</h1>
-//             <div className="flex items-center justify-between w-[60%]">
-//             <div className="flex flex-col items-center text-white"><div className=" relative  w-[220px] h-[120px] mb-2"><Image src={im1} className="!w-full !h-full !object-cover rounded-2xl " /></div><p className="text-[15px] md:text-[20px] text-center my-heading leading-6 text-white font-bold">Flexible  <br/> Working Hours</p></div>
-//             <div className="flex flex-col items-center text-white"><div className=" relative  w-[220px] h-[120px] mb-2"><Image src={im2} className="!w-full !h-full !object-cover rounded-2xl " /></div><p className="text-[15px] md:text-[20px] text-center my-heading leading-6 text-white font-bold">Friendly, Inclusive <br/> Environment</p></div>
-//             <div className="flex flex-col items-center text-white"><div className=" relative  w-[220px] h-[120px] mb-2"><Image src={im3} className="!w-full !h-full !object-cover rounded-2xl " /></div><p className="text-[15px] md:text-[20px] text-center my-heading leading-6 text-white font-bold">Opportunities  <br/> for Growth</p></div></div>
-//         </div>
-//     )
-// }
-// export default section
+
 
 import React from "react";
 import Image from "next/image";
@@ -24,10 +8,13 @@ import im3 from "../../../public/assets/three.JPG";
 
 const Section = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-[#0F0D0D] w-full text-white py-12 px-4">
-      <h1 className="text-[30px] md:text-[45px] text-center font-bold leading-tight mb-10" style={{fontFamily:'Luxerie, sans-serif'}}>
-        Life at Kamdar
+    <div className="flex flex-col items-center justify-center  w-full text-black py-12 px-4 " style={{backgroundImage:'url(/assets/white-bg.jpg)',backgroundSize:'cover',backgroundPosition:'center'}}>
+      <h1 className="text-[30px] md:text-[65px] text-center font-bold leading-tight " style={{fontFamily:'Luxerie, sans-serif'}}>
+    Our Culture
       </h1>
+      <p className="text-[8px] md:text-[20px] text-center  md:w-xl mb-10">We've built a workplace where innovation thrives, relationships matter, 
+and everyone can reach their full potential.
+</p>
       
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between  w-full max-w-screen-md">
         {/* Card 1 */}
