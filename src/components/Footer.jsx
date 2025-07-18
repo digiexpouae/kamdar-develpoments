@@ -81,9 +81,9 @@ const Footer = () => {
         <div className="flex justify-between items-center text-xs text-white/60">
           <p>©2025 Kamdar Development</p>
           <div className="flex gap-2">
-            <span className="underline">Terms & Conditions</span>
+          <Link href="/terms">Terms & Conditions</Link>
             <span>|</span>
-            <span className="underline">Privacy Policy</span>
+            <Link href="/privacy">Privacy Policy</Link>
           </div>
         </div>
       </footer>
