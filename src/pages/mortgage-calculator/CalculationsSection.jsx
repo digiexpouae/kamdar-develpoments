@@ -21,7 +21,7 @@ const useWindowSize = () => {
     // Add event listener
     window.addEventListener('resize', handleResize);
     
-    // Clean up
+    // Clean up calculations
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
