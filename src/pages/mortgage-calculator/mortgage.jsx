@@ -43,7 +43,7 @@ const MortgageCalculator = ({
       <div className="mortgage-calculator">
       <motion.h1
           style={{ fontFamily: 'Luxerie' }}
-          className={`reveal-on-scroll text-black text-center text-5xl md:text-7xl md:leading-[0.8] `}
+          className={`reveal-on-scroll text-black text-center text-4xl md:text-7xl md:leading-[0.8] `}
           variants={fadeVariants}
           initial="hidden"
           animate="visible"

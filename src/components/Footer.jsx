@@ -206,9 +206,14 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
             custom={6}
-            className="pt-8 text-white/40 font-lexend font-[200] text-xs text-left"
+            className="pt-8 text-white/40 font-lexend flex justify-between font-[200] text-xs text-left"
           >
             ©2025 Kamdar Development
+            <div className="flex gap-2">
+            <Link href="/terms">Terms & Conditions</Link>
+            <span>|</span>
+            <Link href="/privacy">Privacy Policy</Link>
+          </div>
           </motion.div>
         </footer>
       </div>
