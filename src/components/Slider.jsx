@@ -43,13 +43,13 @@ const Slider = ({ heading, buttonheading, href }) => {
       logo: arabialogo,
       heading: 'Kamdar Developments Breaks Ground on 105 Residences in JVC',
       text: 'A 105-unit luxury residential Dubai project starting from $174,000 with completion expected in early 2027',
-      buttonHref: 'https://www.albayan.ae/economy/business/real-estate/13347',
+      buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc ',
     },   {
       image: sliderimg2,
       logo: bayanlogo,
       heading: 'Launch of Kamdar 105 project in Jumeirah Village Circle',
       text: 'Dubai-based Kamdar Developers has announced the launch of its new Kamdar 105 Residences project in Jumeirah Village Circle,.........',
-      buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-property-development-announces-new-105-residences-in-jvc',
+      buttonHref: 'https://www.albayan.ae/economy/business/real-estate/13347',
     },    {
       image: sliderimg,
       logo: identitylogo,
@@ -68,14 +68,14 @@ const Slider = ({ heading, buttonheading, href }) => {
       logo: arabialogo,
       heading: 'Kamdar Property Development announces new 105 Residences\' in JVC',
       text: '105 Residences in Dubai\'s JVC features comprehensive amenities, including a rooftop open-air cinema, swimming pool, fitness studio and more',
-      buttonHref: 'https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/',
+      buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-property-development-announces-new-105-residences-in-jvc ',
     },
     {
       image: plumberslide,
       logo: designlogo,
       heading: 'Kamdar Developments Partners With Luxedesign to Deliver Elevated Residential Design',
       text: 'Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.',
-      buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc',
+      buttonHref: 'https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/ ',
     },
   
     
