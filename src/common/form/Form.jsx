@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 import bgImage from '../../../public/assets/bg_5.png';
 import formBg from '../../../public/assets/formbg.png';
 
@@ -13,6 +14,7 @@ const fadeUp = {
 };
 
 const Form = () => {
+  const router = useRouter();
  const [formType, setFormType] = useState('sales');
 
   const getHubSpotEndpoint = () => {
@@ -148,8 +150,8 @@ const Form = () => {
                 );
 
                 if (response.ok) {
-                  alert('Form submitted successfully!');
                   e.target.reset();
+                  router.push('/thankyou');
                 } else {
                   const errorText = await response.text();
                   console.error('HubSpot Error:', errorText);

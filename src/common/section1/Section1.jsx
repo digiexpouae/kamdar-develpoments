@@ -21,7 +21,7 @@ const fadeVariants = {
   },
 };
 
-const Section1 = ({ text, backgroundImage, mobileBackgroundImage,className }) => {
+const Section1 = ({ text, backgroundImage, mobileBackgroundImage, className, description }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -42,17 +42,37 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage,className }) =>
       animate="visible"
       exit="exit" 
     >
-      <div className="relative z-0 flex flex-col items-center justify-center w-full h-screen">
-        <motion.h1
-          style={{ fontFamily: 'Luxerie' }}
-          className="reveal-on-scroll text-white text-center text-6xl md:text-7xl md:leading-[0.8]"
-          variants={fadeVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-        >
-        {text}
-        </motion.h1>
+      <div className={`relative z-0 flex flex-col items-center justify-center w-full h-screen ${className && className.includes('thank-you-heading') ? 'px-8' : ''}`}>
+        <div className={`w-full max-w-7xl mx-auto ${className && className.includes('thank-you-heading') ? 'grid grid-cols-1 md:grid-cols-2 gap-12 items-center' : 'text-center'}`}>
+          <motion.div
+            variants={fadeVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <h1
+              style={{ fontFamily: 'Luxerie' }}
+              className={`reveal-on-scroll text-white text-6xl md:text-6xl ${
+                className && className.includes('thank-you-heading') ? '!text-left' : 'text-center'
+              }`}
+            >
+              {text}
+            </h1>
+          </motion.div>
+          
+          {description && (
+            <motion.div
+              className="text-white text-lg md:text-xl font-light pl-44 text-right leading-relaxed"
+              variants={fadeVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ delay: 0.3 }}
+            >
+              {description}
+            </motion.div>
+          )}
+        </div>
       </div>
 
     </motion.section>
