@@ -28,7 +28,7 @@ const StickyIcon = () => {
             {icons.map((icon, index) => (
                 <a 
                     key={index}
-                    href={icon.href}
+                    // href={icon.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     title={icon.title}
