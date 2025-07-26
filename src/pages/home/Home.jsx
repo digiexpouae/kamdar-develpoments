@@ -74,9 +74,7 @@ const Home = () => {
         <div className="md:block hidden">
           <Section1Video
           text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-            backgroundImage="/assets/homevideo.mp4"
-            mobileBackgroundImage="/assets/homevideo.mp4"
-            placeholderImage="/assets/1.png"
+            backgroundImage="/assets/homevideo.mp4" 
             className="panel inset-0 absolute w-full h-[100vh] z-0"
           />
 
@@ -103,9 +101,7 @@ const Home = () => {
         <Section1Video
         
         text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-         backgroundImage="/assets/homevideo.mp4"
-         mobileBackgroundImage="/assets/homevideo.mp4"
-         placeholderImage="/assets/homemob.png"
+         backgroundImage="/assets/homevideo.mp4" 
           className="w-full h-[100dvh]"
         />
         <Section2

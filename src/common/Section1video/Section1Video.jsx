@@ -23,21 +23,14 @@ const fadeVariants = {
 const Section1Video = ({
   text,
   backgroundImage,
-  mobileBackgroundImage,
-  placeholderImage,
+ 
+  
   className,
-}) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
+}) => { 
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  
 
   useEffect(() => {
     // Defer video load to allow first paint
@@ -47,7 +40,7 @@ const Section1Video = ({
     return () => clearTimeout(timeout);
   }, []);
 
-  const bgVideo = isMobile && mobileBackgroundImage ? mobileBackgroundImage : backgroundImage;
+  const bgVideo =   backgroundImage;
 
   return (
     <motion.section
@@ -57,18 +50,7 @@ const Section1Video = ({
       animate="visible"
       exit="exit"
     >
-      {/* Placeholder Image */}
-      {placeholderImage && (
-        <motion.img
-          src={placeholderImage}
-          alt="video placeholder"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: videoLoaded ? 0 : 1 }}
-          transition={{ duration: 0.5 }}
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
-          loading="eager"
-        />
-      )}
+ 
 
       {/* Background Video */}
       {showVideo && (
@@ -81,7 +63,7 @@ const Section1Video = ({
           playsInline
           preload="metadata"
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-          onLoadedData={() => setVideoLoaded(true)}
+          onLoadedData={() => setShowVideo(true)}
         />
       )}
 
