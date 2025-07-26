@@ -14,6 +14,9 @@ import Section5 from "../../common/section5/Section5";
 import Slider from "../../components/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 
+import styles from "../../common/Section1video/Section1Video.module.css";
+
+
 const Home = () => {
   useEffect(() => {
     // Run animations only on desktop
@@ -55,6 +58,8 @@ const Home = () => {
     };
   }, []);
 
+ 
+
   return (
     <>
       <Head>
@@ -71,39 +76,34 @@ const Home = () => {
         className="hero relative"
 
       >
-        <div className="md:block hidden">
+        <div className="">
           <Section1Video
           text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
             backgroundImage="/assets/homevideo.mp4" 
-            className="panel inset-0 absolute w-full h-[100vh] z-0"
+            className={styles.sectionVideo}
           />
 
           <Section2
             text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
             backgroundImage="/assets/2.png"
-            className="panel inset-0 absolute w-full h-[100vh] z-10"
+            className="panel md:block hidden inset-0 absolute w-full h-[100vh] z-10"
           />
           <Section4
             heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
             desktopBackground="/assets/3.jpg"
             btntext="Explore More"
-            className="panel inset-0 absolute w-full h-[100vh] z-10 bg-cover bg-center"
+            className="panel md:block hidden inset-0 absolute w-full h-[100vh] z-10 bg-cover bg-center"
           />
           <Section5
             heading={<>CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}
-            className="panel inset-0 absolute w-full h-[100vh] z-10"
+            className="panel md:block hidden inset-0 absolute w-full h-[100vh] z-10"
           />
         </div>
       </div>
 
       {/* Mobile stacked sections */}
       <div className="block md:hidden">
-        <Section1Video
-        
-        text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-         backgroundImage="/assets/homevideo.mp4" 
-          className="w-full h-[100dvh]"
-        />
+
         <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
           backgroundImage="/assets/2.png"
