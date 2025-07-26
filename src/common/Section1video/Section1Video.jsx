@@ -1,14 +1,13 @@
-// components/Section1.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const fadeVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 3,
+      duration: 1.2,
       ease: 'easeOut',
     },
   },
@@ -21,8 +20,17 @@ const fadeVariants = {
   },
 };
 
-const Section1Video = ({ text,  backgroundImage, mobileBackgroundImage, className }) => {
+const Section1Video = ({
+  text,
+  backgroundImage,
+  mobileBackgroundImage,
+  placeholderImage,
+  className,
+}) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -31,37 +39,63 @@ const Section1Video = ({ text,  backgroundImage, mobileBackgroundImage, classNam
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    // Defer video load to allow first paint
+    const timeout = setTimeout(() => {
+      setShowVideo(true);
+    }, 300); // can adjust based on your testing
+    return () => clearTimeout(timeout);
+  }, []);
+
   const bgVideo = isMobile && mobileBackgroundImage ? mobileBackgroundImage : backgroundImage;
 
   return (
     <motion.section
-      className={`reveal-on-scroll max-w-full h-screen bg-cover  bg-center flex items-center justify-center ${className}`}
+      className={`relative max-w-full h-screen bg-cover bg-center flex items-center justify-center ${className}`}
       variants={fadeVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
-      {/* Background Video */}
-      <video
-        src={bgVideo}
-        autoPlay
-        loop
-        muted
-        preload='auto'
-        playsInline
-        className="absolute top-0 left-0 w-full h-screen object-cover z-0"
-      />
+      {/* Placeholder Image */}
+      {placeholderImage && (
+        <motion.img
+          src={placeholderImage}
+          alt="video placeholder"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: videoLoaded ? 0 : 1 }}
+          transition={{ duration: 0.5 }}
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-none"
+          loading="eager"
+        />
+      )}
 
-      <div className="relative z-0 flex flex-col items-center justify-center w-full h-full">
+      {/* Background Video */}
+      {showVideo && (
+        <video
+          ref={videoRef}
+          src={bgVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          onLoadedData={() => setVideoLoaded(true)}
+        />
+      )}
+
+      {/* Text Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         <motion.h1
           style={{ fontFamily: 'Luxerie' }}
-          className="reveal-on-scroll text-white text-center text-6xl md:text-7xl md:leading-[0.8]"
+          className="text-white text-center text-6xl md:text-7xl md:leading-[0.8]"
           variants={fadeVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
-       {text}
+          {text}
         </motion.h1>
       </div>
     </motion.section>

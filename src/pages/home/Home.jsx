@@ -68,41 +68,47 @@ const Home = () => {
 
       {/* Desktop animated section */}
       <div
-  className="hero relative"
- 
->
-<div className="md:block hidden">
-        <Section1Video
+        className="hero relative"
+
+      >
+        <div className="md:block hidden">
+          <Section1Video
           text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-          backgroundImage="/assets/homevideo.mp4"
-          className="panel inset-0 absolute w-full h-[100vh] z-0"
-        />
-        <Section2
-          text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
-          backgroundImage="/assets/2.png"
-          className="panel inset-0 absolute w-full h-[100vh] z-10"
-        />
-        <Section4
-          heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
-          desktopBackground="/assets/3.jpg"
-          btntext="Explore More"
-          className="panel inset-0 absolute w-full h-[100vh] z-10 bg-cover bg-center"
-        />
-        <Section5
-          heading={<>CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}
-          className="panel inset-0 absolute w-full h-[100vh] z-10"
-        />
+            backgroundImage="/assets/homevideo.mp4"
+            mobileBackgroundImage="/assets/homevideo.mp4"
+            placeholderImage="/assets/1.png"
+            className="panel inset-0 absolute w-full h-[100vh] z-0"
+          />
+
+          <Section2
+            text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
+            backgroundImage="/assets/2.png"
+            className="panel inset-0 absolute w-full h-[100vh] z-10"
+          />
+          <Section4
+            heading={<>SOPHISTICATED LIVING IN<br />THE HEART OF JVC</>}
+            desktopBackground="/assets/3.jpg"
+            btntext="Explore More"
+            className="panel inset-0 absolute w-full h-[100vh] z-10 bg-cover bg-center"
+          />
+          <Section5
+            heading={<>CRAFTED FOR THE FEW <br /> WHO EXPECT MORE</>}
+            className="panel inset-0 absolute w-full h-[100vh] z-10"
+          />
+        </div>
       </div>
-</div>
 
       {/* Mobile stacked sections */}
       <div className="block md:hidden">
         <Section1Video
-          text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-          backgroundImage="/assets/homevideo.mp4"
+        
+        text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
+         backgroundImage="/assets/homevideo.mp4"
+         mobileBackgroundImage="/assets/homevideo.mp4"
+         placeholderImage="/assets/homemob.png"
           className="w-full h-[100dvh]"
         />
-         <Section2
+        <Section2
           text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
           backgroundImage="/assets/2.png"
           mobileBackgroundImage="/assets/2.png"
