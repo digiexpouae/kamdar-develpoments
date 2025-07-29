@@ -8,7 +8,8 @@ export default function Document() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#ffffff" />
-        
+        <meta name="google-site-verification" content="9wVTIcGj0J87gO07T4-3s6Vqae7vui_IROG1yifBmkQ" />
+
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
