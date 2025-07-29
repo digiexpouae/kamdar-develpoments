@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /?s=
+Disallow: *?replytocom
+
+Sitemap: https://kamdardevelopments.com/sitemap.xml

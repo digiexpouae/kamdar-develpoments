@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kamdar Developments",
+  "url": "https://kamdardevelopments.com",
+  "logo": "https://kamdardevelopments.com/_next/static/media/logo.48a3960a.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+971 4 885 9549",
+    "email": "info@kamdardevelopment.com",
+    "contactType": "Customer Service",
+    "areaServed": "AE",
+    "availableLanguage": "English"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit No. S03-103, MAG AlQuoz Logistic Park",
+    "addressLocality": "Dubai",
+    "addressCountry": "AE"
+  },
+  "sameAs": [
+    "https://www.facebook.com/kamdardevelopments/",
+    "https://www.instagram.com/kamdardevelopments/"
+  ]
+}
