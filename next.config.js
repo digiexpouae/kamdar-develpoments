@@ -1,3 +1,5 @@
+const { source } = require("framer-motion/m");
+
 const nextConfig = {
   // config options here
   reactStrictMode: true,
@@ -11,6 +13,13 @@ const nextConfig = {
       {
         source: '/projects/:path*',
         destination: '/project/:path*',
+      },
+      {
+        source: '/why-choose-us',
+        destination: '/',
+      },  {
+        source: '/faq',
+        destination: '/',
       },
       // About routes
       {
