@@ -23,25 +23,54 @@ const fadeVariants = {
 const Section1Video = ({ text, backgroundImage, backgroundImageMobile, poster, className }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useEffect(() => {
-    // Delay video load
-    const timeout = setTimeout(() => {
-      setShowVideo(true);
-    }, 1500); // Increased delay for LCP relief
-
-    return () => clearTimeout(timeout);
-  }, []);
-
   const videoSrc = isMobile ? backgroundImageMobile : backgroundImage;
+  const posterSrc = isMobile ? '/assets/homevideo-poster.jpg' : '/assets/homevideo-poster-pc.jpg ';
+
+  // Preload critical resources
+  useEffect(() => {
+    // Preload poster image
+    const preloadImage = new Image();
+    preloadImage.src = posterSrc;
+    
+    // Preload video
+    const preloadVideo = document.createElement('video');
+    preloadVideo.src = videoSrc;
+    preloadVideo.preload = 'metadata';
+    
+    // Set mobile state
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      return mobile;
+    };
+    
+    const isMobileView = checkMobile();
+    
+    // Load video after critical content is loaded
+    const loadVideo = () => {
+      if (document.readyState === 'complete') {
+        setShowVideo(true);
+      } else {
+        window.addEventListener('load', () => setShowVideo(true));
+      }
+    };
+    
+    // Small delay to ensure LCP image loads first
+    const timeout = setTimeout(loadVideo, 100);
+    
+    window.addEventListener('resize', checkMobile);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('load', loadVideo);
+    };
+  }, [videoSrc, posterSrc]);
+  
+  const handleVideoLoaded = () => {
+    setIsVideoLoaded(true);
+  };
 
   return (
     <motion.section
@@ -53,17 +82,30 @@ const Section1Video = ({ text, backgroundImage, backgroundImageMobile, poster, c
     >
       {/* Background Video */}
       {showVideo && (
-        <video
-          ref={videoRef}
-          src={videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          poster={poster}
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-        />
+        <>
+          {/* Poster image that shows while video loads */}
+          {!isVideoLoaded && (
+            <img
+              src={posterSrc}
+              alt="Background"
+              className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+              loading="eager"
+              fetchpriority="high"
+            />
+          )}
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={posterSrc}
+            onLoadedData={handleVideoLoaded}
+            className={`absolute top-0 left-0 w-full h-full object-cover z-[-1] ${!isVideoLoaded ? 'opacity-0' : 'opacity-100 transition-opacity duration-1000'}`}
+          />
+        </>
       )}
 
       {/* Text Content */}

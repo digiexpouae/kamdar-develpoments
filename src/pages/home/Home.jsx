@@ -68,6 +68,29 @@ const Home = () => {
         <meta name="description" content="Kamdar Developments offers property for sale in Dubai. Trusted among top real estate developers in Dubai and top property developers in UAE for premium homes." />
         <meta name="keywords" content="top real estate developers in dubai, property for sale in dubai, dubai properties for sale, property developers in uae" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Preload critical resources */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/assets/homevideo-poster.jpg" 
+          media="(max-width: 767px)" 
+          fetchpriority="high"
+        />
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/assets/homevideo-poster-pc.jpg" 
+          media="(min-width: 768px)"
+          fetchpriority="high"
+        />
+        <link 
+          rel="preload" 
+          as="font" 
+          href="/fonts/Luxerie.otf" 
+          type="font/otf" 
+          crossOrigin="anonymous"
+        />
       </Head>
       <Header />
 
