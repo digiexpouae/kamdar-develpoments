@@ -81,10 +81,10 @@ const Project1 = () => {
            <meta name="keywords" content="luxury apartments in Dubai, Book Apartment in Dubai, Modern Apartments in Dubai, Modern Architecture Residences Dubai" />
            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
          </Head>
-         <Header />
+         <Header /> 
          <Section1Video
-            backgroundImage="/assets/105video.mp4"
-            mobileBackgroundImage="/assets/105video.mp4"
+            backgroundImage="/assets/105video_pc.mp4"
+            backgroundImageMobile="/assets/105video.mp4"
             text={<><span style={{ fontFamily: 'lexend',
                fontSize: '55px',
                fontStyle: 'italic',
