@@ -81,7 +81,6 @@ const Home = () => {
             text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
             backgroundImage="/assets/homevideo.mp4"
             backgroundImageMobile="/assets/homevideo-mobile.mp4"
-            poster="/assets/homevideo-poster.jpg"
             className={styles.sectionVideo}
           />
 
