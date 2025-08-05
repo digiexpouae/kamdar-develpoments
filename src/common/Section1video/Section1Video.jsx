@@ -20,27 +20,28 @@ const fadeVariants = {
   },
 };
 
-const Section1Video = ({
-  text,
-  backgroundImage,
- 
-  
-  className,
-}) => { 
+const Section1Video = ({ text, backgroundImage, backgroundImageMobile, poster, className }) => {
   const [showVideo, setShowVideo] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef(null);
 
-  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
-    // Defer video load to allow first paint
+    // Delay video load
     const timeout = setTimeout(() => {
       setShowVideo(true);
-    }, 300); // can adjust based on your testing
+    }, 1500); // Increased delay for LCP relief
+
     return () => clearTimeout(timeout);
   }, []);
 
-  const bgVideo =   backgroundImage;
+  const videoSrc = isMobile ? backgroundImageMobile : backgroundImage;
 
   return (
     <motion.section
@@ -50,20 +51,18 @@ const Section1Video = ({
       animate="visible"
       exit="exit"
     >
- 
-
       {/* Background Video */}
       {showVideo && (
         <video
           ref={videoRef}
-          src={bgVideo}
+          src={videoSrc}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="none"
+          poster={poster}
           className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-          onLoadedData={() => setShowVideo(true)}
         />
       )}
 

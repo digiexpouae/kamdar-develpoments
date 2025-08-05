@@ -1,4 +1,4 @@
-'use client';
+
 import { useEffect, useState } from "react";
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -58,7 +58,7 @@ const Home = () => {
     };
   }, []);
 
- 
+
 
   return (
     <>
@@ -78,10 +78,13 @@ const Home = () => {
       >
         <div className="">
           <Section1Video
-          text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-            backgroundImage="/assets/homevideo.mp4" 
+            text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
+            backgroundImage="/assets/homevideo.mp4"
+            backgroundImageMobile="/assets/homevideo-mobile.mp4"
+            poster="/assets/homevideo-poster.jpg"
             className={styles.sectionVideo}
           />
+
 
           <Section2
             text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
