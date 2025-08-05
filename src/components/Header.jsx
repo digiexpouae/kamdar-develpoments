@@ -5,7 +5,7 @@ import { Sling as Hamburger } from 'hamburger-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../public/assets/logo.png';
+import logo from '../../public/assets/logo.webp';
 import { useRouter } from 'next/router';
 
 const navLinks = [
