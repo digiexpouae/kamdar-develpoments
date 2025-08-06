@@ -15,6 +15,7 @@ import Slider from "../../components/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
 import SmoothScrollProvider from "../../common/SmoothScrollProvider";
 import styles from "../../common/Section1video/Section1Video.module.css";
+import Hero from "../../common/Section1video/Hero";
 
 
 const Home = () => {
@@ -119,14 +120,15 @@ const Home = () => {
 
       >
         <div className="">
-          <Section1Video
+          {/* <Section1Video
             text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
             backgroundImage="/assets/homevideo.mp4"
             backgroundImageMobile="/assets/homevideo-mobile.mp4"
             className={styles.sectionVideo}
-          />
+          /> */}
 
-
+          <Hero/>
+          
           <Section2
             text={<>ELEVATED LIVING,<br />WITHIN REACH</>}
             backgroundImage="/assets/2.png"
