@@ -5,8 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Head from 'next/head';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Form from "../../common/form/Form";
-import Section1Video from "../../common/Section1video/Section1Video";
+import Form from "../../common/form/Form"; 
 import Section2 from '../../common/section2/Section2';
 import Section3 from "./section3/Section3";
 import Section4 from "../../common/section4/Section4";
@@ -90,20 +89,7 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
         {/* Preload critical resources */}
-        <link 
-          rel="preload" 
-          as="image" 
-          href="/assets/homevideo-poster.jpg" 
-          media="(max-width: 767px)" 
-          fetchpriority="high"
-        />
-        <link 
-          rel="preload" 
-          as="image" 
-          href="/assets/homevideo-poster-pc.jpg" 
-          media="(min-width: 768px)"
-          fetchpriority="high"
-        />
+     
         <link 
           rel="preload" 
           as="font" 
@@ -120,12 +106,7 @@ const Home = () => {
 
       >
         <div className="">
-          {/* <Section1Video
-            text={<>BUILT FOR GENERATIONS,<br />CRAFTED WITH PURPOSE</>}
-            backgroundImage="/assets/homevideo.mp4"
-            backgroundImageMobile="/assets/homevideo-mobile.mp4"
-            className={styles.sectionVideo}
-          /> */}
+    
 
           <Hero/>
           
