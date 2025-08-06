@@ -4,10 +4,34 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Form from "./Form";
 import Map from "../../common/Map";
+import SmoothScrollProvider from "../../common/SmoothScrollProvider";
+import { useEffect } from "react";
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Contact = () => {
+
+   useEffect(() => {
+      const animation = gsap.to(".bg-blue-200", {
+        y: -100,
+        scrollTrigger: {
+          trigger: ".bg-blue-200",
+          start: "top center",
+          end: "bottom top",
+          scrub: 1.5
+        }
+      });
+    
+      return () => {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      };
+    }, []);
+    
+
    return (
       <>
+         <SmoothScrollProvider>
          <Head>``
            <title>Contact Us | Kamdar Developments - Get in Touch</title>
            <meta name="title" content='Real Estate Consultancy & Developers in Dubai UAE' />
@@ -24,7 +48,7 @@ const Contact = () => {
          <Form />
          <Map />
          <Footer />
-
+         </SmoothScrollProvider>
       </>
    );
 }

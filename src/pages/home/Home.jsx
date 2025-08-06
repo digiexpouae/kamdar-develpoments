@@ -13,11 +13,31 @@ import Section4 from "../../common/section4/Section4";
 import Section5 from "../../common/section5/Section5";
 import Slider from "../../components/Slider";
 import MobileSlider from "../../common/mobileslider/mobileslider";
-
+import SmoothScrollProvider from "../../common/SmoothScrollProvider";
 import styles from "../../common/Section1video/Section1Video.module.css";
 
 
 const Home = () => {
+
+useEffect(() => {
+  const animation = gsap.to(".bg-blue-200", {
+    y: -100,
+    scrollTrigger: {
+      trigger: ".bg-blue-200",
+      start: "top center",
+      end: "bottom top",
+      scrub: 1.5
+    }
+  });
+
+  return () => {
+    animation.scrollTrigger?.kill();
+    animation.kill();
+  };
+}, []);
+
+
+  
   useEffect(() => {
     // Run animations only on desktop
     if (window.innerWidth < 768) return;
@@ -62,6 +82,7 @@ const Home = () => {
 
   return (
     <>
+    <SmoothScrollProvider>
       <Head>
         <title>Top Real Estate Developers Dubai | Property for Sale UAE</title>
         <meta name="title" content='Top Real Estate Developers Dubai | Property for Sale UAE' />
@@ -157,9 +178,10 @@ const Home = () => {
 
         <MobileSlider />
       </div>
-
+    
       <Form />
       <Footer />
+      </SmoothScrollProvider>
     </>
   );
 };
