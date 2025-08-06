@@ -13,8 +13,25 @@ import Section2 from './section2/Section2'
 import Section3 from './section3/Section3'
 import Chooseus from '../../common/chooseus/Chooseus'
 import Section3Home from '../home/section3/Section3'
+import SmoothScrollProvider from "../../common/SmoothScrollProvider";
 
 const About = () => {
+
+  useEffect(() => {
+    const animation = gsap.to(".bg-blue-200", {
+      y: -100,
+      scrollTrigger: {
+        trigger: ".bg-blue-200",
+        start: "top center",
+        end: "bottom top",
+        scrub: 1.5,
+      }
+    });
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth < 768) return; // ❌ Skip animations on mobile
@@ -55,6 +72,7 @@ const About = () => {
 
     return (
        <>
+        <SmoothScrollProvider>
        <Head>
          <title>Top Property Developers in Dubai & UAE Real Estate
 </title>
@@ -76,6 +94,7 @@ const About = () => {
           <Section3Home bgImage="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+XxKQAAAAASUVORK5CYII="/>
           <Form />
         <Footer />
+        </SmoothScrollProvider>
     </>
   )
 }

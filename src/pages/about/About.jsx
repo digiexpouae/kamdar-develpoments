@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Section1 from "../../common/section1/Section1"
 import Section4 from "../../common/section4/Section4"
 import Header from "../../components/Header";
@@ -7,8 +7,11 @@ import Form from '../../common/form/Form'
 import Section5 from '../../common/section5/Section5'
 
 const About = () => {
+
+  
     return (
        <>
+      
        <Header />
         <Section1 text={<>Driven by Detail,
             Defined by Integrity</>} backgroundImage={'/assets/projectimages/project-1.jpg'} />
@@ -16,7 +19,7 @@ const About = () => {
           <Section5 text={<> Bespoke Living <br />
             By Kamdar</>}/>
           <Form />
-        <Footer />
+        <Footer /> 
     </>
   )
 }

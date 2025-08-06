@@ -10,9 +10,25 @@ import Form from "../../common/form/Form";
 import Slide from "./Slide";
 import Places from '../../common/places/place'
 import Icons from '../../common/icons'
+import SmoothScrollProvider from "../../common/SmoothScrollProvider";
 
 const Project1 = () => {
 
+   useEffect(() => {
+      const animation = gsap.to(".bg-blue-200", {
+        y: -100,
+        scrollTrigger: {
+          trigger: ".bg-blue-200",
+          start: "top center",
+          end: "bottom top",
+          scrub: 1.5,
+        }
+      });
+    
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    }, []);
 
    useEffect(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -73,6 +89,7 @@ const Project1 = () => {
 
    return (
       <>
+      <SmoothScrollProvider>
          <Head>
            <title>105 Residences | Luxury & Modern Apartments in Dubai | Book Yours Today</title>
            
@@ -139,6 +156,7 @@ const Project1 = () => {
            <Form   />
          </div>
          <Footer />
+         </SmoothScrollProvider>
       </>
    );
 };

@@ -4,7 +4,7 @@ import Image from 'next/image'
 const StickyIcon = () => {
     const icons = [
         {
-            src: '/assets/whatsapp.png',
+            src: '/assets/Whatsapp.svg',
             alt: 'WhatsApp',
             href: 'https://api.whatsapp.com/send?phone=971525319618&text=Hi', // Replace with your WhatsApp number
             title: 'Contact us on WhatsApp'

@@ -10,10 +10,30 @@ import Form from '../../common/form/Form';
 import Section5 from '../../common/section5/Section5';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
+import SmoothScrollProvider from "../../common/SmoothScrollProvider";
 import Head from 'next/head';
 
 const Project = () => {
+
+
+  useEffect(() => {
+    const animation = gsap.to(".bg-blue-200", {
+      y: -100,
+      scrollTrigger: {
+        trigger: ".bg-blue-200",
+        start: "top center",
+        end: "bottom top",
+        scrub: 1.5,
+      }
+    });
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
+
+
   useEffect(() => {
     if (window.innerWidth < 768) return;
 
@@ -55,6 +75,7 @@ const Project = () => {
 
   return (
     <>
+      <SmoothScrollProvider>
       <Head>
         <title>Our Projects | Kamdar Developments</title>
         <meta name="title" content='Dubai Real Estate Projects | New Developments in UAE' />
@@ -143,6 +164,7 @@ const Project = () => {
 
       <Form />
       <Footer />
+      </SmoothScrollProvider>
     </>
   );
 };
