@@ -107,6 +107,8 @@ const Header = () => {
                 alt="Logo"
                 width={144}
                 height={40}
+                priority
+                fetchPriority="high"
                 className="w-36 object-contain"
               />
             </Link>
