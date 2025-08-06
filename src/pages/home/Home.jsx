@@ -39,7 +39,7 @@ const Home = () => {
         trigger: ".hero",
         start: "top top",
         end: `${scroll}vh`,
-        scrub: true,
+        scrub: 2,
         pin: true,
         anticipatePin: 1,
       }
