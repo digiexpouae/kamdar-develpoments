@@ -67,7 +67,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
               {btntext}
             </motion.button>
           ) : (
-            <Link href="/project1" passHref legacyBehavior>
+            <Link href="/105-RESIDENCES" passHref legacyBehavior>
               <motion.button
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
             {btntext}
           </motion.button>
         ) : (
-          <Link href="/project1">
+          <Link href="/105-RESIDENCES">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

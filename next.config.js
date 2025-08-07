@@ -14,7 +14,11 @@ const nextConfig = {
       },
       {
         source: '/portfolio/105-residences-by-kamdar',
-        destination: '/project1',
+        destination: '/105-RESIDENCES',
+      },
+      {
+        source: '/project1',
+        destination: '/105-RESIDENCES',
       },
       {
         source: '/projects/:path*',

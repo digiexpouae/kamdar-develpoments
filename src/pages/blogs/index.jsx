@@ -21,7 +21,7 @@ const dummyBlogs = [
     slug: 'jvc-villas-rise-in-demand',
     title: 'JVC Villas: A Rising Choice for Families',
     excerpt: 'Jumeirah Village Circle is becoming a family favorite with spacious villas and green spaces.',
-    mainImage: '/assets/1.png',
+    mainImage: '/assets/105/1.png',
   },
 ];
 

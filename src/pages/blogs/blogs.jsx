@@ -8,8 +8,8 @@ const dummyBlogs = [
     {
       slug: 'luxury-apartments-dubai-marina',
       title: 'Luxury Apartments in Dubai Marina',
-      excerpt: 'Discover the modern high-rises offering world-class amenities in Dubai Marina.',
-      mainImage: 'https://source.unsplash.com/featured/?dubai,marina,building',
+        excerpt: 'Discover the modern high-rises offering world-class amenities in Dubai Marina.',
+        mainImage: 'https://source.unsplash.com/featured/?dubai,marina,building',
     },
     {
       slug: 'off-plan-investment-opportunities',
