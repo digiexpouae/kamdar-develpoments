@@ -34,7 +34,7 @@ export default function Document() {
         </noscript>
         
         {/* Preload critical assets */}
-        <link rel="preload" href="/_next/static/media/logo.48a3960a.png" as="image" />
+        <link rel="preload" href="/_next/static/media/logo.71f8c7b2.webp" as="image" />
         
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
