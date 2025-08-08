@@ -19,22 +19,11 @@ export default function Document() {
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         
         {/* Lexend Font from Google Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700&display=swap"
-          rel="preload"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700&display=swap"
-            rel="stylesheet"
-            type="text/css"
-          />
-        </noscript>
+ 
         
         {/* Preload critical assets */}
-        <link rel="preload" href="/_next/static/media/logo.71f8c7b2.webp" as="image" />
+        <link rel="preload" href="/assets/logo.webp"
+         as="image/webp" />
         
         {/* DNS Prefetch */}
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />

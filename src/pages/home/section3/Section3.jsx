@@ -92,7 +92,7 @@ const Section3 = ({ bgImage }) => {
               </div>
            
 
-            <Link href="/contact" passHref legacyBehavior>
+            <Link href="/contact"  >
             <motion.button
               variants={fadeVariants}
               initial="hidden"

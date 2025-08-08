@@ -203,7 +203,7 @@ const Form = () => {
                 required
                 className="w-full px-4 py-2 bg-transparent border border-black rounded-md text-black"
               >
-                <option  value="" disabled selected >Buyer or Broker</option>
+                <option  value="" disabled default >Buyer or Broker</option>
                 <option value="Buyer">Buyer</option>
                 <option value="Broker">Broker</option>
               </select>
