@@ -88,15 +88,7 @@ const Home = () => {
         <meta name="keywords" content="top real estate developers in dubai, property for sale in dubai, dubai properties for sale, property developers in uae" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         
-        {/* Preload critical resources */}
-     
-        <link 
-          rel="preload" 
-          as="font" 
-          href="/fonts/Luxerie.otf" 
-          type="font/otf" 
-          crossOrigin="anonymous"
-        />
+    
       </Head>
       <Header />
 

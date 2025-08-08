@@ -51,14 +51,11 @@ export default function Section1() {
     <link
       src={POSTER_IMAGE_PATH}
       alt="Background"
-       
       className="object-cover"
-      width={1920}
-      height={1080}
+      fill
       priority
       fetchPriority="high"
-      sizes="100vw"
-      style={{ width: '100%', height: 'auto' }}
+      sizes="110vw"
     />
 
     <video
@@ -89,12 +86,11 @@ export default function Section1() {
           src={POSTER_IMAGE_PATH}
           alt="Background"
           className="object-cover"
-          width={1920}
-          height={1080}
+          fill
           priority
           fetchPriority="high"
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto' }}
+          sizes="110vw"
+
         />
       </div>
 
