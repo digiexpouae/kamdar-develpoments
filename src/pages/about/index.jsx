@@ -74,8 +74,8 @@ const About = () => {
        <>
         <SmoothScrollProvider>
        <Head>
-         <title>Top Property Developers in Dubai & UAE Real Estate
-</title>
+         <title>Top Property Developers in Dubai & UAE Real Estate</title>
+        <meta name="title" content='Top Property Developers in Dubai & UAE Real Estate' />  
          <meta name="description" content="Work with the best property developers in Dubai. Leading real estate developer in UAE offering trusted real estate development across Dubai and beyond." />
          <meta name="keywords" content="best property developers in dubai, leading real estate developer in uae, real estate developers dubai, real estate development companies Dubai" />
          <meta name="viewport" content="width=device-width, initial-scale=1.0" />

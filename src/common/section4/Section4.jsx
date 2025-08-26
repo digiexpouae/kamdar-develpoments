@@ -17,7 +17,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
       {/* Desktop View */}
       <div className="hidden md:flex relative z-20 flex-col items-start justify-start h-full pl-44">
         <div className="relative z-10 flex flex-col items-start p-8 md:p-12">
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -31,7 +31,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
             className="reveal-on-scroll text-white text-3xl md:text-7xl pt-10 font-light  mb-6"
             style={{ fontFamily: 'Luxerie, sans-serif', lineHeight: 0.5, }}>
             <span className="text-7xl font-extrabold">{titleNumber}</span>{heading}
-          </motion.h1>
+          </motion.p>
 
           {p &&
             <motion.p
@@ -92,7 +92,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <motion.h1
+        <motion.p
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -107,7 +107,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
           }}
         >
           {heading}
-        </motion.h1>
+        </motion.p>
         {p &&
           <motion.p className='text-white'>{text1}</motion.p>}
         {isProject1 ? (

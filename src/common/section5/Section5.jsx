@@ -31,7 +31,7 @@ const Section5 = ({ heading,className }) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h1
+        <p
           className="reveal-on-scroll text-white -mt-10 font-light mb-10"
           style={{
             fontFamily: 'Luxerie, sans-serif',
@@ -42,7 +42,7 @@ const Section5 = ({ heading,className }) => {
           }}
         >
           {heading}
-        </h1>
+        </p>
         <Link href="/105-RESIDENCES"  >
         <button
           className="reveal-on-scroll cursor-pointer bg-white text-black rounded-md px-6 py-2 font-medium font-lexend shadow hover:bg-gray-200 transition"
@@ -61,7 +61,7 @@ const Section5 = ({ heading,className }) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h1
+        <p
           className="reveal-on-scroll text-white font-light  md:-mt-96 mb-2"
           style={{
             fontFamily: 'Luxerie, sans-serif',
@@ -72,7 +72,7 @@ const Section5 = ({ heading,className }) => {
           }}
         >
           {heading}
-        </h1>
+        </p>
         <Link href="/105-RESIDENCES"  >
         <button className="reveal-on-scroll bg-white text-black rounded-md px-6 py-3 font-bold font-lexend shadow hover:bg-gray-200 transition">
           Explore More

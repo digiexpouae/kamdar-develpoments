@@ -54,7 +54,7 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage, className, des
           >
             <h1
               style={{ fontFamily: 'Luxerie' }}
-              className={`reveal-on-scroll text-white text-5xl md:text-6xl ${
+              className={`reveal-on-scroll text-white text-5xl md:text-7xl ${
                 className && className.includes('thank-you-heading') ? '!text-left' : 'text-center'
               }`}
             >
