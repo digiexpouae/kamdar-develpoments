@@ -42,14 +42,14 @@ const news = () => {
             <MobileSlider heading="LATEST ARTICLES" />
          </div>
         
-         <div className="md:block hidden">
+         {/* <div className="md:block hidden">
             <Slider heading="LATEST BLOGS" href="/blogs" buttonheading="View All Blogs"/>
-         </div>
-
+         </div> */}
+{/* 
          <div className="md:hidden block">
             <MobileSlider heading="LATEST BLOGS"/>
          </div>
-        
+         */}
     
         <Form />
 

@@ -195,12 +195,12 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
                     >
                         {heading}
                     </h2>
-
+{/* 
                     <Link href={href ?? '#'}>
                         <button className="bg-white text-black mb-14 cursor-pointer px-6 py-2 rounded-md transition text-sm sm:text-base w-auto">
                             {buttonheading}
                         </button>
-                    </Link>
+                    </Link> */}
                 </motion.div>
 
 
