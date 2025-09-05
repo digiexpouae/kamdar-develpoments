@@ -183,7 +183,7 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
     };
 
     return (
-        <div className="w-full h-screen bg-black px-2 pb-20 pt-10  flex justify-center">
+        <div className="w-full h-auto bg-black px-2 pb-20 pt-10 relative flex justify-center">
             <div className="w-full max-w-5xl">
                 {/* Header */}
                 <motion.div

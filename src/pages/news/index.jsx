@@ -39,11 +39,11 @@ const news = () => {
             <Slider heading="FEATURED IN" href="/blogs" buttonheading="View All"/>
          </div>
 
-         <div className="md:hidden block">
+         <div className="md:hidden block ">
             <MobileSlider heading="FEATURED IN" />
          </div>
         
-     <div className="md:block hidden">
+     <div className="md:block hidden ">
             <Slider heading="LATEST BLOGS" href="/blogs" buttonheading="View All Blogs"/>
          </div>
          <div className="md:hidden block">
