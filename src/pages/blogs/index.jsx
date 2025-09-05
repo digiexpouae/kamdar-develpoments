@@ -6,16 +6,17 @@ import { useRouter } from 'next/router';
 
 const dummyBlogs = [
   {
-    slug: 'luxury-apartments-dubai-marina',
-    title: 'Luxury Apartments in Dubai Marina',
-    excerpt: 'Discover the modern high-rises offering world-class amenities in Dubai Marina.',
-    mainImage: '/assets/3.jpg',
+    slug: 'why-jvc-is-one-of-dubais-most-desirable-places-to-live-and-invest',
+    title: 'Why JVC is One of Dubai’s Most Desirable Places to Live and Invest?',
+    excerpt: ' Designed as a thoughtfully curated neighborhood, JVC offers the perfect blend of convenience and comfort.',
+ mainImage: '/assets/Blog 1 Image (JVC).jpg',
   },
   {
-    slug: 'off-plan-investment-opportunities',
-    title: 'Off-Plan Investment Opportunities in Downtown Dubai',
-    excerpt: 'Explore off-plan real estate projects with high ROI potential.',
-    mainImage: '/assets/2.png',
+   
+      slug: 'behind-the-scenes-designing-105-residences',
+         title: 'Behind the Scenes: Designing 105 Residences',
+    excerpt: '105 Residences by Kamdar is our latest boutique luxury development located in the heart of Jumeriah Village Circle, Dubai. ',
+    mainImage: '/assets/Blog 2 image.jpg',
   },
   {
     slug: 'jvc-villas-rise-in-demand',

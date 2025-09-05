@@ -4,20 +4,44 @@ import Footer from '../../components/Footer';
 
 const dummyBlogs = [
   {
-    slug: 'luxury-apartments-dubai-marina',
-    title: 'Luxury Apartments in Dubai Marina',
+    slug: 'why-jvc-is-one-of-dubais-most-desirable-places-to-live-and-invest',
+    title: 'Why JVC is One of Dubai’s Most Desirable Places to Live and Invest?',
     excerpt:
-      'Dubai Marina stands as one of the most iconic waterfront destinations in the UAE, offering a luxurious lifestyle surrounded by high-end retail, fine dining, and stunning marina views. The area is renowned for its ultra-modern high-rise apartment towers, each designed with elegance and equipped with world-class amenities including infinity pools, state-of-the-art gyms, concierge services, and direct marina access. These luxury apartments in Dubai Marina appeal to both residents and investors due to their strong rental demand and consistent capital appreciation. With convenient access to Sheikh Zayed Road, Dubai Metro, and major business districts, Marina living offers the perfect balance between work and leisure. Whether you\'re seeking a high-yield investment or a sophisticated urban lifestyle, Dubai Marina delivers unmatched value and prestige. From studio units to spacious penthouses, each property is crafted to meet the expectations of discerning buyers from around the world. As one of Dubai’s most photographed skylines, Dubai Marina continues to attract global attention for its lifestyle offerings and premium real estate opportunities. Discover the modern luxury and strategic advantage of owning property in one of Dubai’s most desirable waterfront communities.',
-    mainImage: '/assets/3.jpg',
+
+<>Why JVC is One of Dubai’s Most Desirable Places to Live and Invest?
+ Designed as a thoughtfully curated neighborhood, JVC offers the perfect blend of convenience and comfort, bringing together modern living, working and leisure in one cohesive community.<br />
+With apartments, villas, and townhouses nestled among beautiful parks and green spaces, and with Circle Mall at its heart, JVC delivers a complete lifestyle. Residents enjoy not only convenient access to retail and dining, but also schools, nurseries, healthcare facilities, and a wide range of leisure options, from sports courts and fitness centers to playgrounds and community events making it a truly self-sufficient neighborhood where everything you need is within reach.
+A Thriving Community with Exceptional Connectivity
+<br />
+One of JVC’s most attractive qualities is its accessible location. The community sits at the crossroads of three of Dubai’s most important highways; Sheikh Mohammed bin Zayed Road, Al Khail Road, and Hessa Street ensuring residents have access across the city. From JVC, key destinations such as Dubai Marina, Downtown Dubai, Business Bay, and Dubai Hills are just short rides away. This accessibility, combined with the area’s tranquil suburban charm, makes JVC a rare neighbourhood gem of connectivity and community living.
+Future Prospects: Growth and Long-Term Value
+Looking ahead, JVC is set to benefit from major infrastructure improvements that will continue to elevate its market appeal. A series of new bridges and entry points are being constructed, including a major new access from Al Khail Road, which will dramatically improve traffic flow into and out of the community. These upgrades are part of a wider AED 6 billion agreement between Dubai Holding and the RTA, aimed at reducing internal travel times by up to 70% and strengthening JVC’s position as one of Dubai’s most well-connected neighborhoods.
+As accessibility improves and demand continues to rise, property values in JVC are expected to climb steadily. Investors are drawn by its strong rental yields (already averaging between 6.5% and 8%) while families value the complete lifestyle it provides. Its location near retail hubs like Mall of the Emirates and Dubai Hills Mall, coupled with its own growing ecosystem of schools, healthcare centers, and leisure facilities, ensures long-term desirability.
+The Perfect Place to Call Home
+<br />
+In every sense, JVC offers the best of both worlds: the vibrancy and convenience of city living paired with the peace and comfort of a family-friendly community. With its ongoing infrastructure improvements, unparalleled connectivity, and carefully planned amenities, Jumeirah Village Circle is not just one of Dubai’s most sought-after communities today but it is also one of its most promising neighborhoods for the future.</>,
+    mainImage: '/assets/Blog 1 Image (JVC).jpg',
   },
   
     {
-      slug: 'off-plan-investment-opportunities',
-      title: 'Off-Plan Investment Opportunities in Downtown Dubai',
+    slug: 'behind-the-scenes-designing-105-residences',
+         title: 'Behind the Scenes: Designing 105 Residences',
       excerpt:
-        'Downtown Dubai has solidified its position as one of the most prestigious and profitable locations for off-plan property investment in the UAE. With iconic landmarks like the Burj Khalifa, Dubai Mall, and Dubai Opera at its core, this bustling district draws high-net-worth individuals, expatriates, and global investors alike. Off-plan investment opportunities in Downtown Dubai offer significant advantages, including competitive entry prices, flexible payment plans, and the potential for high capital appreciation before project completion. Developers are rolling out innovative projects ranging from branded residences to ultra-modern smart homes, all designed to meet the growing demand for luxury living. These off-plan properties also attract strong rental demand, ensuring consistent ROI post-handover. As Expo 2020 legacies and infrastructure improvements continue to impact the area positively, investing in off-plan real estate in Downtown Dubai presents both short-term and long-term gains. Whether you\'re a first-time investor or expanding your portfolio, Downtown Dubai offers a wealth of opportunities in a globally recognized address. Explore what’s next in Dubai’s real estate future — and invest early to reap the maximum benefits.',
-      mainImage: '/assets/2.png',
-    },
+      <>What is 105 Residences?
+105 Residences by Kamdar is our latest boutique luxury development located in the heart of Jumeriah Village Circle, Dubai. Conceived as an intimate, exclusive project, it features only 105 units, ensuring privacy and distinction in one of the city’s most dynamic communities. Under construction by Luxedesign (LDV), the project represents the culmination of Kamdar’s four decades of expertise across three continents, bringing a legacy of excellence to Dubai’s real estate market.
+How Was 105 Residences Designed?
+Every element of 105 Residences was meticulously crafted by an award-winning architect to embody sophistication and elegance. The design team placed emphasis on timeless luxury, which is being brought to life through high-quality materials carefully sourced from Casamia, such as Calacatta marble and rich wood tones, to create interiors that are as durable as they are elegant. This dedication to detail ensures that every apartment is a sanctuary of comfort and style.
+<br />
+Floor Plans
+The development offers a carefully curated selection of studio, one-bedroom, and two-bedroom apartments, each with spacious layouts and refined finishes. Studios are designed for modern urban living with smart, functional layouts, while one-bedroom units balance elegance with practicality. For families, two-bedroom apartments provide ample space and comfort. In addition, a limited number of residences feature private pools on their balconies, offering residents a rare and exclusive luxury experience.
+Amenities Selected<br />
+At 105 Residences, the amenities were chosen to cater to a wide range of lifestyles, ensuring that every resident finds something meaningful within the community. Highlights include a rooftop open-air cinema, yoga deck, Zen garden, and barbecue area for leisure and relaxation. Wellness is at the forefront with a state-of-the-art fitness studio, infinity pool, and multi-purpose sports court. Families are equally catered to, with children’s play areas built into the podium level. Each space has been designed not just for function but to enhance the everyday lifestyle of residents.
+A Statement of Luxury Living
+The balance between privacy, community, and lifestyle makes 105 Residences a one-of-a-kind development. By combining boutique exclusivity with world-class amenities, Kamdar ensures that residents experience both tranquility and vibrancy within their home environment. Whether it’s relaxing on the rooftop, exercising in the gym, or hosting friends at the barbecue area, every detail was designed to reflect the modern Dubai lifestyle while maintaining an air of timeless sophistication.
+More than just a residential project, 105 Residences is a statement of boutique luxury, created for those who value quality, exclusivity, and thoughtful design. From its architectural brilliance to its hand-selected finishes and lifestyle-focused amenities, it redefines what it means to live well in Jumeirah Village Circle. For families, professionals, and investors alike, this development offers not just a home but a new benchmark in boutique living in Dubai.
+</>,
+      mainImage: '/assets/Blog 1 Image (JVC).jpg'},
+    
     {
       slug: 'jvc-villas-rise-in-demand',
       title: 'JVC Villas: A Rising Choice for Families',
