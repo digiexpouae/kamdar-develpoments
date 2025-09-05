@@ -77,7 +77,7 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage, className, des
           )}
         </div>
       </div>
-  <div className=" absolute inset-0 z-0 bg-black/40"></div>
+  <div className=" absolute inset-0 z-0 h-[100vh] bg-black/40"></div>
     </motion.section>
   );
 };
