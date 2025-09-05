@@ -42,11 +42,11 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage, className, des
       animate="visible"
       exit="exit" 
     >
-      <div className={`relative z-0 flex flex-col items-center justify-center w-full h-screen ${className && className.includes('thank-you-heading') ? 'px-4 md:px-8' : ''}`}>
+      <div className={`relative z-[5] flex flex-col items-center justify-center w-full h-screen ${className && className.includes('thank-you-heading') ? 'px-4 md:px-8' : ''}`}>
         <div className={`w-full max-w-7xl mx-auto ${className && className.includes('thank-you-heading') ? 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center' : 'text-center'}`}>
           {/* Heading - Full width on mobile, half width on desktop */}
           <motion.div
-            className="md:pr-8"
+            className="md:pr-8 relative z-10"
             variants={fadeVariants}
             initial="hidden"
             animate="visible"
@@ -54,7 +54,7 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage, className, des
           >
             <h1
               style={{ fontFamily: 'Luxerie' }}
-              className={`reveal-on-scroll text-white text-5xl md:text-7xl ${
+              className={`reveal-on-scroll text-white text-5xl  md:text-7xl ${
                 className && className.includes('thank-you-heading') ? '!text-left' : 'text-center'
               }`}
             >
@@ -77,7 +77,7 @@ const Section1 = ({ text, backgroundImage, mobileBackgroundImage, className, des
           )}
         </div>
       </div>
-
+  <div className=" absolute inset-0 z-0 bg-black/40"></div>
     </motion.section>
   );
 };

@@ -14,20 +14,21 @@ const news = () => {
     return (
         <>
             <Header />
-            <div className="md:block hidden">
+            <div className="md:block hidden  ">
            <Section1
        text={<>LATEST NEWS</>}
-            backgroundImage="/assets/blogs/blogs.png"
-            mobileBackgroundImage="/assets/blogs/blogs.png"
-           className={'h-[100vh]'}
-         />
-         </div>
+            backgroundImage="/assets/latestnews.jpg"
+            mobileBackgroundImage="/assets/latestnews.jpg"
+           className={'h-[100vh] relative'}
 
+         />
+       
+</div>
          <div className="md:hidden block">
          <Section1
        text={<><span className="text-5xl"> BLOGS/ARTICLES</span></>}
-            backgroundImage="/assets/blogs/blogs.png"
-            mobileBackgroundImage="/assets/blogs/blogs.png"
+            backgroundImage="/assets/latestnews.jpg"
+            mobileBackgroundImage="/assets/latestnews.jpg"
            className={'h-[100vh]'}
          />
            
@@ -35,11 +36,11 @@ const news = () => {
             
 
          <div className="md:block hidden">
-            <Slider heading="LATEST ARTICLES" href="/blogs" buttonheading="View All"/>
+            <Slider heading="FEATURED IN" href="/blogs" buttonheading="View All"/>
          </div>
 
          <div className="md:hidden block">
-            <MobileSlider heading="LATEST ARTICLES" />
+            <MobileSlider heading="FEATURED IN" />
          </div>
         
          {/* <div className="md:block hidden">

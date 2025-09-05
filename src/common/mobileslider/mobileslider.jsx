@@ -16,7 +16,10 @@ import plumberlogo from '../../../public/assets/homeslider/plumber.png'
 import plumberslide from '../../../public/assets/homeslider/hs2.png'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
+import Person from '../../../public/assets/person.webp'
+import zawya from '../../../public/assets/zawya-removebg-preview.png'
+import constructive from '../../../public/assets/constructive.png'
+import Kamdar from '../../../public/assets/kamdar.jpg'
 
 const MobileSlider = ({heading}) => {
   return (
@@ -300,6 +303,64 @@ const MobileSlider = ({heading}) => {
                 <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Renowned developer launches first UAE project for public sale after four decades of delivering exclusive private developments</p>
                 <a
                   href="https://www.khaleejtimes.com/business/kamdar-unveils-new-residential-development-in-dubais-jvc "
+                  className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
+          {/* slide 10 */}
+
+              <SwiperSlide>
+            <div className="relative w-full h-full">
+              <Image
+                src={Person}
+                alt="Kamdar unveils new residential development in Dubai's JVC"
+                layout="fill"
+                objectFit="cover"
+                className="brightness-[0.5]"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col max-w-[80%] justify-center p-6 text-white z-10">
+                <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
+                  <Image src={zawya} alt="Khaleej Times Logo" width={120} height={32} className="object-contain drop-shadow-lg" />
+                </div>
+                <h2 className="text-xl font-bold max-w-xl leading-[0.7] mt-5"
+                style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}>
+                  Kamdar unveils new residential development in Dubai's JVC
+                </h2>
+                <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Renowned developer launches first UAE project for public sale after four decades of delivering exclusive private developments</p>
+                <a
+                  href="https://www.zawya.com/en/projects/construction/dubais-kamdar-developments-eyes-saudi-arabia-in-regional-growth-push-nz8djj5f"
+                  className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
+              <SwiperSlide>
+            <div className="relative w-full h-full">
+              <Image
+                src={Kamdar}
+                alt="Kamdar unveils new residential development in Dubai's JVC"
+                layout="fill"
+                objectFit="cover"
+                className="brightness-[0.5]"
+                priority
+              />
+              <div className="absolute inset-0 flex flex-col max-w-[80%] justify-center p-6 text-white z-10">
+                <div className="absolute top-6 left-6 sm:top-10 sm:left-10">
+                  <Image src={constructive} alt="Khaleej Times Logo" width={120} height={32} className="object-contain drop-shadow-lg" />
+                </div>
+                <h2 className="text-xl font-bold max-w-xl leading-[0.7] mt-5"
+                style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}>
+                  Kamdar unveils new residential development in Dubai's JVC
+                </h2>
+                <p className="mt-2 leading-[1] font-lexend text-sm max-w-md">Renowned developer launches first UAE project for public sale after four decades of delivering exclusive private developments</p>
+                <a
+                  href="https://www.constructionweekonline.com/people/appointments/casamia-kamdar-developments "
                   className="mt-4 px-5 py-2 border max-w-[120px] border-white text-sm rounded-md hover:bg-white hover:text-black transition"
                 >
                   Read More

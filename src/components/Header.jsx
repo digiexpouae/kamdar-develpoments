@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/project', label: 'Projects' },
   // { href: '/blogs', label: 'Blogs' },
+  {href: '/news', label: 'News'}
 ];
 
 const headerVariants = {
