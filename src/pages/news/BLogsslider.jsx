@@ -86,14 +86,21 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
             text: '105 Residences in Dubai\'s JVC features comprehensive amenities, including a rooftop open-air cinema, swimming pool, fitness studio and more',
             buttonHref: 'https://design-middleeast.com/kamdar-developments-partners-with-luxedesign-to-deliver-elevated-residential-design/',
         }
-
-        // {
-        //     image: plumberslide,
-        //     logo: designlogo,
-        //     heading: 'Kamdar Developments Partners With Luxedesign to Deliver Elevated Residential Design',
-        //     text: 'Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.',
-        //     buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc',
-        // },
+,
+        {
+            image:'/assets/105/1.png',
+            // logo: designlogo,
+            heading: 'Kamdar Developments Partners With Luxedesign to Deliver Elevated Residential Design',
+            text: 'Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.',
+            buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc',
+        },
+                {
+            image:  '/assets/Blog 1 Image (JVC).jpg',
+            // logo: identitylogo,
+            heading: 'Unveiling Attainable Luxury',
+            text: 'Kamdar Developments has launched 105 Residences, a new high-end development in Jumeirah Village Circle.',
+            buttonHref: 'https://identity.ae/105-residences-jvc/',
+        },
         // // This is the first slide added at the end for infinite loop
         // {
         //     image:Person,
@@ -104,7 +111,7 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
         // },
         // {}
     ];
-      const total =2; 
+      const total =3; 
     const extendedTotal = extendedSlides.length;
 
     const [slideWidth, setSlideWidth] = useState(0);
@@ -270,7 +277,7 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
                                         'transform 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)',
                                 }}
                             >
-                                <Image src={'/assets/Blog 1 Image (JVC).jpg'} alt="Slide 0" fill className="object-cover" />
+                                <Image src={'/assets/105/1.png'} alt="Slide 0" fill className="object-cover" />
                                 <div
                                     className="absolute inset-0 flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10"
                                     style={{
@@ -291,8 +298,8 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
                                         <h2
                                             style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
                                             className="text-white text-3xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
-                                        >
-                        Why JVC is One of Dubai’s Most Desirable Places to Live and Invest?                                        </h2>
+                                        >JVC Villas: A Rising Choice for Families
+                                                             </h2>
                                         {/* <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
                                             Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.
                                         </p> */}
@@ -483,6 +490,60 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
                                 </div>
                             </div>
 
+  <div
+                                className={`rounded-3xl overflow-hidden bg-white relative ${0 === current ? 'z-20' : 'z-10'
+                                    }`}
+                                style={{
+                                    width: `${slideWidth}px`,
+                                    height: `${containerHeight}px`,
+                                    marginRight: `${previewWidth}px`,
+                                    flex: '0 0 auto',
+                                    transform: 0 === current ? 'scale(1.30)' : 'scale(0.95)',
+                                    boxShadow: 0 === current ? '0 10px 30px rgba(0,0,0,0.15)' : 'none',
+                                    transition:
+                                        'transform 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)',
+                                }}
+                            >
+                                <Image src={ '/assets/Blog 1 Image (JVC).jpg'} alt="Slide 0" fill className="object-cover" />
+                                <div
+                                    className="absolute inset-0 flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10"
+                                    style={{
+                                        background:
+                                            'linear-gradient(180deg,rgba(25,25,25,0.45) 60%,rgba(25,25,25,0.85) 100%)',
+                                    }}
+                                >
+                                    <div className="max-w-md">
+                                        {/* <div className="absolute top-6  sm:top-10 ">
+                                            <Image
+                                                src={designlogo}
+                                                alt="Slide Logo"
+                                                width={120}
+                                                height={32}
+                                                className="object-contain drop-shadow-lg"
+                                            />
+                                        </div> */}
+                                        <h2
+                                            style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
+                                            className="text-white text-3xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
+                                        >Why JVC is One of Dubai’s Most Desirable Places to Live and Invest?
+                                                             </h2>
+                                        {/* <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
+                                            Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.
+                                        </p> */}
+                                        <a href="/blogs/why-jvc-is-one-of-dubais-most-desirable-places-to-live-and-invest" target="_blank" rel="noopener noreferrer">
+                                            <button
+                                                style={{
+                                                    border: '1px solid #A08741',
+                                                    borderRadius: '7px',
+                                                }}
+                                                className="text-white text-xs font-lexend cursor-pointer px-3 py-2 shadow-md transition w-fit"
+                                            >
+                                                Read More
+                                            </button>
+                                        </a>
+                                    </div> 
+                                </div>
+                            </div>
                             {/* Slide 4 */}
                             {/* <div
                                 className={`rounded-3xl overflow-hidden bg-white relative ${3 === current ? 'z-20' : 'z-10'

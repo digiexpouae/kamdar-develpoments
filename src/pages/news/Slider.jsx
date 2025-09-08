@@ -33,7 +33,7 @@ const fadeUp = {
 const ClientSlider = ({ heading, buttonheading, href }) => {
     const [current, setCurrent] = useState(1);
 
-    const total = 9; // Since we have 7 slides now
+    const total = 10; // Since we have 7 slides now
     const extendedSlides = [
         // This is the last slide added at the beginning for infinite loop
         {
@@ -100,6 +100,13 @@ const ClientSlider = ({ heading, buttonheading, href }) => {
             heading: 'Dubai’s Kamdar Developments eyes Saudi Arabia in regional growth push',
             text: 'Dubai-based Kamdar Developments is exploring opportunities in the GCC real estate market, particularly Saudi Arabia, as it continues to prioritise high-end residential projects.',
             buttonHref: 'https://www.zawya.com/en/projects/construction/dubais-kamdar-developments-eyes-saudi-arabia-in-regional-growth-push-nz8djj5f',
+        },
+            {
+            image: plumberslide,
+            logo: designlogo,
+            heading: 'Kamdar Developments Partners With Luxedesign to Deliver Elevated Residential Design',
+            text: 'Kamdar Developments has appointed Luxedesign (LDV) as the General Contractor for the 105 Residences in JVC and an exclusive luxury villa collection in Meydan.',
+            buttonHref: 'https://www.arabianbusiness.com/industries/real-estate/dubai-real-estate-kamdar-developments-breaks-ground-on-105-residences-in-jvc',
         },
         {}
     ];
@@ -875,6 +882,61 @@ Kamdar Developments has announced it will fit luxury Italian materials and surfa
 Dubai-based Kamdar Developments is exploring opportunities in the GCC real estate market, particularly Saudi Arabia, as it continues to prioritise high-end residential projects.
                                         </p>
                                         <a href="https://www.zawya.com/en/projects/construction/dubais-kamdar-developments-eyes-saudi-arabia-in-regional-growth-push-nz8djj5f" target="_blank" rel="noopener noreferrer">
+                                            <button
+                                                style={{
+                                                    border: '1px solid #A08741',
+                                                    borderRadius: '7px',
+                                                }}
+                                                className="text-white text-xs font-lexend cursor-pointer px-3 py-2 shadow-md transition w-fit"
+                                            >
+                                                Read More
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                           <div
+                                className={`rounded-3xl overflow-hidden bg-white relative ${1 === current ? 'z-20' : 'z-10'
+                                    }`}
+                                style={{
+                                    width: `${slideWidth}px`,
+                                    height: `${containerHeight}px`,
+                                    marginRight: `${previewWidth}px`,
+                                    flex: '0 0 auto',
+                                    transform: 1 === current ? 'scale(1.09)' : 'scale(0.95)',
+                                    boxShadow: 1 === current ? '0 10px 30px rgba(0,0,0,0.15)' : 'none',
+                                    transition:
+                                        'transform 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)',
+                                }}
+                            >
+                                <Image src={sliderimg2} alt="Slide 1" fill className="object-cover" />
+                                <div
+                                    className="absolute inset-0 flex flex-col justify-end sm:justify-center p-6 sm:p-12 z-10"
+                                    style={{
+                                        background:
+                                            'linear-gradient(180deg,rgba(25,25,25,0.45) 60%,rgba(25,25,25,0.85) 100%)',
+                                    }}
+                                >
+                                    <div className="max-w-md">
+                                        <div className="absolute top-6  sm:top-10 ">
+                                            <Image
+                                                src={khaleejLogo}
+                                                alt="Slide Logo"
+                                                width={120}
+                                                height={32}
+                                                className="object-contain drop-shadow-lg"
+                                            />
+                                        </div>
+                                        <h2
+                                            style={{ fontFamily: 'Luxerie, Lexend, sans-serif' }}
+                                            className="text-white text-3xl font-semibold leading-[1] mt-3 mb-1 drop-shadow-lg"
+                                        >
+                                            Kamdar unveils new residential development in Dubai's JVC
+                                        </h2>
+                                        <p className="text-white text-md font-lexend mb-8 max-w-md drop-shadow-lg">
+                                            Renowned developer launches first UAE project for public sale after four decades of delivering exclusive private developments
+                                        </p>
+                                        <a href="https://www.khaleejtimes.com/business/kamdar-unveils-new-residential-development-in-dubais-jvc" target="_blank" rel="noopener noreferrer">
                                             <button
                                                 style={{
                                                     border: '1px solid #A08741',
