@@ -40,7 +40,7 @@ A Statement of Luxury Living
 The balance between privacy, community, and lifestyle makes 105 Residences a one-of-a-kind development. By combining boutique exclusivity with world-class amenities, Kamdar ensures that residents experience both tranquility and vibrancy within their home environment. Whether it’s relaxing on the rooftop, exercising in the gym, or hosting friends at the barbecue area, every detail was designed to reflect the modern Dubai lifestyle while maintaining an air of timeless sophistication.
 More than just a residential project, 105 Residences is a statement of boutique luxury, created for those who value quality, exclusivity, and thoughtful design. From its architectural brilliance to its hand-selected finishes and lifestyle-focused amenities, it redefines what it means to live well in Jumeirah Village Circle. For families, professionals, and investors alike, this development offers not just a home but a new benchmark in boutique living in Dubai.
 </>,
-      mainImage: '/assets/Blog 1 Image (JVC).jpg'},
+   mainImage: '/assets/Blog 2 image.jpg',},
     
     {
       slug: 'jvc-villas-rise-in-demand',
