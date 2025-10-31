@@ -13,7 +13,7 @@ export const SITE = {
     instagram: 'https://www.instagram.com/kamdardevelopments/'
   },
   contact: {
-    phone: '+971 4 885 9549',
+    phone: '+971 0554692589 ',
     email: 'info@kamdardevelopment.com',
     address: {
       street: 'Unit No. S03-103, MAG AlQuoz Logistic Park',

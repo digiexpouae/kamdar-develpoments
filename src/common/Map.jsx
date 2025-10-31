@@ -22,7 +22,7 @@ const ContactSection = () => {
         {/* Phone */}
         <div className="flex items-center gap-2 md:gap-5 text-center">
           <Image src="/assets/contact/phone.png" alt="Phone Icon" width={30} height={30} />
-          <span className="text-sm md:text-base font-medium text-black">+971 4 885 9549</span>
+          <span className="text-sm md:text-base font-medium text-black">+971 0554692589 </span>
         </div>
 
         {/* Email */}

@@ -6,7 +6,7 @@ const StickyIcon = () => {
         {
             src: '/assets/Whatsapp.svg',
             alt: 'WhatsApp',
-            href: 'https://api.whatsapp.com/send?phone=971525319618&text=Hi', // Replace with your WhatsApp number
+            href: 'https://api.whatsapp.com/send?phone=9710554692589&text=Hi', // Replace with your WhatsApp number
             title: 'Contact us on WhatsApp'
         },
         {
@@ -18,7 +18,7 @@ const StickyIcon = () => {
         {
             src: '/assets/phone.png',
             alt: 'Phone',
-            href: 'tel:+971525319618', // Replace with your phone number
+            href: 'tel:+9710554692589', // Replace with your phone number
             title: 'Call us'
         }
     ]
