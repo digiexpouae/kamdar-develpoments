@@ -194,7 +194,7 @@ const Footer = () => {
                 <p>Unit No. S03-103, MAG</p>
                 <p>AlQuoz Logistic Park, Dubai</p>
                 <p className="pt-4">info@kamdardevelopment.com</p>
-                <p>+971 0554692589 </p>
+                <p>+971 554692589 </p>
               </motion.div>
             </div>
           </motion.div>
