@@ -79,7 +79,17 @@ const Footer = () => {
 
         {/* Row 5: Bottom Text */}
         <div className="flex justify-between items-center text-xs text-white/60">
-          <p>©2025 Kamdar Development</p>
+          <div>
+    © 2025 Kamdar <br /> Development   | Designed & Developed by
+    <Link 
+      href="https://www.digiexpo.ae" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="font-bold ml-1"
+    >
+      DigiExpo
+    </Link>
+  </div>    
           <div className="flex gap-2">
           <Link href="/terms">Terms & Conditions</Link>
             <span>|</span>
@@ -206,10 +216,19 @@ const Footer = () => {
             whileInView="visible"
             viewport={{ once: true }}
             custom={6}
-            className="pt-8 text-white/40 font-lexend flex justify-between font-[200] text-xs text-left"
+            className="pt-8 text-white/40 font-lexend flex justify-between font-[200] text-sm text-left"
           >
- © 2025 Kamdar Development | Designed & Developed by DigiExpo
-            <div className="flex gap-2">
+<div>
+    © 2025 Kamdar Development |  Designed & Developed by
+    <Link 
+      href="https://www.digiexpo.ae" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="font-bold ml-1"
+    >
+      DigiExpo
+    </Link>
+  </div>            <div className="flex gap-2">
             <Link href="/terms">Terms & Conditions</Link>
             <span>|</span>
             <Link href="/privacy">Privacy Policy</Link>
