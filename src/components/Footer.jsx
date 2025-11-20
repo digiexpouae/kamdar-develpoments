@@ -208,7 +208,7 @@ const Footer = () => {
             custom={6}
             className="pt-8 text-white/40 font-lexend flex justify-between font-[200] text-xs text-left"
           >
-            ©2025 Kamdar Development
+ © 2025 Kamdar Development | Designed & Developed by DigiExpo
             <div className="flex gap-2">
             <Link href="/terms">Terms & Conditions</Link>
             <span>|</span>
