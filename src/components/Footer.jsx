@@ -80,7 +80,7 @@ const Footer = () => {
         {/* Row 5: Bottom Text */}
         <div className="flex justify-between items-center text-xs text-white/60">
           <div>
-    © 2025 Kamdar <br /> Development   | Designed & Developed by
+    © 2026 Kamdar <br /> Development   | Designed & Developed by
     <Link 
       href="https://www.digiexpo.ae" 
       target="_blank" 
@@ -219,7 +219,7 @@ const Footer = () => {
             className="pt-8 text-white/40 font-lexend flex justify-between font-[200] text-sm text-left"
           >
 <div>
-    © 2025 Kamdar Development |  Designed & Developed by
+    © 2026 Kamdar Development |  Designed & Developed by
     <Link 
       href="https://www.digiexpo.ae" 
       target="_blank" 
