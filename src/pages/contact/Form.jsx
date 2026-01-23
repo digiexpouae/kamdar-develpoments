@@ -100,28 +100,63 @@ const Form = ({ backgroundImage = null }) => {
                            { name: 'apartment_type', value: apttype?.value },
                          ],
                        };
+
+
+                           const formData = {
+                    firstname: firstname.value.trim(),
+                    lastname: lastname.value.trim(),
+                    email: email.value.trim(),
+                    phone: phone.value.trim(),
+                    buyertype: buyertype.value,
+                    timeframe: timeframe.value,
+                    apttype: apttype.value,
+                  };
+
          
                        const { portalId, formId } = getHubSpotEndpoint();
          
-                       try {
-                         const response = await fetch(
-                           `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
-                           {
-                             method: 'POST',
-                             headers: { 'Content-Type': 'application/json' },
-                             body: JSON.stringify(payload),
-                           }
-                         );
+                      //  try {
+                      //    const response = await fetch(
+                      //      `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
+                      //      {
+                      //        method: 'POST',
+                      //        headers: { 'Content-Type': 'application/json' },
+                      //        body: JSON.stringify(payload),
+                      //      }
+                      //    );
          
-                         if (response.ok) {
-                           e.target.reset();
-                           router.push('/thankyou');
-                         } else {
-                           const errorText = await response.text();
-                           console.error('HubSpot Error:', errorText);
-                           alert('Form submission failed. Check console.');
-                         }
-                       } catch (err) {
+                      //    if (response.ok) {
+                      //      e.target.reset();
+                      //      router.push('/thankyou');
+                      //    } else {
+                      //      const errorText = await response.text();
+                      //      console.error('HubSpot Error:', errorText);
+                      //      alert('Form submission failed. Check console.');
+                      //    }
+                      //  } 
+                       
+                                  try {
+              const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+              });
+            
+              if (!response.ok) {
+                const error = await response.json();
+                console.error('Backend error:', error);
+                alert('Form submission failed. Please try again.');
+                return;
+              }
+            
+              // ✅ Success
+              e.target.reset();
+              router.push('/thankyou');
+            
+            } 
+ 
+                       
+                       catch (err) {
                          console.error('Submission Error:', err);
                          alert('Network error. Try again.');
                        }

@@ -125,6 +125,17 @@ const Form = () => {
 
               const { firstname, lastname, email, phone, buyertype, timeframe, apttype, areyou } = e.target;
 
+          const formData = {
+                    firstname: firstname.value.trim(),
+                    lastname: lastname.value.trim(),
+                    email: email.value.trim(),
+                    phone: phone.value.trim(),
+                    buyertype: buyertype.value,
+                    timeframe: timeframe.value,
+                    apttype: apttype.value,
+                  };
+
+          
               const payload = {
                 fields: [
                   { name: 'firstname', value: firstname?.value.trim() },
@@ -139,25 +150,60 @@ const Form = () => {
 
               const { portalId, formId } = getHubSpotEndpoint();
 
-              try {
-                const response = await fetch(
-                  `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
-                  {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload),
-                  }
-                );
+              // try {
+              // //  const response = await fetch(
+              // //    `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
+              // //    {
+              // //      method: 'POST',
+              // //      headers: { 'Content-Type': 'application/json' },
+              // //      body: JSON.stringify(payload),
+              // //    }
+              // //  );
+              //    const response = await fetch(
+              //    `/api/contact`,
+              //    {
+              //      method: 'POST',
+              //      headers: { 'Content-Type': 'application/json' },
+              //      body: JSON.stringify(formData),
+              //    }
+              //  );
 
-                if (response.ok) {
-                  e.target.reset();
-                  router.push('/thankyou');
-                } else {
-                  const errorText = await response.text();
-                  console.error('HubSpot Error:', errorText);
-                  alert('Form submission failed. Check console.');
-                }
-              } catch (err) {
+              //   if (response.ok) {
+              //     e.target.reset();
+              //     router.push('/thankyou');
+              //   }
+
+              //   else {
+              //     const errorText = await response.text();
+              //     console.error('HubSpot Error:', errorText);
+              //     alert('Form submission failed. Check console.');
+              //   }
+              // }
+              // const { portalId, formId } = getHubSpotEndpoint(); // keep if needed later
+
+try {
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    console.error('Backend error:', error);
+    alert('Form submission failed. Please try again.');
+    return;
+  }
+
+  // ✅ Success
+  e.target.reset();
+  router.push('/thankyou');
+
+} 
+
+
+              
+              catch (err) {
                 console.error('Submission Error:', err);
                 alert('Network error. Try again.');
               }
