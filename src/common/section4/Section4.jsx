@@ -51,6 +51,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
 
             > JVC, Dubai</motion.p>}
           {isProject1 ? (
+            <div className='flex gap-4'>
             <motion.button
               onClick={() => {
                 const formSection = document.getElementById('register-form');
@@ -58,7 +59,7 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
                   formSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              initial={{ opacity: 0, y: 20 }}
+              // initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               viewport={{ once: true }}
@@ -66,6 +67,19 @@ const Section4 = ({ heading, text, btntext, p, text1, desktopBackground, mobileB
             >
               {btntext}
             </motion.button>
+               <Link href="/virtualtour/index.htm" >
+                 <motion.button
+              
+              // initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="reveal-on-scroll cursor-pointer mt-5 bg-black text-white px-6 py-2 rounded shadow font-base hover:bg-gray-00 transition"
+            >
+              Virtual tour
+            </motion.button>
+            </Link>
+            </div>
           ) : (
             <Link href="/105-RESIDENCES" >
               <motion.button
