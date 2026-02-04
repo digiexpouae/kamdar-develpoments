@@ -65,7 +65,9 @@ html: `
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kamdar Developments | Intelligence Report</title>
+
 </head>
+
 <body style="margin:0;padding:0;background-color:#f0f2f5;-webkit-font-smoothing:antialiased;">
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0f2f5;padding:60px 20px;">
@@ -85,11 +87,7 @@ html: `
 <td>
 <img src="https://kamdardevelopments.com/assets/blacklogo.png" style="height:80px;width:auto;" />
 </td>
-<td align="right">
-<span style="font-family:Arial;font-size:11px;font-weight:700;color:#cc0000;letter-spacing:1px;text-transform:uppercase;background:#fff1f0;padding:4px 10px;border-radius:4px;">
-New Priority Lead
-</span>
-</td>
+
 </tr>
 </table>
 
@@ -138,29 +136,31 @@ ${phone || 'No phone provided'}
 Investment Requirements
 </p>
 
-<table width="100%" style="background:#fafafa;border-radius:6px;">
-<tr>
-<td width="33%" style="padding:20px;border-right:1px solid #eee;">
-<span style="font-size:10px;color:#999;text-transform:uppercase;">Buyer Type</span>
-<div style="font-size:14px;font-weight:600;">
-${buyertype || '-'}
-</div>
-</td>
+<table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;table-layout:fixed;font-family:Arial,sans-serif;">
+  <tr>
 
-<td width="33%" style="padding:20px;border-right:1px solid #eee;">
-<span style="font-size:10px;color:#999;text-transform:uppercase;">Preference</span>
-<div style="font-size:14px;font-weight:600;">
-${apttype || '-'}
-</div>
-</td>
+    <td width="33%" style="padding:16px 12px;border-right:1px solid #eee;vertical-align:top;">
+      <span style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:0.5px;">Buyer Type</span>
+      <div style="font-size:14px;font-weight:500;line-height:1.5;margin-top:6px;color:#333;">
+        ${buyertype || '-'}
+      </div>
+    </td>
 
-<td width="33%" style="padding:20px;">
-<span style="font-size:10px;color:#999;text-transform:uppercase;">Timeline</span>
-<div style="font-size:14px;font-weight:600;">
-${timeframe || '-'}
-</div>
-</td>
-</tr>
+    <td width="33%" style="padding:16px 12px;border-right:1px solid #eee;vertical-align:top;">
+      <span style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:0.5px;">Preference</span>
+      <div style="font-size:14px;font-weight:600;line-height:1.5;margin-top:6px;color:#333;">
+        ${apttype || '-'}
+      </div>
+    </td>
+
+    <td width="33%" style="padding:16px 12px;vertical-align:top;">
+      <span style="font-size:10px;color:#999;text-transform:uppercase;letter-spacing:0.5px;">Timeline</span>
+      <div style="font-size:14px;font-weight:600;line-height:1.5;margin-top:6px;color:#333;">
+        ${timeframe || '-'}
+      </div>
+    </td>
+
+  </tr>
 </table>
 
 <table width="100%" style="margin-top:50px;">
@@ -184,7 +184,7 @@ Initiate Response
 <tr>
 <td style="font-family:Arial;font-size:12px;color:#888;">
 <strong style="color:#fff;">Lead Traceability:</strong><br/>
-Timestamp: ${dateStr}<br/>
+Timestamp: ${new Date().toLocaleString()}<br/>
 Source: kamdardevelopments.com/contact
 </td>
 <td align="right">
