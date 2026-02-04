@@ -57,65 +57,157 @@ Are You: ${areyou || 'N/A'}
       `,
 
       // HTML email
-      html: `
-        <div style="background:#f7f7f7;padding:30px;font-family:Arial,sans-serif;">
-          <div style="max-width:640px;margin:auto;background:#fff;border-radius:14px;padding:32px;box-shadow:0 8px 24px rgba(0,0,0,0.08);">
-     <div style="text-align:center;margin-bottom:28px;">
-              <img src="https://kamdardevelopments.com/assets/blacklogo.png" alt="Kamdar Logo" style="height:55px;width:145px;display:inline-block;margin:0 auto;" />
-              <h2 style="margin:24px 0 0;color:#000;font-size:27px;font-weight:700;">New Contact Form Submission</h2>
-            </div>
+     
+html: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamdar Developments | Intelligence Report</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f0f2f5;-webkit-font-smoothing:antialiased;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0f2f5;padding:60px 20px;">
+<tr>
+<td align="center">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.05);">
+
+<tr>
+<td height="4" style="background-color:#000000;"></td>
+</tr>
+
+<tr>
+<td style="padding:40px 50px 0;">
+<table width="100%">
+<tr>
+<td>
+<img src="https://kamdardevelopments.com/assets/blacklogo.png" style="height:80px;width:auto;" />
+</td>
+<td align="right">
+<span style="font-family:Arial;font-size:11px;font-weight:700;color:#cc0000;letter-spacing:1px;text-transform:uppercase;background:#fff1f0;padding:4px 10px;border-radius:4px;">
+New Priority Lead
+</span>
+</td>
+</tr>
+</table>
+
+<h1 style="margin:40px 0 10px;font-family:Helvetica,Arial,sans-serif;color:#111;font-size:28px;font-weight:300;">
+Web Enquiry Received
+</h1>
+
+<p style="margin:0;font-family:Arial;color:#777;font-size:14px;">
+A new prospect has submitted an interest form via the Kamdar digital gateway.
+</p>
+</td>
+</tr>
+
+<tr>
+<td style="padding:40px 50px;">
+
+<p style="font-family:Arial;font-size:12px;font-weight:700;color:#000;text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #eee;padding-bottom:8px;">
+Client Profile
+</p>
+
+<table width="100%" style="margin-bottom:40px;">
+<tr>
+<td style="padding:10px 0;">
+<span style="font-size:11px;color:#999;text-transform:uppercase;">Full Name</span>
+<div style="font-size:17px;color:#111;font-weight:500;">
+${fullName || 'Unnamed Lead'}
+</div>
+</td>
+</tr>
+
+<tr>
+<td style="padding:15px 0;">
+<span style="font-size:11px;color:#999;text-transform:uppercase;">Email & Phone</span>
+<div style="font-size:16px;color:#111;">
+<a href="mailto:${email}" style="color:#000;text-decoration:none;border-bottom:1px solid #ccc;">
+${email}
+</a>
+<span style="color:#ddd;margin:0 12px;">|</span>
+${phone || 'No phone provided'}
+</div>
+</td>
+</tr>
+</table>
+
+<p style="font-family:Arial;font-size:12px;font-weight:700;color:#000;text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #eee;padding-bottom:8px;">
+Investment Requirements
+</p>
+
+<table width="100%" style="background:#fafafa;border-radius:6px;">
+<tr>
+<td width="33%" style="padding:20px;border-right:1px solid #eee;">
+<span style="font-size:10px;color:#999;text-transform:uppercase;">Buyer Type</span>
+<div style="font-size:14px;font-weight:600;">
+${buyertype || '-'}
+</div>
+</td>
+
+<td width="33%" style="padding:20px;border-right:1px solid #eee;">
+<span style="font-size:10px;color:#999;text-transform:uppercase;">Preference</span>
+<div style="font-size:14px;font-weight:600;">
+${apttype || '-'}
+</div>
+</td>
+
+<td width="33%" style="padding:20px;">
+<span style="font-size:10px;color:#999;text-transform:uppercase;">Timeline</span>
+<div style="font-size:14px;font-weight:600;">
+${timeframe || '-'}
+</div>
+</td>
+</tr>
+</table>
+
+<table width="100%" style="margin-top:50px;">
+<tr>
+<td align="center">
+<a href="mailto:${email}" style="background:#000;color:#fff;padding:20px 45px;border-radius:4px;text-decoration:none;font-family:Arial;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:inline-block;">
+Initiate Response
+</a>
 
 
-            <table style="width:100%;border-collapse:collapse;font-size:15px;color:#333;">
-              <tr>
-                <td style="padding:10px 0;font-weight:600;">Name</td>
-                <td style="padding:10px 0;">${fullName || '-'}</td>
-              </tr>
-              <tr style="background:#fafafa;">
-                <td style="padding:10px 0;font-weight:600;">Email</td>
-                <td style="padding:10px 0;">${email}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px 0;font-weight:600;">Phone</td>
-                <td style="padding:10px 0;">${phone || '-'}</td>
-              </tr>
-              <tr style="background:#fafafa;">
-                <td style="padding:10px 0;font-weight:600;">Buyer Type</td>
-                <td style="padding:10px 0;">${buyertype || '-'}</td>
-              </tr>
-              <tr>
-                <td style="padding:10px 0;font-weight:600;">Buying Timeframe</td>
-                <td style="padding:10px 0;">${timeframe || '-'}</td>
-              </tr>
-              <tr style="background:#fafafa;">
-                <td style="padding:10px 0;font-weight:600;">Apartment Type</td>
-                <td style="padding:10px 0;">${apttype || '-'}</td>
-              </tr>
-              ${
-                areyou
-                  ? `
-                <tr>
-                  <td style="padding:10px 0;font-weight:600;">Are You</td>
-                  <td style="padding:10px 0;">${areyou}</td>
-                </tr>
-              `
-                  : ''
-              }
-            </table>
+</td>
+</tr>
+</table>
 
-            <div style="text-align:center;margin-top:32px;">
-              <a href="mailto:${email}"
-                 style="background:#000;color:#fff;padding:12px 26px;border-radius:8px;text-decoration:none;font-weight:600;">
-                Reply to Enquiry
-              </a>
-            </div>
+</td>
+</tr>
 
-            <div style="margin-top:36px;text-align:center;font-size:12px;color:#999;border-top:1px solid #eee;padding-top:16px;">
-              © ${new Date().getFullYear()} Kamdar Developments
-            </div>
-          </div>
-        </div>
-      `,
+<tr>
+<td style="padding:30px 50px;background:#111;">
+<table width="100%">
+<tr>
+<td style="font-family:Arial;font-size:12px;color:#888;">
+<strong style="color:#fff;">Lead Traceability:</strong><br/>
+Timestamp: ${dateStr}<br/>
+Source: kamdardevelopments.com/contact
+</td>
+<td align="right">
+<img src="https://kamdardevelopments.com/assets/blacklogo.png" style="height:20px;filter:invert(1);opacity:.5;" />
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</table>
+
+<p style="margin-top:30px;font-family:Arial;font-size:11px;color:#999;text-transform:uppercase;letter-spacing:1px;">
+Confidential Property of Kamdar Developments Group © ${new Date().getFullYear()}
+</p>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+`
     });
 
     return res.status(200).json({ message: 'Email sent successfully' });
