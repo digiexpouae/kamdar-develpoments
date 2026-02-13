@@ -7,7 +7,7 @@ import Head from 'next/head';
 
 const LAND_VIDEO_PATH = "/assets/105video_pc.mp4";
 const PORT_VIDEO_PATH = "/assets/105_mobile.mp4";
-const POSTER_IMAGE_PATH = "/assets/105bg.png";
+const POSTER_IMAGE_PATH = "/assets/2.png";
 
 export default function Section1() {
   const [videoSrc, setVideoSrc] = useState(null);
